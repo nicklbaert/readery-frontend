@@ -12,15 +12,18 @@
         <br />
       </p>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from "../components/footer.vue"
 import PlansBoxes from "../components/plans-boxes.vue";
 export default {
   name: "Plans",
   components: {
-    PlansBoxes
+    PlansBoxes,
+    Footer
   }
 };
 </script>
@@ -44,7 +47,7 @@ export default {
 }
 #plan-info p {
   color: #b4b9bf;
-  margin-top: 2%;
+  margin: 2% 0 5% 0;
   font-size: 16px;
   text-align: left;
   font-weight: 300;

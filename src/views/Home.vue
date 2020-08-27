@@ -49,10 +49,8 @@
         <h4 class="step-number">STEP 3</h4>
         <h2 class="step-heading">We send you a new book each month</h2>
         <h3 class="step-subheading">
-          Lean back and start learning. When you're finished, the next book is
-          already waiting to be shipped to your doorstep. If you are more of a
-          slow reader, you can always skip a month and won't be charged
-          anything.
+          Grab a cup of coffee and start learning. When you're finished with your book, the next one is
+          already waiting to be shipped to your doorstep. 
         </h3>
       </div>
       <div class="step-image" id="step-image-3"></div>
