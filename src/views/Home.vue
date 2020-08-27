@@ -23,13 +23,11 @@
     <div class="step" id="step-1">
       <div class="step-content" id="step-content-1">
         <h4 class="step-number">STEP 1</h4>
-        <h2 class="step-heading">
-          You tell us what you
-          are interested in
-        </h2>
+        <h2 class="step-heading">You tell us what you are interested in</h2>
         <h3 class="step-subheading">
-          Select from over 50 different categories,
-          which ones you like the most
+          Select from over 50 different categories, which ones you like the
+          most. Wether you want to learn about entrepreneurship or just want to
+          dive into the world of vampire love stories, we got you covered.
         </h3>
       </div>
       <div class="step-image" id="step-image-1"></div>
@@ -37,14 +35,11 @@
     <div class="step" id="step-2">
       <div class="step-content" id="step-content-2">
         <h4 class="step-number">STEP 2</h4>
-        <h2 class="step-heading">
-          Lean back and
-          let us do the rest
-        </h2>
+        <h2 class="step-heading">Lean back and let us do the rest</h2>
         <h3 class="step-subheading">
-          Readery plots out your reading journey
-          by selecting the best books for your
-          preferences
+          Readery plots out your reading journey by selecting the best books for
+          your your preferences. You can then look at your plan online and
+          modify it, so that it fits your needs best.
         </h3>
       </div>
       <div class="step-image" id="step-image-2"></div>
@@ -52,14 +47,12 @@
     <div class="step" id="step-3">
       <div class="step-content" id="step-content-3">
         <h4 class="step-number">STEP 3</h4>
-        <h2 class="step-heading">
-          We send you a new
-          book each month
-        </h2>
+        <h2 class="step-heading">We send you a new book each month</h2>
         <h3 class="step-subheading">
-          Lean back and start learning. When you're
-          finished, the next book is already waiting to
-          be shipped to your doorstep
+          Lean back and start learning. When you're finished, the next book is
+          already waiting to be shipped to your doorstep. If you are more of a
+          slow reader, you can always skip a month and won't be charged
+          anything.
         </h3>
       </div>
       <div class="step-image" id="step-image-3"></div>
@@ -68,9 +61,13 @@
       <div class="step-content" id="step-content-4">
         <h4 class="step-number">STEP 4</h4>
         <h2 class="step-heading">You are in full control</h2>
-        <h3
-          class="step-subheading"
-        >Skip a month, swap out a book you've already read or cancel your subscription at any time online</h3>
+        <h3 class="step-subheading">
+          Skip a month, swap out a book you've already read or cancel your
+          subscription at any time online with our configuration tool
+        </h3>
+        <div id="step-4-cta">
+          <a href="#">Start your reading journey &rarr;</a>
+        </div>
       </div>
       <div class="step-image" id="step-image-4"></div>
     </div>
@@ -138,7 +135,7 @@ export default {
   margin-top: 5%;
   width: 100%;
   height: 500px;
-  background-image: url("../assets/images/man-window-reading.png");
+  background-image: url("../assets/images/photos/man-window-reading.png");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -205,21 +202,31 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0 15%;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 .step-content {
-  width: 40%;
+  width: 45%;
+  min-height: 400px;
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .step-heading {
   margin-top: 2%;
-  font-size: 50px;
+  font-size: 30px;
+  color: #454d57;
+  font-weight: 400;
   text-align: left;
 }
 .step-subheading {
   margin-top: 5%;
   font-size: 20px;
+  color: #8595a8;
   text-align: left;
   font-weight: 300;
+  line-height: 30px;
 }
 
 .step-number {
@@ -230,7 +237,8 @@ export default {
 }
 .step-image {
   height: 400px;
-  width: 55%;
+  width: 45%;
+  min-width: 450px;
   background-position: center;
 }
 #step-2,
@@ -238,15 +246,48 @@ export default {
   flex-direction: row-reverse;
 }
 #step-image-1 {
-  background-image: url("../assets/images/interest-demo.png");
+  background-image: url("../assets/images/photos/interest-demo.png");
 }
 #step-image-2 {
-  background-image: url("../assets/images/man-chill.png");
+  background-image: url("../assets/images/photos/man-chill.png");
 }
 #step-image-3 {
-  background-image: url("../assets/images/plan-demo.png");
+  background-image: url("../assets/images/photos/plan-demo.png");
 }
 #step-image-4 {
-  background-image: url("../assets/images/girl-laptop-2.png");
+  background-image: url("../assets/images/photos/girl-laptop-2.png");
+}
+#step-4-cta {
+  margin-top: 5%;
+  text-align: left;
+  position: relative;
+}
+#step-4-cta a {
+  text-decoration: none;
+  text-align: left;
+  color: #40caff;
+  font-size: 20px;
+  font-weight: 500;
+}
+#step-4-cta:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  width: 0;
+  bottom: -5px;
+  background: #40caff;
+  height: 3px;
+  border-radius: 50px;
+  transition-property: width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+#step-4-cta:hover:after,
+#step-4-cta:focus:after,
+#step-4-cta:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
 }
 </style>
