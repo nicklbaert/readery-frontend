@@ -108,4 +108,9 @@
 #signup-button a.router-link-exact-active {
   color: #fff;
 }
+@media screen and (max-width: 1280px) {
+  #nav {
+    padding: 0 5%;
+  }
+}
 </style>

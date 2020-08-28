@@ -70,16 +70,14 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 .benefit-wrapper {
   margin: 5% 2%;
   width: 380px;
-  min-width: 350px;
+  min-width: 250px;
   text-align: left;
 }
 .benefit-image {
-  width: 100%;
   height: 300px;
   background-position: center;
   background-size: cover;
@@ -130,5 +128,22 @@ export default {
   transition: 0.3s ease-out;
   transform: scale(1.03);
   box-shadow: 0 10px 100px 0 rgba(52, 52, 66, 0.2);
+}
+
+@media screen and (max-width: 1280px) {
+  #benefits {
+    padding: 0 5%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #benefits {
+    flex-wrap: wrap;
+  }
+  .benefit-wrapper {
+    width: 100%;
+  }
+  .benefit-image {
+    height: 400px;
+  }
 }
 </style>

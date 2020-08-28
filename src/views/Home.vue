@@ -50,7 +50,7 @@
         <h2 class="step-heading">We send you a new book each month</h2>
         <h3 class="step-subheading">
           Grab a cup of coffee and start learning. When you're finished with your book, the next one is
-          already waiting to be shipped to your doorstep. 
+          already waiting to be shipped to your doorstep.
         </h3>
       </div>
       <div class="step-image" id="step-image-3"></div>
@@ -287,5 +287,11 @@ export default {
   left: 0;
   right: auto;
   width: 100%;
+}
+
+@media screen and (max-width: 1280px) {
+  .step {
+    padding: 0 5%;
+  }
 }
 </style>
