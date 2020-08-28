@@ -1,6 +1,9 @@
 <template>
   <div class="plans">
-    <h1 id="heading">Plans</h1>
+    <h1 id="heading">
+      For starters
+      <br />& for hustlers
+    </h1>
     <PlansBoxes />
     <div id="plan-info">
       <h3>Included</h3>
@@ -12,12 +15,12 @@
         <br />
       </p>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Footer from "../components/footer.vue"
+import Footer from "../components/footer.vue";
 import PlansBoxes from "../components/plans-boxes.vue";
 export default {
   name: "Plans",
@@ -35,7 +38,7 @@ export default {
 }
 #heading {
   margin-top: 5%;
-  font-size: 60px;
+  font-size: 80px;
 }
 #plan-info {
   padding: 0 15%;
