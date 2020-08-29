@@ -8,7 +8,7 @@
       v-bind:class="{selected: (selectedPlan === plan)}"
     >
       <h3 class="plan-title">{{ plan.name }}</h3>
-      <img :src="plan.icon" />
+      <img :src="getIconUrl(plan)" />
       <div class="price-container">
         <h3 class="price">{{ plan.price }}$</h3>
         <h3 class="price-rate">per month</h3>
@@ -18,18 +18,33 @@
 </template>
 
 <script>
+const school_icon_white = require("../assets/images/icons/school-icon-white.png");
+const school_icon_grey = require("../assets/images/icons/school-icon-grey.png");
+const books_icon_white = require("../assets/images/icons/books-icon-white.png");
+const books_icon_grey = require("../assets/images/icons/books-icon-grey.png");
+
 export default {
   name: "PlansBoxesSelectable",
   components: {},
   methods: {
-    getIconUrl(icon) {
-      var icons = require.context("../assets/images/icons/", false, /\.png$/);
-
-      return icons("./" + icon + ".png");
+    getIconUrl(plan) {
+      if (plan.name === "Student") {
+        if (this.selectedPlan === plan) {
+          return school_icon_white;
+        } else {
+          return school_icon_grey;
+        }
+      } else {
+        if (this.selectedPlan === plan) {
+          return books_icon_white;
+        } else {
+          return books_icon_grey;
+        }
+      }
     },
     handleSelectedPlan(plan) {
       this.selectedPlan = plan;
-      console.log(this.selectedPlan.toString());
+      this.$emit("changeSelectedPlan", plan);
     }
   },
   data() {
@@ -40,13 +55,13 @@ export default {
           name: "Student",
           price: "14",
           plan_id: 1,
-          icon: "./assets/images/icons/school-icon-blue.png"
+          icon: "../assets/images/icons/school-icon-blue.png"
         },
         {
           name: "Standard",
           price: "18",
           plan_id: 2,
-          icon: "./assets/images/icons/books-icon-blue.png"
+          icon: "../assets/images/icons/books-icon-blue.png"
         }
       ]
     };
@@ -79,6 +94,9 @@ export default {
   align-items: center;
   transition: 0.2s ease-out;
   cursor: pointer;
+}
+.plan-box img {
+  width: 100px;
 }
 .selected {
   transform: scale(1.03);

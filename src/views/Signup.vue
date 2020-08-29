@@ -17,12 +17,14 @@
     </div>
     <h1 id="heading">On to the next step</h1>
     <h1 id="subheading">Please choose a plan</h1>
-    <PlansBoxesSelectable />
+    <PlansBoxesSelectable v-on:changeSelectedPlan="updatePlan($event)" />
 
     <h1 id="heading">We're almost done</h1>
     <h1 id="subheading">Fill out this form and you are ready to go</h1>
 
     <SignupForm />
+
+    <button @click="finishSignup()">Finish</button>
 
     <Footer />
   </div>
@@ -41,6 +43,7 @@ export default {
   },
   data() {
     return {
+      selectedPlan: null,
       selectedItems: [],
       items: [
         "Business",
@@ -90,6 +93,16 @@ export default {
         }
       }
       return arr;
+    },
+    finishSignup() {
+      var userObject = {
+        plan: this.selectedPlan,
+        topics: this.selectedItems
+      };
+      console.log(userObject);
+    },
+    updatePlan(plan) {
+      this.selectedPlan = plan;
     }
   }
 };
@@ -126,7 +139,7 @@ export default {
 }
 
 .topic-wrapper {
-  width: 150px; 
+  width: 150px;
   padding: 2% 5%;
   margin: 2%;
   border-radius: 5px;
@@ -148,7 +161,6 @@ export default {
 }
 
 @media screen and (max-width: 1000px) {
-  
   #topic-grid {
     width: 90%;
   }

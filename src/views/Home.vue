@@ -10,7 +10,7 @@
     </h2>
     <div id="action-buttons">
       <a href="#" id="learn-more-button">Learn More</a>
-      <a href="#" id="get-started-button">Get Started</a>
+      <router-link to="/signup" id="get-started-button">Get started</router-link>
     </div>
     <div id="image-1-wrapper">
       <h2 id="newsletter-heading">Want 30% off?</h2>
