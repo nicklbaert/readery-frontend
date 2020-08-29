@@ -3,29 +3,29 @@
     <div class="row" id="name-wrapper">
       <div id="first-name-wrapper" class="field">
         <label for id="first-name-label">First name</label>
-        <input type="text" id="first-name" />
+        <input type="text" id="first-name" placeholder="John"/>
       </div>
       <div id="last-name-wrapper" class="field">
         <label for id="last-name-label">Last name</label>
-        <input type="text" id="last-name" />
+        <input type="text" id="last-name" placeholder="Doe"/>
       </div>
     </div>
     <div class="row" id="email-wrapper">
       <div class="field">
         <label for id="email-label">Email</label>
-        <input type="text" id="email" />
+        <input type="text" id="email" placeholder="johndoe@gmail.com"/>
       </div>
     </div>
     <div class="row" id="address-wrapper">
       <div class="field">
         <label for id="address-label">Shipping address</label>
-        <input type="text" id="address" />
+        <input type="text" id="address" placeholder="2066 Crist Drive Los Altos, CA 94024"/>
       </div>
     </div>
     <div class="row" id="payment-wrapper">
       <div class="field">
-        <label for id="payment-label">Payment Option</label>
-        <input type="text" id="payment" />
+        <label for id="payment-label">Payment</label>
+        <input type="text" id="payment" placeholder="Select a payment option"/>
       </div>
     </div>
   </div>
@@ -87,6 +87,9 @@ input {
   font-size: 16px;
   font-weight: 300;
   outline: none;
+}
+input::placeholder{
+  color: #8595a8;
 }
 input:focus {
   border: none;

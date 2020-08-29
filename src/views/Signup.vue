@@ -118,15 +118,15 @@ export default {
 }
 #topic-grid {
   margin: 5% 0 5% 0;
-  width: 40%;
+  width: 60%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .topic-wrapper {
-  /* flex: 1; */
+  width: 150px; 
   padding: 2% 5%;
   margin: 2%;
   border-radius: 5px;
@@ -148,11 +148,9 @@ export default {
 }
 
 @media screen and (max-width: 1000px) {
-  .topic-wrapper {
-    width: 100px;
-  }
+  
   #topic-grid {
-    width: 100%;
+    width: 90%;
   }
   #heading {
     margin-top: 15%;
