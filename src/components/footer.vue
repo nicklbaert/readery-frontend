@@ -44,7 +44,7 @@
         </tr>
         <tr>
           <td>
-            <router-link to="/about">How it works</router-link>
+            <router-link to="/about">Why Readery</router-link>
           </td>
           <td>
             <router-link to="/plans">Terms of Service</router-link>
@@ -65,11 +65,7 @@
         </tr>
       </table>
       <div id="newsletter-wrapper">
-        <input
-          type="text"
-          placeholder="Enter your E-Mail"
-          id="newsletter-input"
-        />
+        <input type="text" placeholder="Enter your E-Mail" id="newsletter-input" />
         <button id="newsletter-send">Send</button>
       </div>
     </div>
@@ -128,7 +124,7 @@ export default {
 <style scoped>
 .footer {
   height: 400px;
-  background-color: #E7EDF4;
+  background-color: #e7edf4;
   padding: 0 15%;
   display: flex;
   align-items: flex-start;
@@ -159,7 +155,7 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   /* color: #d0dbe8; */
-  color: #454D57;
+  color: #454d57;
 
   font-weight: 400;
   font-size: 14px;
@@ -223,11 +219,16 @@ export default {
   justify-content: space-between;
 }
 #footer-bottom h3 {
-  color: #454D57;
+  color: #454d57;
   font-size: 14px;
   font-weight: 300;
 }
-#social-media{
+#social-media {
   margin: 0 2%;
+}
+@media screen and (max-width: 1280px) {
+  .footer {
+    padding: 0 5%;
+  }
 }
 </style>

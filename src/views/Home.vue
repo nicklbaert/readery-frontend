@@ -236,8 +236,9 @@ export default {
 .step-image {
   height: 400px;
   width: 45%;
-  min-width: 450px;
+  min-width: 400px;
   background-position: center;
+  background-size: cover;
 }
 #step-2,
 #step-4 {
@@ -289,9 +290,31 @@ export default {
   width: 100%;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1250px) {
   .step {
     padding: 0 5%;
+  }
+
+  .step-content {
+    width: 100%;
+  }
+  .step-image {
+    width: 100%;
+  }
+  .step-heading {
+    margin-top: 5%;
+    font-size: 30px;
+    color: #454d57;
+    font-weight: 400;
+    text-align: left;
+  }
+  .step-subheading {
+    margin-top: 2%;
+    font-size: 20px;
+    color: #8595a8;
+    text-align: left;
+    font-weight: 300;
+    line-height: 30px;
   }
 }
 </style>

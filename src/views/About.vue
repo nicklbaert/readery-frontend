@@ -41,6 +41,22 @@
     <div id="screenshot">
       <img src="../assets/images/photos/tool-screenshot.png" alt />
     </div>
+    <div class="step" id="step-1">
+      <div class="step-content" id="step-content-1">
+        <h2 class="step-heading">You are a slow reader?</h2>
+        <h3
+          class="step-subheading"
+        >Skip a month whenever you like and you won't get charged anything.</h3>
+      </div>
+      <div class="step-image" id="step-image-1"></div>
+    </div>
+    <div class="step" id="step-2">
+      <div class="step-content" id="step-content-2">
+        <h2 class="step-heading">You already read the book?</h2>
+        <h3 class="step-subheading">You can always choose to generate a new best pick for the month.</h3>
+      </div>
+      <div class="step-image" id="step-image-2"></div>
+    </div>
     <Footer />
   </div>
 </template>
@@ -130,12 +146,92 @@ export default {
   box-shadow: 0 10px 100px 0 rgba(52, 52, 66, 0.2);
 }
 
+.step {
+  margin: 10% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15%;
+  flex-wrap: wrap-reverse;
+}
+.step-content {
+  width: 45%;
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.step-heading {
+  margin-top: 2%;
+  font-size: 30px;
+  color: #454d57;
+  font-weight: 400;
+  text-align: left;
+}
+.step-subheading {
+  margin-top: 5%;
+  font-size: 20px;
+  color: #8595a8;
+  text-align: left;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.step-number {
+  text-align: left;
+  font-weight: 700;
+  color: #aab7c6;
+  font-size: 20px;
+}
+.step-image {
+  height: 400px;
+  width: 45%;
+  min-width: 400px;
+  background-position: center;
+  background-size: cover;
+}
+#step-2,
+#step-4 {
+  flex-direction: row-reverse;
+}
+#step-image-1 {
+  background-image: url("../assets/images/photos/man-nature.png");
+}
+#step-image-2 {
+  background-image: url("../assets/images/photos/books-pile.png");
+}
+
 @media screen and (max-width: 1280px) {
   #benefits {
     padding: 0 5%;
   }
+  .step {
+    padding: 0 5%;
+  }
+  .step-content {
+    width: 100%;
+  }
+  .step-image {
+    width: 100%;
+  }
+  .step-heading {
+    margin-top: 5%;
+    font-size: 30px;
+    color: #454d57;
+    font-weight: 400;
+    text-align: left;
+  }
+  .step-subheading {
+    margin-top: 2%;
+    font-size: 20px;
+    color: #8595a8;
+    text-align: left;
+    font-weight: 300;
+    line-height: 30px;
+  }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
   #benefits {
     flex-wrap: wrap;
   }

@@ -44,7 +44,7 @@
       </div>
       <div id="links">
         <router-link to="/">Home</router-link>
-        <router-link to="/about">How it works</router-link>
+        <router-link to="/about">Why Readery</router-link>
         <router-link to="/plans">Plans</router-link>
         <router-link to="/login">Login</router-link>
         <div id="signup-button">
