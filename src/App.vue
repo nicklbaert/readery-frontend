@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <router-view />
+    <router-view id="router-view" />
   </div>
 </template>
 
@@ -69,13 +69,23 @@
   margin: 0;
   color: #1b1f23;
 }
+#router-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
 #nav {
   padding: 0 15%;
   margin-top: 3%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
 #links {

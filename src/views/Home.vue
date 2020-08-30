@@ -1,25 +1,28 @@
 <template>
   <div class="home">
-    <h1 id="heading">
-      One book can change
-      <br />your life forever
-    </h1>
-    <h2 id="subheading">
-      Start your reading journey today with readery.
-      <br />Select your interests and we'll take care of the rest.
-    </h2>
-    <div id="action-buttons">
-      <a href="#" id="learn-more-button">Learn More</a>
-      <router-link to="/signup" id="get-started-button">Get started</router-link>
+    <div id="landing-page">
+      <video autoplay muted loop id="background-video">
+        <source src="../assets/videos/readery-landingpage-video.mp4" type="video/mp4" />Your browser does not support HTML5 video.
+      </video>
+      <div id="landingpage-content">
+        <h1 id="heading">
+          Reinvent
+          <br />the way you read
+        </h1>
+        <h2 id="subheading">A book subscription service based on your goals and interests.</h2>
+        <div id="action-buttons">
+          <router-link to="/signup" id="get-started-button">Get free book</router-link>
+        </div>
+      </div>
     </div>
-    <div id="image-1-wrapper">
+    <!-- <div id="image-1-wrapper">
       <h2 id="newsletter-heading">Want 30% off?</h2>
       <h3 id="newsletter-subheading">join our newsletter and get 30% off on all plans</h3>
       <div id="newsletter-input-wrapper">
         <input type="text" placeholder="Enter your E-Mail address" id="newsletter-input" />
         <button id="newsletter-send">Send</button>
       </div>
-    </div>
+    </div>-->
     <div class="step" id="step-1">
       <div class="step-content" id="step-content-1">
         <h4 class="step-number">STEP 1</h4>
@@ -38,8 +41,7 @@
         <h2 class="step-heading">Lean back and let us do the rest</h2>
         <h3 class="step-subheading">
           Readery plots out your reading journey by selecting the best books for
-          your your preferences. You can then look at your plan online and
-          modify it, so that it fits your needs best.
+          your your preferences. Our picks are based on reccomendations of experts in the particular field.
         </h3>
       </div>
       <div class="step-image" id="step-image-2"></div>
@@ -88,13 +90,38 @@ export default {
   height: 100%;
   width: 100%;
 }
+#landingpage-content {
+  position: absolute;
+  width: 100%;
+}
+#landing-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: 1000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#background-video {
+  /* position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh; */
+  height: 100%;
+  width: 177.77777778vh; /* 100 * 16 / 9 */
+  min-width: 100%;
+  min-height: 56.25vw; /* 100 * 9 / 16 */
+}
 #heading {
-  margin-top: 10%;
   font-size: 80px;
+  font-weight: 700;
 }
 #subheading {
-  margin-top: 3%;
+  margin-top: 2%;
   font-weight: 300;
+  font-size: 25px;
 }
 #action-buttons {
   margin-top: 3%;
@@ -130,7 +157,6 @@ export default {
   transition: 0.2s ease-out;
 }
 #image-1-wrapper {
-  margin-top: 5%;
   width: 100%;
   height: 500px;
   background-image: url("../assets/images/photos/man-window-reading.png");

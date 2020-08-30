@@ -77,8 +77,9 @@ export default {
   width: 100%;
 }
 #heading {
-  margin-top: 5%;
-  font-size: 80px;
+  margin-top: 10%;
+  font-size: 60px;
+  font-weight: 700;
 }
 #benefits {
   margin: 2% 0 5% 0;

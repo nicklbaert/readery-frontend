@@ -22,9 +22,7 @@
     <h1 id="heading">We're almost done</h1>
     <h1 id="subheading">Fill out this form and you are ready to go</h1>
 
-    <SignupForm />
-
-    <button @click="finishSignup()">Finish</button>
+    <SignupForm v-on:changeCustomerObject="updateCustomerObject($event)" />
 
     <Footer />
   </div>
@@ -43,6 +41,7 @@ export default {
   },
   data() {
     return {
+      customer: null,
       selectedPlan: null,
       selectedItems: [],
       items: [
@@ -68,14 +67,14 @@ export default {
   methods: {
     handleSelectedItem(item) {
       if (this.selectedItems.includes(item)) {
-        this.selectedItems = this.removeItemOnce(this.selectedItems, item);
+        this.selectedItems = this.removeItem(this.selectedItems, item);
         console.log(this.selectedItems.toString());
       } else {
         this.selectedItems.push(item);
         console.log(this.selectedItems.toString());
       }
     },
-    removeItemOnce(arr, value) {
+    removeItem(arr, value) {
       var index = arr.indexOf(value);
       if (index > -1) {
         arr.splice(index, 1);
@@ -83,17 +82,6 @@ export default {
       return arr;
     },
 
-    removeItemAll(arr, value) {
-      var i = 0;
-      while (i < arr.length) {
-        if (arr[i] === value) {
-          arr.splice(i, 1);
-        } else {
-          ++i;
-        }
-      }
-      return arr;
-    },
     finishSignup() {
       var userObject = {
         plan: this.selectedPlan,
@@ -103,6 +91,11 @@ export default {
     },
     updatePlan(plan) {
       this.selectedPlan = plan;
+    },
+    updateCustomerObject(customer) {
+      this.customer = customer;
+      console.log("Customer object: ");
+      console.log(this.customer);
     }
   }
 };
