@@ -16,11 +16,11 @@
       </div>
     </div>
     <h1 id="heading">On to the next step</h1>
-    <h1 id="subheading">Please choose a plan</h1>
+    <!-- <h1 id="subheading">Please choose a plan</h1>
     <PlansBoxesSelectable v-on:changeSelectedPlan="updatePlan($event)" />
 
-    <h1 id="heading">We're almost done</h1>
-    <h1 id="subheading">Fill out this form and you are ready to go</h1>
+    <h1 id="heading">We're almost done</h1>-->
+    <h1 id="subheading">Fill out this form to create an account</h1>
 
     <SignupForm v-on:changeCustomerObject="updateCustomerObject($event)" />
 
@@ -30,13 +30,13 @@
 
 <script>
 import Footer from "../components/footer.vue";
-import PlansBoxesSelectable from "../components/plans-boxes-selectable.vue";
+/* import PlansBoxesSelectable from "../components/plans-boxes-selectable.vue"; */
 import SignupForm from "../components/signup-form.vue";
 export default {
   name: "Home",
   components: {
     Footer,
-    PlansBoxesSelectable,
+    /* PlansBoxesSelectable, */
     SignupForm
   },
   data() {
@@ -107,7 +107,7 @@ export default {
   width: 100%;
 }
 #heading {
-  margin-top: 5%;
+  margin-top: 10%;
   font-size: 50px;
 }
 #subheading {
@@ -124,7 +124,7 @@ export default {
 }
 #topic-grid {
   margin: 5% 0 5% 0;
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -153,6 +153,11 @@ export default {
   color: white;
 }
 
+@media screen and (max-width: 1570px) {
+  #topic-grid {
+    width: 70%;
+  }
+}
 @media screen and (max-width: 1000px) {
   #topic-grid {
     width: 90%;

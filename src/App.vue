@@ -46,7 +46,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/about">Why Readery</router-link>
         <router-link to="/plans">Plans</router-link>
-        <router-link to="/login">Login</router-link>
+        <router-link to="/configuration">Login</router-link>
         <div id="signup-button">
           <router-link to="/signup">Sign Up</router-link>
         </div>

@@ -11,7 +11,7 @@
         </h1>
         <h2 id="subheading">A book subscription service based on your goals and interests.</h2>
         <div id="action-buttons">
-          <router-link to="/signup" id="get-started-button">Get free book</router-link>
+          <router-link to="/signup" id="get-started-button">Sign up for free</router-link>
         </div>
       </div>
     </div>
@@ -32,6 +32,9 @@
           most. Wether you want to learn about entrepreneurship or just want to
           dive into the world of vampire love stories, we got you covered.
         </h3>
+        <div id="step-1-cta" class="step-cta">
+          <router-link to="/signup">Get started &rarr;</router-link>
+        </div>
       </div>
       <div class="step-image" id="step-image-1"></div>
     </div>
@@ -43,6 +46,9 @@
           Readery plots out your reading journey by selecting the best books for
           your your preferences. Our picks are based on reccomendations of experts in the particular field.
         </h3>
+        <div id="step-2-cta" class="step-cta">
+          <a href="#">Find out how we choose our books &rarr;</a>
+        </div>
       </div>
       <div class="step-image" id="step-image-2"></div>
     </div>
@@ -54,6 +60,9 @@
           Grab a cup of coffee and start learning. When you're finished with your book, the next one is
           already waiting to be shipped to your doorstep.
         </h3>
+        <div id="step-3-cta" class="step-cta">
+          <a href="#">Check out the demo &rarr;</a>
+        </div>
       </div>
       <div class="step-image" id="step-image-3"></div>
     </div>
@@ -65,7 +74,7 @@
           Skip a month, swap out a book you've already read or cancel your
           subscription at any time online with our configuration tool
         </h3>
-        <div id="step-4-cta">
+        <div id="step-4-cta" class="step-cta">
           <a href="#">Start your reading journey &rarr;</a>
         </div>
       </div>
@@ -77,10 +86,17 @@
 
 <script>
 import Footer from "../components/footer.vue";
+import { db } from "../main.js";
+
 export default {
   name: "Home",
   components: {
     Footer
+  },
+  firestore() {
+    return {
+      locations: db.collection("users")
+    };
   }
 };
 </script>
@@ -282,19 +298,19 @@ export default {
 #step-image-4 {
   background-image: url("../assets/images/photos/girl-laptop-2.png");
 }
-#step-4-cta {
+.step-cta {
   margin-top: 5%;
   text-align: left;
   position: relative;
 }
-#step-4-cta a {
+.step-cta a {
   text-decoration: none;
   text-align: left;
   color: #40caff;
   font-size: 20px;
   font-weight: 500;
 }
-#step-4-cta:after {
+.step-cta:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -308,9 +324,9 @@ export default {
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
-#step-4-cta:hover:after,
-#step-4-cta:focus:after,
-#step-4-cta:active:after {
+.step-cta:hover:after,
+.step-cta:focus:after,
+.step-cta:active:after {
   left: 0;
   right: auto;
   width: 100%;
