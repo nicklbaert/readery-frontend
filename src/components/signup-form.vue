@@ -95,8 +95,13 @@ export default {
       }
     },
     validateForm() {
+      this.showFirstNameError = false;
+        this.showLastNameError = false;
+        this.showEmailError = false;
+        this.showPasswordError = false;
+        this.showPasswordConfirmError = false;
+        this.showPasswordMatchError = false;
       if (this.first_name !== null && this.first_name !== "") {
-        this.showFirstNameError = false;
         if (this.last_name !== null && this.last_name !== "") {
           this.showLastNameError = false;
           if (this.email !== null && this.email !== "") {
