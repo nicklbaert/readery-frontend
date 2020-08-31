@@ -41,7 +41,7 @@
         <h2 class="step-heading">Lean back and let us do the rest</h2>
         <h3 class="step-subheading">
           Readery plots out your reading journey by selecting the best books for
-          your your preferences. Our picks are based on reccomendations of experts in the particular field.
+          your your preferences. Our picks are based on recommendations of experts in the particular field.
         </h3>
       </div>
       <div class="step-image" id="step-image-2"></div>
