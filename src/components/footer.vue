@@ -82,9 +82,7 @@
           />
         </svg>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100.221"
-          height="20"
+          xmlns="http://www.w3.org/2000/svg" width="20" height="20"
           viewBox="0 0 100.221 81.398"
         >
           <path

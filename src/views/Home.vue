@@ -86,18 +86,12 @@
 
 <script>
 import Footer from "../components/footer.vue";
-import { db } from "../main.js";
 
 export default {
   name: "Home",
   components: {
     Footer
   },
-  firestore() {
-    return {
-      locations: db.collection("users")
-    };
-  }
 };
 </script>
 

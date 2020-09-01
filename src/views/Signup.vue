@@ -22,7 +22,7 @@
     <h1 id="heading">We're almost done</h1>-->
     <h1 id="subheading">Fill out this form to create an account</h1>
 
-    <SignupForm v-on:changeCustomerObject="updateCustomerObject($event)" />
+    <SignupForm v-on:finishSignup="finishSignup($event)" />
 
     <Footer />
   </div>
@@ -32,6 +32,8 @@
 import Footer from "../components/footer.vue";
 /* import PlansBoxesSelectable from "../components/plans-boxes-selectable.vue"; */
 import SignupForm from "../components/signup-form.vue";
+import axios from 'axios';
+
 export default {
   name: "Home",
   components: {
@@ -82,20 +84,26 @@ export default {
       return arr;
     },
 
-    finishSignup() {
-      var userObject = {
-        plan: this.selectedPlan,
-        topics: this.selectedItems
-      };
-      console.log(userObject);
-    },
+  
     updatePlan(plan) {
       this.selectedPlan = plan;
     },
-    updateCustomerObject(customer) {
+    finishSignup(customer) {
       this.customer = customer;
-      console.log("Customer object: ");
-      console.log(this.customer);
+      var userObject = Object.assign({}, this.customer);
+      userObject.interests = this.selectedItems;
+
+      console.log("Creating user: "+userObject.toString());
+
+      axios.post("http://localhost:3000/user", {
+      body: userObject
+    })
+    .then(response => {
+      console.log("User creation request response: "+response.toString());
+    })
+    .catch(e => {
+      console.log("User creation request Error: "+e.toString());
+    })
     }
   }
 };

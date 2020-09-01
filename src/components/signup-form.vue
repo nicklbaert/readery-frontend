@@ -89,7 +89,7 @@ export default {
         country: this.country,
         payment: this.payment */
         };
-        this.$emit("changeCustomerObject", customer);
+        this.$emit("finishSignup", customer);
       } else {
         console.log("Something went wrong");
       }
