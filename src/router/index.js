@@ -5,7 +5,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Plans from "../views/Plans.vue";
 import Signup from "../views/Signup.vue";
-import MainApp from "../views/MainApp.vue";
+import Account from "../views/Account.vue";
 
 Vue.use(VueRouter);
 
@@ -36,13 +36,11 @@ const routes = [{
         component: Signup
     },
     {
-        path: "/configuration",
-        name: "Configuration",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: MainApp
-    },
+        path: "/account",
+        name: "Account",
+        component: Account
+    }
+    
 ];
 
 const router = new VueRouter({

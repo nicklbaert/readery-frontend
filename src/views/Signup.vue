@@ -24,6 +24,16 @@
 
     <SignupForm v-on:finishSignup="finishSignup($event)" />
 
+  <div id="spinner-wrapper">
+    <HalfCircleSpinner
+    :animation-duration="1000"
+    :size="30"
+    color="rgb(70, 204, 255)"
+    class = "spinner"
+    v-bind:class="{loadingSpinner: loadSpinner}"
+  />
+  </div>
+
     <Footer />
   </div>
 </template>
@@ -33,16 +43,20 @@ import Footer from "../components/footer.vue";
 /* import PlansBoxesSelectable from "../components/plans-boxes-selectable.vue"; */
 import SignupForm from "../components/signup-form.vue";
 import axios from 'axios';
+import { HalfCircleSpinner } from 'epic-spinners';
+import router from "../router";
 
 export default {
   name: "Home",
   components: {
     Footer,
     /* PlansBoxesSelectable, */
-    SignupForm
+    SignupForm,
+    HalfCircleSpinner
   },
   data() {
     return {
+      loadSpinner: false,
       customer: null,
       selectedPlan: null,
       selectedItems: [],
@@ -89,6 +103,7 @@ export default {
       this.selectedPlan = plan;
     },
     finishSignup(customer) {
+      this.loadSpinner = true;
       this.customer = customer;
       var userObject = Object.assign({}, this.customer);
       userObject.interests = this.selectedItems;
@@ -101,6 +116,11 @@ export default {
     .then(response => {
       console.log("User creation request response: "+JSON.stringify(response));
       console.log("Signup successfully executed");
+      this.loadSpinner = false;
+
+      var userID = response.id;
+      router.push(router.push({ name: 'Account', params: { userId: userID } }));
+
     })
     .catch(e => {
       console.log("User creation request Error: "+e.toString());
@@ -160,6 +180,21 @@ export default {
   transform: scale(1.08);
   background-color: rgb(70, 204, 255);
   color: white;
+}
+
+#spinner-wrapper{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.spinner{
+  display: none;
+}
+.loadingSpinner{
+  display: block;
 }
 
 @media screen and (max-width: 1570px) {

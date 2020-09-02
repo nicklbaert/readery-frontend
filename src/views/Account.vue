@@ -1,19 +1,18 @@
 <template>
   <div class="wrapper">
     <h1 id="heading">
-      Reinvent
-      <br />the way you read
+      UUser
     </h1>
   </div>
 </template>
 
 <script>
+//import router from "../router";
 export default {
-  name: "MainApp",
+  name: "Account",
   components: {},
   data() {
     return {
-      documents: []
     };
   }
 };
