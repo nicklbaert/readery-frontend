@@ -92,14 +92,15 @@ export default {
       this.customer = customer;
       var userObject = Object.assign({}, this.customer);
       userObject.interests = this.selectedItems;
+      userObject.time_joined = Date.now();
 
-      console.log("Creating user: "+userObject.toString());
 
-      axios.post("http://localhost:3000/user", {
-      body: userObject
-    })
+      console.log("Creating user: "+JSON.stringify(userObject));
+
+      axios.post("http://localhost:3000/user", userObject)
     .then(response => {
-      console.log("User creation request response: "+response.toString());
+      console.log("User creation request response: "+JSON.stringify(response));
+      console.log("Signup successfully executed");
     })
     .catch(e => {
       console.log("User creation request Error: "+e.toString());
