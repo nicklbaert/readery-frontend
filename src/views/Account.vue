@@ -1,13 +1,12 @@
 <template>
   <div class="wrapper">
     <h1 id="heading">
-      UUser
+      {{$route.params.userId}}
     </h1>
   </div>
 </template>
 
 <script>
-//import router from "../router";
 export default {
   name: "Account",
   components: {},

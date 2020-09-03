@@ -30,8 +30,8 @@
         <div class="benefit">
           <h2 class="benefit-heading">Save money</h2>
           <h3 class="benefit-content">
-            Your first book only costs $9.99, after that it's $14.99 per month -
-            even if the book costs more than that.
+            Our pricing model is based on a fixed monthly rate - even if the book
+            would otherwise cost more than that.
           </h3>
         </div>
       </div>

@@ -228,5 +228,19 @@ export default {
   .footer {
     padding: 0 5%;
   }
+  #newsletter-wrapper {
+  width: 90%;
+  min-width: 0px;
+}
+#footer-links {
+  margin-top: 2%;
+  width: 90%;
+  min-width: 0px;
+}
+#footer-bottom {
+  width: 90%;
+  min-width: 0px;
+}
+
 }
 </style>

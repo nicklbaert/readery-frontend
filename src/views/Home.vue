@@ -41,13 +41,13 @@
     <div class="step" id="step-2">
       <div class="step-content" id="step-content-2">
         <h4 class="step-number">STEP 2</h4>
-        <h2 class="step-heading">Lean back and let us do the rest</h2>
+        <h2 class="step-heading">Lean back and watch us work</h2>
         <h3 class="step-subheading">
           Readery plots out your reading journey by selecting the best books for
           your your preferences.
         </h3>
         <div id="step-2-cta" class="step-cta">
-          <a href="#">Find out how we choose our books &rarr;</a>
+          <a href="#">Find out how we choose your next book &rarr;</a>
         </div>
       </div>
       <div class="step-image" id="step-image-2"></div>
@@ -61,7 +61,7 @@
           already waiting to be shipped to your doorstep.
         </h3>
         <div id="step-3-cta" class="step-cta">
-          <a href="#">Check out the demo &rarr;</a>
+          <a href="#">Find out how it works &rarr;</a>
         </div>
       </div>
       <div class="step-image" id="step-image-3"></div>
@@ -125,13 +125,13 @@ export default {
   min-height: 56.25vw; /* 100 * 9 / 16 */
 }
 #heading {
-  font-size: 80px;
+  font-size:calc(20px + 4vw);
   font-weight: 700;
 }
 #subheading {
   margin-top: 2%;
   font-weight: 300;
-  font-size: 25px;
+  font-size:calc(14px + 1vw);
 }
 #action-buttons {
   margin-top: 3%;
@@ -333,9 +333,11 @@ export default {
 
   .step-content {
     width: 100%;
+    min-width: 0px;
   }
   .step-image {
     width: 100%;
+    min-width: 0px;
   }
   .step-heading {
     margin-top: 5%;

@@ -46,7 +46,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/about">Why Readery</router-link>
         <router-link to="/plans">Plans</router-link>
-        <router-link to="/configuration">Login</router-link>
+        <!--<router-link to="/configuration">Login</router-link>-->
         <div id="signup-button">
           <router-link to="/signup">Sign Up</router-link>
         </div>
@@ -122,5 +122,30 @@
   #nav {
     padding: 0 5%;
   }
+  
 }
+
+@media screen and (max-width: 900px) {
+  #nav {
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  #links{
+    margin-top: 2%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  #nav a {
+  margin: 20px 0;
+}
+#signup-button{
+  margin: 20px 0;
+}
+  
+}
+
+
 </style>

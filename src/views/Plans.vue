@@ -1,8 +1,7 @@
 <template>
   <div class="plans">
     <h1 id="heading">
-      For starters
-      <br />& for hustlers
+      Invest in yourself
     </h1>
     <PlansBoxes />
     <div id="plan-info">

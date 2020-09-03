@@ -44,7 +44,6 @@ import Footer from "../components/footer.vue";
 import SignupForm from "../components/signup-form.vue";
 import axios from 'axios';
 import { HalfCircleSpinner } from 'epic-spinners';
-import router from "../router";
 
 export default {
   name: "Home",
@@ -118,8 +117,8 @@ export default {
       console.log("Signup successfully executed");
       this.loadSpinner = false;
 
-      var userID = response.id;
-      router.push(router.push({ name: 'Account', params: { userId: userID } }));
+      var userID = response.data._id;
+      this.$router.push({ name: 'Account', params: { userId: userID } });
 
     })
     .catch(e => {
