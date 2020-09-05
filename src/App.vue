@@ -41,13 +41,32 @@
             </g>
           </svg>
         </router-link>
+        
       </div>
-      <div id="links">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">Why Readery</router-link>
-        <router-link to="/plans">Plans</router-link>
+      <div  class="nav-icon" @click="openNav()" v-bind:class="{nav_icon_opened: this.showNav}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="80" viewBox="0 0 191 152">
+          <g id="Group_43" data-name="Group 43" transform="translate(-1948 -4244)">
+            <rect id="Rectangle_56" data-name="Rectangle 56" width="191" height="29" rx="14.5" transform="translate(1948 4244)" fill="#1B1F23"/>
+            <rect id="Rectangle_57" data-name="Rectangle 57" width="148" height="29" rx="14.5" transform="translate(1991 4306)" fill="#1B1F23"/>
+            <rect id="Rectangle_58" data-name="Rectangle 58" width="96" height="29" rx="14.5" transform="translate(2043 4367)" fill="#1B1F23"/>
+          </g>
+      </svg>
+      </div>
+      <div class="nav-close-icon" @click="closeNav()" v-bind:class="{nav_icon_close_opened: this.showNav}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="80" viewBox="0 0 173.282 173.282">
+  <g id="Group_43" data-name="Group 43" transform="translate(-1956.718 -4482)">
+    <rect id="Rectangle_59" data-name="Rectangle 59" width="212.754" height="32.303" rx="16.151" transform="translate(1979.56 4482) rotate(45)" fill="#1b1f23"/>
+    <rect id="Rectangle_60" data-name="Rectangle 60" width="212.754" height="32.303" rx="16.152" transform="translate(2130 4504.841) rotate(135)" fill="#1b1f23"/>
+  </g>
+</svg>
+
+      </div>
+      <div class="links" @click="closeNav()" v-bind:class="{nav_open: this.showNav}">
+        <router-link to="/" class="link">Home</router-link>
+        <router-link to="/about" class="link">Why Readery</router-link>
+        <router-link to="/plans" class="link">Plans</router-link>
         <!--<router-link to="/configuration">Login</router-link>-->
-        <div id="signup-button">
+        <div id="signup-button" class="link">
           <router-link to="/signup">Sign Up</router-link>
         </div>
       </div>
@@ -55,7 +74,27 @@
     <router-view id="router-view" />
   </div>
 </template>
+<script>
 
+export default {
+  name: "App",
+  methods: {
+    openNav(){
+      this.showNav = true;
+      console.log("Nav open");
+    },
+    closeNav(){
+      this.showNav = false;
+      console.log("Nav closed");
+    }
+  },
+  data ()  {
+    return {
+      showNav: false,
+    };
+  }
+};
+</script>
 <style>
 * {
   margin: 0;
@@ -88,9 +127,18 @@
   box-sizing: border-box;
 }
 
-#links {
+.nav-icon{
+  display: none;
+}
+
+.nav-close-icon{
+  display: none;
+}
+
+.links {
   display: flex;
 }
+
 
 #nav a {
   text-decoration: none;
@@ -126,23 +174,68 @@
 }
 
 @media screen and (max-width: 900px) {
-  #nav {
-    flex-direction: column;
-    align-items: flex-start;
-    box-sizing: border-box;
+  #nav{
+    align-items: center;
+    height: 80px;
+    margin: 0;
+    padding: 0 20px;
   }
-  #links{
-    margin-top: 2%;
-    width: 100%;
+  .nav-icon{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top:0;
+    right: 20px;
+  }
+
+  .nav_icon_opened{
     display: none;
+  }
+
+
+  .nav-close-icon{
+    position: absolute;
+    z-index: 100;
+    top:0;
+    right: 20px;
+  }
+
+  .nav_icon_close_opened{
+    display: block;
+  }
+
+
+  .links{
+  
+    width: 60%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: center;
+    background-color: #fff;
+    display: none;
+    transition: 0.2s ease-out;
   }
-  #nav a {
-  margin: 20px 0;
-}
+  #first-link{
+    margin-top: 80px;
+  }
+
+  .nav_open{
+    display: flex;
+    transition: 0.2s ease-out;
+  }
+
+  #nav a{
+    margin: 40px 20px 40px 0 ;
+  }
+
+  
+
 #signup-button{
-  margin: 20px 0;
+  margin: 40px 0;
 }
   
 }
