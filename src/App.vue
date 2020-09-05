@@ -100,10 +100,36 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+@font-face {
+  font-family: "cera-pro";
+  src: url("./assets/fonts/cera-light.otf");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "cera-pro";
+  src: url("./assets/fonts/cera-medium.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "cera-pro";
+  src: url("./assets/fonts/cera-bold.otf");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "cera-pro";
+  src: url("./assets/fonts/cera-black.otf");
+  font-style: normal;
+  font-weight: 900;
+}
+
 #app {
-  font-family: Cera Pro, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: cera-pro;
   text-align: center;
   margin: 0;
   color: #1b1f23;

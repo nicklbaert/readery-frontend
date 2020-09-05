@@ -212,7 +212,7 @@ input {
   box-sizing: border-box;
   width: 100%;
   background-color: #f1f6fc;
-  font-family: "Cera Pro", Helvetica, sans-serif;
+  font-family: cera-pro;
   font-size: 16px;
   font-weight: 300;
   outline: none;
@@ -230,7 +230,7 @@ input:focus {
   padding: 0 15px;
   width: 100%;
   background-color: #f1f6fc;
-  font-family: "Cera Pro", Helvetica, sans-serif;
+  font-family: cera-pro;
   font-size: 16px;
   font-weight: 300;
   outline: none;
@@ -266,7 +266,7 @@ label {
   text-decoration: none;
   transition: 0.2s ease-in;
   border: none;
-  font-family: "Cera Pro", Arial, Helvetica, sans-serif;
+  font-family: cera-pro;
   outline: none;
 }
 #finish-button:hover {

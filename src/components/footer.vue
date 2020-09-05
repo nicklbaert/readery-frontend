@@ -176,7 +176,7 @@ export default {
   height: 100%;
   border: none;
   width: 70%;
-  font-family: "Cera Pro", Helvetica, sans-serif;
+  font-family: cera-pro;
   font-size: 16px;
   padding: 0 15px;
   font-weight: 300;
@@ -193,7 +193,7 @@ export default {
   width: 25%;
   background-color: #40caff;
   color: #fff;
-  font-family: "Cera Pro", Helvetica, sans-serif;
+  font-family: cera-pro;
   font-size: 16px;
   cursor: pointer;
   transition: 0.2s ease-in;
