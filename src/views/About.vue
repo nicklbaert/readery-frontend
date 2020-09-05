@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <h1 id="subheading">You are in full control</h1>
+    <h1 id="heading">You are in full control</h1>
     <h1 id="sub-subheading">With our online configuration tool</h1>
     <div id="screenshot">
       <img src="../assets/images/photos/tool-screenshot.png" alt />
@@ -46,7 +46,7 @@
         <h2 class="step-heading">You are a slow reader?</h2>
         <h3
           class="step-subheading"
-        >Skip a month whenever you like and you won't get charged anything.</h3>
+        >Skip a month whenever you like</h3>
       </div>
       <div class="step-image" id="step-image-1"></div>
     </div>
@@ -78,8 +78,7 @@ export default {
 }
 #heading {
   margin-top: 10%;
-  font-size: 60px;
-  font-weight: 700;
+  font-size:calc(30px + 2vw);
 }
 #benefits {
   margin: 2% 0 5% 0;
@@ -242,5 +241,48 @@ export default {
   .benefit-image {
     height: 400px;
   }
+
+  .step {
+    margin: 30% 0;
+    padding: 0 5%;
+  }
+
+  .step-content {
+    width: 100%;
+    min-width: 0px;
+  }
+  .step-image {
+    width: 100%;
+    min-width: 0px;
+  }
+  .step-heading {
+    margin-top: 5%;
+    font-size: 30px;
+    color: #454d57;
+    font-weight: 400;
+    text-align: left;
+  }
+  .step-subheading {
+    margin-top: 2%;
+    font-size: 20px;
+    color: #8595a8;
+    text-align: left;
+    font-weight: 300;
+    line-height: 30px;
+  }
 }
+@media screen and (max-width: 1150px) {
+  #heading {
+    margin-top: 20%;
+  }
+
+}
+
+@media screen and (max-width: 700px){
+  #heading {
+    margin-top: 30%;
+  }
+}
+
+
 </style>

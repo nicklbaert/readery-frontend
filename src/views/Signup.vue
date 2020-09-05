@@ -136,11 +136,11 @@ export default {
 }
 #heading {
   margin-top: 10%;
-  font-size: 50px;
+  font-size:calc(30px + 2vw);
 }
 #subheading {
   margin-top: 10px;
-  font-size: 25px;
+ font-size:calc(14px + 1vw);
   color: #8595a8;
   font-weight: 300;
 }
@@ -165,8 +165,14 @@ export default {
   margin: 2%;
   border-radius: 5px;
   background-color: #f1f6fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.1s ease-out;
   cursor: pointer;
+}
+.topic{
+  font-size: 16px;
 }
 .topic-wrapper:hover {
   transform: scale(1.08);
@@ -201,12 +207,32 @@ export default {
     width: 70%;
   }
 }
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1150px) {
   #topic-grid {
     width: 90%;
   }
   #heading {
-    margin-top: 15%;
+    margin-top: 20%;
   }
+  .topic-wrapper {
+  width: 100px;
+}
+}
+
+@media screen and (max-width: 700px){
+  #heading {
+    margin-top: 30%;
+  }
+  #subheading{
+    padding: 0 5%;
+  }
+   .topic-wrapper {
+  width: 100%;
+  height: 70px;
+}
+.topic{
+  font-size: 18px;
+}
 }
 </style>

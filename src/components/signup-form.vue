@@ -162,7 +162,7 @@ export default {
 
 <style scoped>
 .signup-form {
-  margin: 5% 0 3% 0;
+  margin: 5% 0 5% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -288,5 +288,22 @@ label {
   .row {
     width: 90%;
   }
+}
+
+@media screen and (max-width: 700px){
+  #name-wrapper, #password-wrapper, #email-wrapper{
+    flex-direction: column;
+  }
+  #first-name-wrapper {
+  width: 100%;
+  
+}
+#last-name-wrapper {
+  width: 100%;
+
+}
+.signup-form {
+  margin: 10% 0 20% 0;
+}
 }
 </style>

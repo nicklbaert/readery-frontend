@@ -194,7 +194,7 @@ export default {
 
 
   .nav-close-icon{
-    position: absolute;
+    position: fixed;
     z-index: 100;
     top:0;
     right: 20px;
@@ -206,18 +206,20 @@ export default {
 
 
   .links{
-  
-    width: 60%;
+    width: 40%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background-color: rgba(255,255,255,1);
     display: none;
     transition: 0.2s ease-out;
+    -webkit-box-shadow: 0px 0px 40px -2px rgba(133,149,168,1);
+-moz-box-shadow: 0px 0px 40px -2px rgba(133,149,168,1);
+box-shadow: 0px 0px 40px -2px rgba(133,149,168,1);
   }
   #first-link{
     margin-top: 80px;
@@ -229,7 +231,8 @@ export default {
   }
 
   #nav a{
-    margin: 40px 20px 40px 0 ;
+    margin: 40px 0px 40px 0 ;
+    color: white,
   }
 
   
