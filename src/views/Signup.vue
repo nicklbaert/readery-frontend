@@ -111,7 +111,7 @@ export default {
 
       console.log("Creating user: "+JSON.stringify(userObject));
 
-      axios.post("http://localhost:3000/user", userObject)
+      axios.post("https://readery-backend.herokuapp.com/user", userObject)
     .then(response => {
       console.log("User creation request response: "+JSON.stringify(response));
       console.log("Signup successfully executed");
