@@ -232,7 +232,7 @@ export default {
 
 
   .links{
-    width: 40%;
+    width: 50%;
     height: 100vh;
     position: fixed;
     top: 0;

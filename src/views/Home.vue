@@ -14,6 +14,12 @@
           <router-link to="/signup" id="get-started-button">Sign up for free</router-link>
         </div>
       </div>
+      <div class="scroll-downs">
+          <div class="mousey">
+            <div class="scroller"></div>
+            <div class="mouse-caption"><span>scroll down</span></div>
+          </div>
+        </div>
     </div>
     <!-- <div id="image-1-wrapper">
       <h2 id="newsletter-heading">Want 30% off?</h2>
@@ -166,6 +172,54 @@ export default {
   background-color: #1ab5f1;
   transition: 0.2s ease-out;
 }
+
+/*Mouse animation*/ 
+.scroll-downs {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  right: 0;
+  left: 0;
+  bottom: 40px;
+  margin: 5% auto 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #1b1f23;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.mouse-caption{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 100%;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #1b1f23;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
+
 #image-1-wrapper {
   width: 100%;
   height: 500px;
