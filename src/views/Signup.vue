@@ -46,7 +46,7 @@ import axios from 'axios';
 import { HalfCircleSpinner } from 'epic-spinners';
 
 export default {
-  name: "Home",
+  name: "Signup",
   components: {
     Footer,
     /* PlansBoxesSelectable, */
@@ -136,11 +136,11 @@ export default {
 }
 #heading {
   margin-top: 10%;
-  font-size:calc(30px + 2vw);
+  font-size:calc(30px + 1vw);
 }
 #subheading {
   margin-top: 10px;
- font-size:calc(14px + 1vw);
+ font-size:calc(14px + 0.5vw);
   color: #8595a8;
   font-weight: 300;
 }

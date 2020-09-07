@@ -60,7 +60,7 @@
         </tr>
         <tr>
           <td>
-            <router-link to="/configuration">Login</router-link>
+            <router-link to="/login">Login</router-link>
           </td>
         </tr>
       </table>
