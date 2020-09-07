@@ -177,7 +177,7 @@ export default {
 .scroll-downs {
   position: absolute;
   width: 100px;
-  height: 90px;
+  height: 80px;
   right: 0;
   left: 0;
   bottom: 40px;
@@ -189,8 +189,8 @@ export default {
 }
 .mousey {
   width: 3px;
-  padding: 10px 15px;
-  height: 35px;
+  padding: 10px 10px;
+  height: 20px;
   border: 2px solid #1b1f23;
   border-radius: 25px;
   opacity: 0.75;
@@ -202,6 +202,7 @@ export default {
   left: 0;
   right: 0;
   text-align: center;
+  font-size: 14px;
   width: 100%;
 }
 .scroller {
