@@ -23,7 +23,9 @@
     <h1 id="subheading">Fill out this form to create an account</h1>
 
     <SignupForm v-on:finishSignup="finishSignup($event)" />
-
+<div id="error-message">
+      <span v-bind:class="{ showError: (signUpError !== null) }" class="error">{{signUpError}}</span>
+</div>
   <div id="spinner-wrapper">
     <HalfCircleSpinner
     :animation-duration="1000"
@@ -59,6 +61,7 @@ export default {
       customer: null,
       selectedPlan: null,
       selectedItems: [],
+      signUpError: null,
       items: [
         "Business",
         "Finance",
@@ -111,14 +114,24 @@ export default {
 
       console.log("Creating user: "+JSON.stringify(userObject));
 
-      axios.post("https://readery-backend.herokuapp.com/user", userObject)
+      axios.post("https://readery-backend.herokuapp.com/api/user/signup", userObject)
     .then(response => {
-      console.log("User creation request response: "+JSON.stringify(response));
-      console.log("Signup successfully executed");
       this.loadSpinner = false;
 
-      var userID = response.data._id;
-      this.$router.push({ name: 'Account', params: { userId: userID } });
+      if(response.data.error !== undefined && response.data.error !== null){
+        //Error
+        console.log("An error occured: "+response.data.error.toString());
+        this.signUpError = response.data.error;
+      }else{
+        //Login user
+        var userID = response.data._id;
+        this.$router.push({ name: 'Account', params: { userId: userID } });
+      }
+
+      
+      
+
+      
 
     })
     .catch(e => {
@@ -185,6 +198,25 @@ export default {
   transform: scale(1.08);
   background-color: rgb(70, 204, 255);
   color: white;
+}
+#error-message{
+  margin: 2% 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error {
+  display: none;
+  color: #ff5d73;
+}
+.showError {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  line-height: 30px;
+  transition: 0.2s ease-out;
 }
 
 #spinner-wrapper{

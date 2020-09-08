@@ -45,7 +45,7 @@ export default {
   },
   mounted(){
     var userId = this.$route.params.userId;
-      axios.get("https://readery-backend.herokuapp.com/user/"+userId)
+      axios.get("https://readery-backend.herokuapp.com/api/user/"+userId)
     .then(response => {
       console.log("User data request response: "+JSON.stringify(response));
       console.log("User data successfully fetched");

@@ -162,7 +162,7 @@ export default {
 
 <style scoped>
 .signup-form {
-  margin: 5% 0 5% 0;
+  margin: 5% 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
