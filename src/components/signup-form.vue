@@ -5,38 +5,35 @@
       <div id="first-name-wrapper" class="field">
         <label for id="first-name-label">First name</label>
         <input v-model="first_name" type="text" id="first-name" placeholder="John" />
-        <span v-bind:class="{ showError: showFirstNameError }" class="error">This field is required</span>
+        <span v-bind:class="{ showError: error_first_name !== null }" class="error">{{error_first_name}}</span>
       </div>
       <div id="last-name-wrapper" class="field">
         <label for id="last-name-label">Last name</label>
         <input v-model="last_name" type="text" id="last-name" placeholder="Doe" />
-        <span v-bind:class="{ showError: showLastNameError }" class="error">This field is required</span>
+        <span v-bind:class="{ showError: error_last_name !== null }" class="error">{{error_last_name}}</span>
       </div>
     </div>
     <div class="row" id="email-wrapper">
       <div class="field">
         <label for id="email-label">Email</label>
         <input v-model="email" type="text" id="email" placeholder="johndoe@gmail.com" />
-        <span v-bind:class="{ showError: showEmailError }" class="error">This field is required</span>
+        <span v-bind:class="{ showError: error_email !== null }" class="error">{{error_email}}</span>
       </div>
     </div>
     <div class="row" id="password-wrapper">
       <div id="password-01-wrapper" class="field">
         <label for id="password-01-label">Password</label>
         <input v-model="password" type="text" id="password" />
-        <span v-bind:class="{ showError: showPasswordError }" class="error">This field is required</span>
+        <span v-bind:class="{ showError: error_password !== null }" class="error">{{error_password}}</span>
       </div>
       <div id="password-confirm-wrapper" class="field">
         <label for id="password-confirm-label">Confirm password</label>
         <input v-model="password_confirm" type="text" id="password-confirm" required />
         <span
-          v-bind:class="{ showError: showPasswordMatchError }"
-          class="error"
-        >The passwords don't match up. Please enter them again</span>
-        <span
-          v-bind:class="{ showError: showPasswordConfirmError }"
-          class="error"
-        >This field is required</span>
+          v-bind:class="{ showError: error_password_confirm !== null }"
+          class="error">
+          {{error_password_confirm}}
+          </span>
       </div>
     </div>
     <!-- <div class="row" id="country-wrapper">
@@ -95,49 +92,57 @@ export default {
       }
     },
     validateForm() {
-      this.showFirstNameError = false;
-        this.showLastNameError = false;
-        this.showEmailError = false;
-        this.showPasswordError = false;
-        this.showPasswordConfirmError = false;
-        this.showPasswordMatchError = false;
+
+      this.error_first_name = null;
+      this.error_last_name = null;
+      this.error_email = null;
+      this.error_password = null;
+      this.error_password_confirm = null;
+
       if (this.first_name !== null && this.first_name !== "") {
         if (this.last_name !== null && this.last_name !== "") {
-          this.showLastNameError = false;
           if (this.email !== null && this.email !== "") {
-            this.showEmailError = false;
             if (this.password !== null && this.password !== "") {
-              this.showPasswordError = false;
               if (
                 this.password_confirm !== null &&
                 this.password_confirm !== ""
               ) {
                 this.showPasswordConfirmError = false;
                 if (this.password === this.password_confirm) {
-                  this.showPasswordMatchError = false;
-                  console.log("All fine, ma man");
-                  return true;
+                  if(this.validateEmail(this.email)){
+                    return true;
+                  }
+                  else{
+                    this.error_email= "Please enter a valid email";
+                  }
+                 
                 } else {
-                  this.showPasswordMatchError = true;
+                  this.error_password_confirm = "Your passwords do not match"
                 }
               } else {
-                this.showPasswordConfirmError = true;
+                this.error_password_confirm = "Please re-enter your password";
               }
             } else {
-              this.showPasswordError = true;
+              this.error_password = "Please choose a password";
             }
           } else {
-            this.showEmailError = true;
+            this.error_email = "Please enter your email adress"
           }
         } else {
-          this.showLastNameError = true;
+          this.error_last_name = "Please enter your last name";
         }
       } else {
-        this.showFirstNameError = true;
+        this.error_first_name = "Please enter your first name";
+      }
+      return false;
+    },
+    validateEmail(email){
+      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+        return true;
       }
       return false;
     }
-  },
+ },
   data() {
     return {
       first_name: null,
@@ -146,12 +151,12 @@ export default {
       password: null,
       password_confirm: null,
 
-      showPasswordMatchError: false,
-      showPasswordError: false,
-      showPasswordConfirmError: false,
-      showEmailError: false,
-      showFirstNameError: false,
-      showLastNameError: false
+      error_first_name: null,
+      error_last_name: null,
+      error_email: null,
+      error_password: null,
+      error_password_confirm: null
+      
       /* address: null,
       country: null, 
       payment: null*/
