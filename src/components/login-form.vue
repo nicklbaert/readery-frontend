@@ -5,14 +5,14 @@
       <div class="field">
         <label for id="email-label">Email</label>
         <input v-model="email" type="text" id="email" placeholder="johndoe@gmail.com" />
-        <span v-bind:class="{ showError: showEmailError }" class="error">This field is required</span>
+        <span v-bind:class="{ showError: emailError !== null}" class="error">{{emailError}}</span>
       </div>
     </div>
     <div class="row" id="password-wrapper">
       <div id="password-01-wrapper" class="field">
         <label for id="password-01-label">Password</label>
         <input v-model="password" type="text" id="password" />
-        <span v-bind:class="{ showError: showPasswordError }" class="error">This field is required</span>
+        <span v-bind:class="{ showError: passwordError !== null }" class="error">{{passwordError}}</span>
       </div>
     </div>
     <button type="submit" id="finish-button" @click="finishLogin()">Login</button>
@@ -37,20 +37,18 @@ export default {
     },
     validateForm() {
     
-        this.showEmailError = false;
-        this.showPasswordError = false;
+       this.emailError = null;
+       this.passwordError = null;
 
       if (this.email !== null && this.email !== "") {
-            this.showEmailError = false;
             if (this.password !== null && this.password !== "") {
-              this.showPasswordError = false;
               console.log("All fine, ma man");
               return true;
             } else {
-              this.showPasswordError = true;
+              this.passwordError = "Please enter the password";
             }
           } else {
-            this.showEmailError = true;
+            this.emailError = "Plase enter your email";
           }
       return false;
     }
@@ -59,8 +57,8 @@ export default {
     return {
       email: null,
       password: null,
-      showPasswordError: false,
-      showEmailError: false,
+      emailError: null,
+      passwordError: null,
     };
   }
 };

@@ -71,7 +71,7 @@
         </div>
       </div>
     </div>
-    <router-view id="router-view" />
+    <router-view id="router-view" v-on:loggedInUser="setUserData($event)"/>
   </div>
 </template>
 <script>
@@ -86,11 +86,19 @@ export default {
     closeNav(){
       this.showNav = false;
       console.log("Nav closed");
+    },
+    setUserData(data){
+
+      this.userData = data;
+      console.log("This user is now logged in");
+      console.log(data);
+
     }
   },
   data ()  {
     return {
       showNav: false,
+      userData: null
     };
   }
 };

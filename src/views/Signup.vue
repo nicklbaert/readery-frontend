@@ -114,7 +114,7 @@ export default {
 
       console.log("Creating user: "+JSON.stringify(userObject));
 
-      axios.post("https://readery-backend.herokuapp.com/api/user/signup", userObject)
+      axios.post("https://readery-backend.herokuapp.com/api/auth/signup", userObject)
     .then(response => {
       this.loadSpinner = false;
 

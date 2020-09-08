@@ -21,10 +21,16 @@
       </div>
     </div>
     <div class="row" id="password-wrapper">
-      <div id="password-01-wrapper" class="field">
+      <div id="password-wrapper" class="field">
         <label for id="password-01-label">Password</label>
         <input v-model="password" type="text" id="password" />
         <span v-bind:class="{ showError: error_password !== null }" class="error">{{error_password}}</span>
+        <span class="password-rules">
+          The password must <br>
+          - be at least 6 characters long <br>
+          - contain both numbers and regular letters <br>
+          - contain symbols, like #, ! or _
+        </span>
       </div>
       <div id="password-confirm-wrapper" class="field">
         <label for id="password-confirm-label">Confirm password</label>
@@ -189,6 +195,11 @@ export default {
   justify-content: flex-start;
   height: 110px;
 }
+
+#password-wrapper, #password-confirm-wrapper{
+  height: 180px;
+}
+
 .field p {
   color: #8595a8;
   font-size: 12px;
@@ -261,6 +272,14 @@ label {
   text-align: left;
   line-height: 30px;
   transition: 0.2s ease-out;
+}
+.password-rules{
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: left;
+  line-height: 20px;
+  color: #8595a8;
 }
 #finish-button {
   margin-top: 3%;

@@ -47,8 +47,8 @@ export default {
     var userId = this.$route.params.userId;
       axios.get("https://readery-backend.herokuapp.com/api/user/"+userId)
     .then(response => {
-      console.log("User data request response: "+JSON.stringify(response));
-      console.log("User data successfully fetched");
+      console.log("User Data Fetch Response"+JSON.stringify(response.data));
+
       //this.loadSpinner = false;
 
       this.first_name = response.data.first_name;
