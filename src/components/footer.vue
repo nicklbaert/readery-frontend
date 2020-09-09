@@ -74,7 +74,7 @@
     <div id="newsletter-wrapper">
       <h3 id="newsletter-heading">Stay updated</h3>
       <div id="newsletter-field">
-        <input v-model="email" type="text" placeholder="Enter your E-Mail" id="newsletter-input" />
+        <input v-model="email" type="email" placeholder="Enter your E-Mail" id="newsletter-input" />
         <button id="newsletter-send" @click="signupSubscriber()">Send</button>
       </div>
       <span v-bind:class="{ showErrorEmail: emailError !== null }" class="error-email">{{emailError}}</span>
@@ -154,6 +154,9 @@ export default {
     signupSubscriber() {
       this.emailError = null;
       this.successMessage = null;
+
+      this.email = this.email.toString().toLowerCase();
+
       if (this.validateEmail(this.email)) {
         //send request to sign up
 
