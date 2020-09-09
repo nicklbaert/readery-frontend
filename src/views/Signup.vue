@@ -125,7 +125,9 @@ export default {
       }else{
         //Login user
         var userID = response.data._id;
-        this.$router.push({ name: 'Account', params: { userId: userID } });
+        var jwt = response.data.access_token;
+        this.$router.push({ name: "Account", params: { userId: userID, access_token: jwt } });
+        
       }
 
       

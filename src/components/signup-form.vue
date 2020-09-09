@@ -318,14 +318,18 @@ label {
   #name-wrapper, #password-wrapper, #email-wrapper{
     flex-direction: column;
   }
-  #first-name-wrapper {
-  width: 100%;
-  
-}
-#last-name-wrapper {
-  width: 100%;
 
-}
+  #password-wrapper{
+    height: 320px;
+  }
+
+  #first-name-wrapper {
+    width: 100%;
+  }
+  #last-name-wrapper {
+    width: 100%;
+  }
+
 .signup-form {
   margin: 10% 0 20% 0;
 }

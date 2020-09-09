@@ -47,13 +47,17 @@ const routes = [{
     {
         path: "/account/:userId",
         name: "Account",
-        component: Account
+        component: Account,
+        props: true
     }
     
 ];
 
 const router = new VueRouter({
-    routes
+    scrollBehavior() {
+        return { x: 0, y: 0 };
+      },
+    routes: routes,
 });
 
 export default router;

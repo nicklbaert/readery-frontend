@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="33.912" viewBox="0 0 177.5 33.912">
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="150" height="33.912" viewBox="0 0 177.5 33.912">
       <g id="logo-svg" transform="translate(-278 -73)">
         <g id="Gruppe_7" data-name="Gruppe 7" transform="translate(-28)">
           <path
@@ -38,25 +38,25 @@
           <td>
             <router-link to="/">Home</router-link>
           </td>
-          <td>
+          <!--<td>
             <router-link to="/about">Privacy</router-link>
-          </td>
+          </td>-->
         </tr>
         <tr>
           <td>
             <router-link to="/about">Why Readery</router-link>
           </td>
-          <td>
+          <!--<td>
             <router-link to="/plans">Terms of Service</router-link>
-          </td>
+          </td>-->
         </tr>
         <tr>
           <td>
             <router-link to="/plans">Plans</router-link>
           </td>
-          <td>
+          <!--<td>
             <router-link to="/login">Imprint</router-link>
-          </td>
+          </td>-->
         </tr>
         <tr>
           <td>
@@ -64,15 +64,19 @@
           </td>
         </tr>
       </table>
-      <div id="newsletter-wrapper">
+    </div>
+    <div id="newsletter-wrapper">
+      <h3 id="newsletter-heading">Stay updated</h3>
+      <div id="newsletter-field">
         <input type="text" placeholder="Enter your E-Mail" id="newsletter-input" />
         <button id="newsletter-send">Send</button>
       </div>
     </div>
+    
     <div id="footer-bottom">
       <h3>© Readery GmbH 2020</h3>
       <div id="social-media">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 81.577 81.558">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 81.577 81.558">
           <path
             id="Icon_awesome-instagram"
             data-name="Icon awesome-instagram"
@@ -95,7 +99,7 @@
         </svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="43.757"
+          width="20"
           height="20"
           viewBox="0 0 43.757 81.699"
         >
@@ -121,13 +125,16 @@ export default {
 
 <style scoped>
 .footer {
-  height: 400px;
+  height: 500px;
   background-color: #e7edf4;
-  padding: 0 15%;
+  padding: 5% 15%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+}
+#logo{
+  width: 150px;
 }
 #footer-content {
   width: 100%;
@@ -159,12 +166,21 @@ export default {
   font-size: 14px;
   letter-spacing: 1px;
 }
+#newsletter-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+#newsletter-heading{
+font-size: 20px;
+font-weight: 500;
+}
 
-#newsletter-wrapper {
-  min-width: 350px;
+#newsletter-field {
   margin: 2% 0;
   height: 60px;
-  width: 50%;
+  width: 100%;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -172,7 +188,7 @@ export default {
   justify-content: space-between;
 }
 
-#newsletter-wrapper input {
+#newsletter-field input {
   height: 100%;
   border: none;
   width: 70%;
@@ -182,11 +198,11 @@ export default {
   font-weight: 300;
   outline: none;
 }
-#newsletter-wrapper input:focus {
+#newsletter-field input:focus {
   border: none;
   outline: none;
 }
-#newsletter-wrapper button {
+#newsletter-field button {
   height: 100%;
   border: none;
   padding: 0;
@@ -198,13 +214,13 @@ export default {
   cursor: pointer;
   transition: 0.2s ease-in;
 }
-#newsletter-wrapper button:hover {
+#newsletter-field button:hover {
   border: none;
   outline: none;
   background-color: #1ab5f1;
   transition: 0.2s ease-out;
 }
-#newsletter-wrapper button:focus {
+#newsletter-field button:focus {
   border: none;
   outline: none;
 }
@@ -223,22 +239,41 @@ export default {
 }
 #social-media {
   margin: 0 2%;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 @media screen and (max-width: 1280px) {
   .footer {
-    padding: 0 5%;
+    padding: 10% 5%;
+    height: 500px;
+    justify-content: space-between;
   }
-  #newsletter-wrapper {
-  width: 90%;
+  #newsletter-field {
+  width: 100%;
   min-width: 0px;
 }
+  #newsletter-field input {
+  width: 70%;
+  font-family: cera-pro;
+  font-size: 16px;
+  padding: 0 15px;
+  font-weight: 300;
+  outline: none;
+}
+
+#newsletter-field button {
+  height: 100%;
+  padding: 0 10%;
+  min-width: 100px;
+}
 #footer-links {
-  margin-top: 2%;
-  width: 90%;
+  width: 100%;
   min-width: 0px;
 }
 #footer-bottom {
-  width: 90%;
+  width: 100%;
   min-width: 0px;
 }
 

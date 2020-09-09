@@ -17,7 +17,7 @@
     </h1>
     <button type="submit" id="notify-button" @click="notifyUser()">Notify me</button>
     <h1 class="subheading" id="subheading3">
-     Cincerely, <br>
+     Sincerely, <br>
      Niclas (CEO)
     </h1>
     <Footer />
@@ -43,11 +43,19 @@ export default {
       last_name: "Jobs",
     };
   },
-  mounted(){
+  beforeMount(){
     var userId = this.$route.params.userId;
-      axios.get("https://readery-backend.herokuapp.com/api/user/"+userId)
+    var access_token = this.$route.params.access_token;
+
+    console.log("Fetching data from user...");
+    console.log(access_token);
+      axios.get("https://readery-backend.herokuapp.com/api/user/"+userId, {headers: {"Authorization": access_token}})
     .then(response => {
       console.log("User Data Fetch Response"+JSON.stringify(response.data));
+
+      if(response.data.error === "Invalid token"){
+        this.$router.push({path: "/login"});
+      }
 
       //this.loadSpinner = false;
 
@@ -59,7 +67,7 @@ export default {
     .catch(e => {
       console.log("User creation request Error: "+e.toString());
     })
-  }
+  },
 };
 </script>
 

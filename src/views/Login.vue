@@ -90,9 +90,10 @@ export default {
         //Login user
         console.log("User logged in: " + response.data)
         var userID = response.data._id;
+        var jwt = response.data.access_token;
 
         this.$emit("loggedInUser", response.data);
-        this.$router.push({ name: 'Account', params: { userId: userID } });
+        this.$router.push({ name: "Account", params: { userId: userID, access_token: jwt } });
       }
 
       

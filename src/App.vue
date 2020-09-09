@@ -65,6 +65,7 @@
         <router-link to="/" class="link">Home</router-link>
         <router-link to="/about" class="link">Why Readery</router-link>
         <router-link to="/plans" class="link">Plans</router-link>
+        <router-link to="/login" class="link">Login</router-link>
         <!--<router-link to="/configuration">Login</router-link>-->
         <div id="signup-button" class="link">
           <router-link to="/signup">Sign Up</router-link>
@@ -207,7 +208,7 @@ export default {
   
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 970px) {
   #nav{
     align-items: center;
     height: 80px;
