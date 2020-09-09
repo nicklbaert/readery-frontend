@@ -129,12 +129,6 @@ export default {
         this.$router.push({ name: "Account", params: { userId: userID, access_token: jwt } });
         
       }
-
-      
-      
-
-      
-
     })
     .catch(e => {
       console.log("User creation request Error: "+e.toString());

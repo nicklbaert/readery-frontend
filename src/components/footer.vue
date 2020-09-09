@@ -1,6 +1,12 @@
 <template>
   <div class="footer">
-    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="150" height="33.912" viewBox="0 0 177.5 33.912">
+    <svg
+      id="logo"
+      xmlns="http://www.w3.org/2000/svg"
+      width="150"
+      height="33.912"
+      viewBox="0 0 177.5 33.912"
+    >
       <g id="logo-svg" transform="translate(-278 -73)">
         <g id="Gruppe_7" data-name="Gruppe 7" transform="translate(-28)">
           <path
@@ -68,11 +74,25 @@
     <div id="newsletter-wrapper">
       <h3 id="newsletter-heading">Stay updated</h3>
       <div id="newsletter-field">
-        <input type="text" placeholder="Enter your E-Mail" id="newsletter-input" />
-        <button id="newsletter-send">Send</button>
+        <input v-model="email" type="text" placeholder="Enter your E-Mail" id="newsletter-input" />
+        <button id="newsletter-send" @click="signupSubscriber()">Send</button>
       </div>
+      <span v-bind:class="{ showErrorEmail: emailError !== null }" class="error-email">{{emailError}}</span>
+      <div id="success-message">
+      <span v-bind:class="{ showSuccessMessage: (successMessage!== null) }" class="success-message">{{successMessage}}</span>
+      </div>
+      <div id="spinner-wrapper">
+        <HalfCircleSpinner
+          :animation-duration="1000"
+          :size="30"
+          color="rgb(70, 204, 255)"
+          class="spinner"
+          v-bind:class="{loadingSpinner: loadSpinner}"
+        />
+      </div>
+      
     </div>
-    
+
     <div id="footer-bottom">
       <h3>© Readery GmbH 2020</h3>
       <div id="social-media">
@@ -86,7 +106,9 @@
           />
         </svg>
         <svg
-          xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
           viewBox="0 0 100.221 81.398"
         >
           <path
@@ -97,12 +119,7 @@
             fill="#454D57"
           />
         </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 43.757 81.699"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 43.757 81.699">
           <path
             id="Icon_awesome-facebook-f"
             data-name="Icon awesome-facebook-f"
@@ -117,9 +134,75 @@
 </template>
 
 <script>
+import axios from "axios";
+import { HalfCircleSpinner } from "epic-spinners";
+
 export default {
   name: "Footer",
-  components: {}
+  components: {
+    HalfCircleSpinner
+  },
+  data() {
+    return{
+      email: null,
+      emailError: null,
+    successMessage : null,
+    loadSpinner :false,
+    }
+  },
+  methods: {
+    signupSubscriber() {
+      this.emailError = null;
+      this.successMessage = null;
+      if (this.validateEmail(this.email)) {
+        //send request to sign up
+
+        const subscriber = {
+          email: this.email,
+          time_joined: Date.now()
+        };
+
+        this.loadSpinner = true;
+
+        axios
+          .post(
+            "https://readery-backend.herokuapp.com/api/newsletter/signup",
+            subscriber
+          )
+          .then(response => {
+            this.loadSpinner = false;
+
+            if (
+              response.data.error !== undefined &&
+              response.data.error !== null
+            ) {
+              //Error
+              console.log(
+                "An error occured: " + response.data.error.toString()
+              );
+              this.emailError = response.data.error;
+            } else {
+              //Login user
+              this.successMessage = this.email+ " was added to our subscriber list. Thank you!";
+              this.email = "";
+            }
+          })
+          .catch(e => {
+            console.log("User creation request Error: " + e.toString());
+          });
+      } else {
+        this.emailError = "Please enter a valid email";
+      }
+    },
+    validateEmail(email){
+      if(email !== null && email !== ""){
+        if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+           return true;
+        }
+      }
+      return false;
+    }
+  }
 };
 </script>
 
@@ -133,7 +216,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-#logo{
+#logo {
   width: 150px;
 }
 #footer-content {
@@ -166,19 +249,20 @@ export default {
   font-size: 14px;
   letter-spacing: 1px;
 }
-#newsletter-wrapper{
+#newsletter-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  padding: 5% 0 0 0;
 }
-#newsletter-heading{
-font-size: 20px;
-font-weight: 500;
+#newsletter-heading {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 #newsletter-field {
-  margin: 2% 0;
+  margin: 2% 0 0 0;
   height: 60px;
   width: 100%;
   background-position: center;
@@ -224,6 +308,54 @@ font-weight: 500;
   border: none;
   outline: none;
 }
+
+#spinner-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.spinner {
+  display: none;
+}
+.loadingSpinner {
+  display: block;
+}
+
+.error-email {
+  display: none;
+  color: #ff5d73;
+  transition: 0.2s ease-in;
+}
+.showErrorEmail {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  transition: 0.2s ease-out;
+  margin-top: 10px;
+}
+
+
+#success-message{
+  width: 100%;
+}
+.success-message {
+  display: none;
+  color: #1b1f23;
+}
+.showSuccessMessage {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 10px;
+  transition: 0.2s ease-out;
+}
+
+
 #footer-bottom {
   margin-top: 3%;
   width: 50%;
@@ -251,31 +383,30 @@ font-weight: 500;
     justify-content: space-between;
   }
   #newsletter-field {
-  width: 100%;
-  min-width: 0px;
-}
+    width: 100%;
+    min-width: 0px;
+  }
   #newsletter-field input {
-  width: 70%;
-  font-family: cera-pro;
-  font-size: 16px;
-  padding: 0 15px;
-  font-weight: 300;
-  outline: none;
-}
+    width: 70%;
+    font-family: cera-pro;
+    font-size: 16px;
+    padding: 0 15px;
+    font-weight: 300;
+    outline: none;
+  }
 
-#newsletter-field button {
-  height: 100%;
-  padding: 0 10%;
-  min-width: 100px;
-}
-#footer-links {
-  width: 100%;
-  min-width: 0px;
-}
-#footer-bottom {
-  width: 100%;
-  min-width: 0px;
-}
-
+  #newsletter-field button {
+    height: 100%;
+    padding: 0 10%;
+    min-width: 100px;
+  }
+  #footer-links {
+    width: 100%;
+    min-width: 0px;
+  }
+  #footer-bottom {
+    width: 100%;
+    min-width: 0px;
+  }
 }
 </style>
