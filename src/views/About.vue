@@ -57,16 +57,19 @@
       </div>
       <div class="step-image" id="step-image-2"></div>
     </div>
+    <SignUpCTA/>
     <Footer />
   </div>
 </template>
 
 <script>
 import Footer from "../components/footer.vue";
+import SignUpCTA from "../components/signup-cta.vue";
 export default {
   name: "Plans",
   components: {
-    Footer
+    Footer,
+    SignUpCTA
   }
 };
 </script>
@@ -77,9 +80,11 @@ export default {
   width: 100%;
 }
 #heading {
-  margin-top: 10%;
-  font-size:calc(30px + 2vw);
+  margin-top: 150px;
+  font-size:calc(30px + 1.5vw);
+  font-weight: 500;
 }
+
 #benefits {
   margin: 2% 0 5% 0;
   padding: 0 15%;
@@ -231,7 +236,7 @@ export default {
     line-height: 30px;
   }
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1100px) {
   #benefits {
     flex-wrap: wrap;
   }
@@ -269,18 +274,6 @@ export default {
     text-align: left;
     font-weight: 300;
     line-height: 30px;
-  }
-}
-@media screen and (max-width: 1150px) {
-  #heading {
-    margin-top: 20%;
-  }
-
-}
-
-@media screen and (max-width: 700px){
-  #heading {
-    margin-top: 30%;
   }
 }
 

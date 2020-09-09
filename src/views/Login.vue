@@ -112,15 +112,17 @@ export default {
   width: 100%;
 }
 #heading {
-  margin-top: 10%;
-  font-size:calc(30px + 1vw);
+  margin-top: 150px;
+  font-size:calc(30px + 1.5vw);
+  font-weight: 500;
 }
 #subheading {
   margin-top: 10px;
- font-size:calc(14px + 0.5vw);
-  color: #8595a8;
   font-weight: 300;
+  font-size:calc(20px + 0.3vw);
+  color: #454D57;
 }
+
 
 #spinner-wrapper{
   width: 100%;
@@ -138,18 +140,7 @@ export default {
 }
 
 
-@media screen and (max-width: 1150px) {
-
-  #heading {
-    margin-top: 20%;
-  }
-
-}
-
 @media screen and (max-width: 700px){
-  #heading {
-    margin-top: 30%;
-  }
   #subheading{
     padding: 0 5%;
   }

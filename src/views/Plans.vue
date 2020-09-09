@@ -14,6 +14,7 @@
         <br />
       </p>
     </div>
+    <SignUpCTA/>
     <Footer />
   </div>
 </template>
@@ -21,11 +22,14 @@
 <script>
 import Footer from "../components/footer.vue";
 import PlansBoxes from "../components/plans-boxes.vue";
+import SignUpCTA from "../components/signup-cta.vue";
+
 export default {
   name: "Plans",
   components: {
     PlansBoxes,
-    Footer
+    Footer,
+    SignUpCTA
   }
 };
 </script>
@@ -36,9 +40,9 @@ export default {
   width: 100%;
 }
 #heading {
-  margin-top: 10%;
-  font-size: 60px;
-  font-weight: 700;
+  margin-top: 150px;
+  font-size:calc(30px + 1.5vw);
+  font-weight: 500;
 }
 #plan-info {
   padding: 0 15%;

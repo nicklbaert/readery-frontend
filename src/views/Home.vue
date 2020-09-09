@@ -1,15 +1,14 @@
 <template>
   <div class="home">
     <div id="landing-page">
-      <video autoplay muted loop id="background-video">
-        <source src="../assets/videos/readery-landingpage-video.mp4" type="video/mp4" />Your browser does not support HTML5 video.
+      <video autoplay muted loop id="background-video" poster="../assets/videos/video-poster.png">
+        <source src="../assets/videos/readery-landingpage-video_whiter.mp4" type="video/mp4" />Your browser does not support HTML5 video.
       </video>
       <div id="landingpage-content">
         <h1 id="heading">
-          Reinvent
-          <br />the way you read
+          Make reading a regular habit
         </h1>
-        <h2 id="subheading">A book subscription service based on your goals and interests.</h2>
+        <h2 id="subheading">The book subscription based on your goals and interests.</h2>
         <div id="action-buttons">
           <router-link to="/signup" id="get-started-button">Sign up for free</router-link>
         </div>
@@ -86,17 +85,22 @@
       </div>
       <div class="step-image" id="step-image-4"></div>
     </div>
+
+    <SignUpCTA/>
+
     <Footer />
   </div>
 </template>
 
 <script>
 import Footer from "../components/footer.vue";
+import SignUpCTA from "../components/signup-cta.vue";
 
 export default {
   name: "Home",
   components: {
-    Footer
+    Footer,
+    SignUpCTA
   },
 };
 </script>
@@ -108,7 +112,7 @@ export default {
 }
 #landingpage-content {
   position: absolute;
-  width: 100%;
+  width: 90%;
 }
 #landing-page {
   height: 100vh;
@@ -131,13 +135,14 @@ export default {
   min-height: 56.25vw; /* 100 * 9 / 16 */
 }
 #heading {
-  font-size:calc(20px + 4vw);
-  font-weight: 700;
+  font-size:calc(30px + 1.5vw);
+  font-weight: 500;
 }
 #subheading {
   margin-top: 2%;
   font-weight: 300;
-  font-size:calc(14px + 1vw);
+  font-size:calc(20px + 0.3vw);
+  color: #454D57;
 }
 #action-buttons {
   margin-top: 3%;
@@ -293,6 +298,7 @@ export default {
   padding: 0 15%;
   flex-wrap: wrap-reverse;
 }
+
 .step-content {
   width: 45%;
   min-height: 400px;
@@ -409,5 +415,14 @@ export default {
     font-weight: 300;
     line-height: 30px;
   }
+}
+
+@media screen and (max-width: 400px) {
+  #subheading {
+  margin-top: 8%;
+}
+#action-buttons {
+  margin-top: 8%;
+}
 }
 </style>

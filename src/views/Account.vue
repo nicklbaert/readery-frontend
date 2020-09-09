@@ -78,8 +78,8 @@ export default {
 }
 #heading {
   margin-top: 150px;
-  font-size: 50px;
-  font-weight: 700;
+  font-size:calc(30px + 1.5vw);
+  font-weight: 500;
 }
 #party-emoji{
   margin-top: 10px;
@@ -150,9 +150,6 @@ padding: 0 5%;
 
 
 @media screen and (max-width: 700px){
-  #heading {
-    margin-top: 30%;
-  }
   #subheading1{
 padding: 0 5%;
 }
