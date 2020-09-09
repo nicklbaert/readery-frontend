@@ -7,7 +7,7 @@
       <img src="../assets/images/icons/party_emoji.png" alt="PARTEEEY">
     </div>
     <h1 class="subheading" id="subheading1">
-      First of all, thank you for signing up. You are one of the first people to join readery, 
+      Thank you for signing up. You are one of the first people to join readery, 
       which is why we want to give something back.
     </h1>
      <h1 class="subheading" id="subheading2">
