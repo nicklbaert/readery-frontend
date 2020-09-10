@@ -23,7 +23,7 @@
     <div class="row" id="password-wrapper">
       <div id="password-wrapper" class="field">
         <label for id="password-01-label">Password</label>
-        <input v-model="password" type="text" id="password" />
+        <input v-model="password" type="password" id="password" />
         <span v-bind:class="{ showError: error_password !== null }" class="error">{{error_password}}</span>
         <span class="password-rules">
           The password must <br>
@@ -34,7 +34,7 @@
       </div>
       <div id="password-confirm-wrapper" class="field">
         <label for id="password-confirm-label">Confirm password</label>
-        <input v-model="password_confirm" type="text" id="password-confirm" required />
+        <input v-model="password_confirm" type="password" id="password-confirm" required />
         <span
           v-bind:class="{ showError: error_password_confirm !== null }"
           class="error">
@@ -239,6 +239,10 @@ input::placeholder {
 input:focus {
   border: none;
   outline: none;
+}
+
+#password, #password-confirm{
+  letter-spacing: 3px;
 }
 /* #country {
   height: 50px;

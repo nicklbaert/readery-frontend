@@ -44,21 +44,19 @@
     </div>
     <div class="step" id="step-1">
       <div class="step-content" id="step-content-1">
-        <h2 class="step-heading">You are a slow reader?</h2>
-        <h3
-          class="step-subheading"
-        >Skip a month whenever you like</h3>
+        <h2 class="step-heading">
+          Book selections from
+          true game-changers
+        </h2>
+        <h3 class="step-subheading">
+          Readery selects your next book based on recommendations of
+          the most the successful people on the planet including Elon Musk,
+          Jeff Bezos and more.
+        </h3>
       </div>
       <div class="step-image" id="step-image-1"></div>
     </div>
-    <div class="step" id="step-2">
-      <div class="step-content" id="step-content-2">
-        <h2 class="step-heading">You already read the book?</h2>
-        <h3 class="step-subheading">You can always choose to generate a new best pick for the month.</h3>
-      </div>
-      <div class="step-image" id="step-image-2"></div>
-    </div>
-    <SignUpCTA/>
+    <SignUpCTA />
     <Footer />
   </div>
 </template>
@@ -83,15 +81,16 @@ export default {
 
 #heading {
   margin-top: 150px;
-  font-size:calc(30px + 1.5vw);
+  font-size: calc(30px + 1.5vw);
   font-weight: 500;
+  padding: 0 5%;
 }
 
 #subheading {
   margin-top: 10px;
   font-weight: 300;
-  font-size:calc(20px + 0.2vw);
-  color: #8595A8;
+  font-size: calc(20px + 0.2vw);
+  color: #8595a8;
   padding: 0 5%;
 }
 
@@ -158,6 +157,7 @@ export default {
   box-shadow: 0 10px 100px 0 rgba(52, 52, 66, 0.2);
 }
 
+/*INFO SECTION */
 .step {
   margin: 10% 0;
   display: flex;
@@ -166,8 +166,10 @@ export default {
   padding: 0 15%;
   flex-wrap: wrap-reverse;
 }
+
 .step-content {
   width: 45%;
+  min-height: 400px;
   min-width: 450px;
   display: flex;
   flex-direction: column;
@@ -203,49 +205,49 @@ export default {
   background-position: center;
   background-size: cover;
 }
-#step-2,
-#step-4 {
-  flex-direction: row-reverse;
-}
+
 #step-image-1 {
-  background-image: url("../assets/images/photos/man-nature.png");
-}
-#step-image-2 {
-  background-image: url("../assets/images/photos/books-pile.png");
+  background-image: url("../assets/images/photos/business.png");
 }
 
-@media screen and (max-width: 1280px) {
-  #benefits {
-    padding: 0 5%;
-  }
-  .step {
-    padding: 0 5%;
-  }
-  .step-content {
-    width: 100%;
-  }
-  .step-image {
-    width: 100%;
-  }
-  .step-heading {
-    margin-top: 5%;
-    font-size: 30px;
-    color: #454d57;
-    font-weight: 400;
-    text-align: left;
-  }
-  .step-subheading {
-    margin-top: 2%;
-    font-size: 20px;
-    color: #8595a8;
-    text-align: left;
-    font-weight: 300;
-    line-height: 30px;
-  }
+.step-cta {
+  margin-top: 5%;
+  text-align: left;
+  position: relative;
 }
-@media screen and (max-width: 1100px) {
+.step-cta a {
+  text-decoration: none;
+  text-align: left;
+  color: #40caff;
+  font-size: 20px;
+  font-weight: 500;
+}
+.step-cta:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  width: 0;
+  bottom: -5px;
+  background: #40caff;
+  height: 3px;
+  border-radius: 50px;
+  transition-property: width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+.step-cta:hover:after,
+.step-cta:focus:after,
+.step-cta:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 1250px) {
   #benefits {
     flex-wrap: wrap;
+    padding: 0 5%;
   }
   .benefit-wrapper {
     width: 100%;
@@ -254,9 +256,21 @@ export default {
     height: 400px;
   }
 
+  #screenshot {
+    width: 100%;
+    margin: 5% 0 20% 0;
+  }
+  #screenshot img {
+    width: 90%;
+  }
+  #screenshot img:hover {
+    transform: scale(1);
+    box-shadow: 0 10px 30px 0 rgba(52, 52, 66, 0.1);
+  }
+
   .step {
-    margin: 30% 0;
     padding: 0 5%;
+    margin: 30% 0;
   }
 
   .step-content {
@@ -283,6 +297,4 @@ export default {
     line-height: 30px;
   }
 }
-
-
 </style>

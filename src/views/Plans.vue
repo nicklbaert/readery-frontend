@@ -4,7 +4,7 @@
       Invest in yourself
     </h1>
     <h1 id="subheading">Start your reading journey with our flexible pricing model</h1>
-    <PlansBoxes />
+    <PlansBoxes id="plans"/>
     <div class="step" id="step-1">
       <div class="step-content" id="step-content-1">
         <h2 class="step-heading">Student Discounts</h2>
@@ -176,6 +176,11 @@ export default {
 }
 
 @media screen and (max-width: 1250px) {
+  #plans{
+
+    margin: 10% 0 15% 0;
+
+  }
   .step {
     padding: 0 5%;
   }

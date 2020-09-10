@@ -312,7 +312,7 @@
               />
             </g>
           </svg>
-          <span class="benefit-text">Everything from the Hustle Mode Plan</span>
+          <span class="benefit-text">Hustle Mode included</span>
         </div>
       </div>
       <router-link to="/signup" class="plan-button" id="plan-button-ultimate">CHOOSE PLAN</router-link>
@@ -339,10 +339,10 @@ export default {
 .plan {
   margin: 5% 1%;
   padding: 50px;
-  height: 300px;
+  height: 350px;
   width: 200px;
   min-width: 150px;
-  min-height: 300px;
+  min-height: 350px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 15px 0 rgba(17, 17, 20, 0.1);
@@ -356,6 +356,7 @@ export default {
   width: 250px;
   min-height: 400px;
   min-width: 200px;
+  box-shadow: 0 4px 30px 0 rgba(41, 41, 48, 0.1);
 }
 .plan-title {
   color: #8595A8;
@@ -420,7 +421,13 @@ export default {
   font-weight: 700;
   font-size: 16px;
   background-color: #46CCFF;
+  transition: 0.2s ease-in;
   color: #fff;
+}
+
+.plan-button:hover{
+    background-color: #1ab5f1;
+    transition: 0.2s ease-out;
 }
 
 #plan-button-free{
@@ -428,9 +435,16 @@ export default {
   background-color: #fff;
 }
 
+#plan-button-free:hover{
+  background-color: #fff;
+}
+
 #plan-button-ultimate{
   background-color: #F1F6FC;
   color: #8595A8;
+}
+#plan-button-ultimate:hover{
+    background-color: #DFE7F0;
 }
 
 

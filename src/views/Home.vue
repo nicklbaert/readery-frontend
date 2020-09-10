@@ -44,7 +44,7 @@
           your your preferences.
         </h3>
         <div id="step-2-cta" class="step-cta">
-          <a href="#">Find out how we choose your next book &rarr;</a>
+          <router-link to="/about">How we choose your books &rarr;</router-link>
         </div>
       </div>
       <div class="step-image" id="step-image-2"></div>
@@ -58,7 +58,7 @@
           already waiting to be shipped to your doorstep.
         </h3>
         <div id="step-3-cta" class="step-cta">
-          <a href="#">Find out how it works &rarr;</a>
+          <router-link to="/about">Find out how it works &rarr;</router-link>
         </div>
       </div>
       <div class="step-image" id="step-image-3"></div>
@@ -72,7 +72,7 @@
           subscription at any time online with our configuration tool
         </h3>
         <div id="step-4-cta" class="step-cta">
-          <a href="#">Start your reading journey &rarr;</a>
+          <router-link to="/signup">Start your reading journey &rarr;</router-link>
         </div>
       </div>
       <div class="step-image" id="step-image-4"></div>
@@ -271,7 +271,7 @@ export default {
   flex-direction: row-reverse;
 }
 #step-image-1 {
-  background-image: url("../assets/images/photos/interest-demo.png");
+  background-image: url("../assets/images/photos/interest-demo-2.png");
 }
 #step-image-2 {
   background-image: url("../assets/images/photos/man-chill.png");

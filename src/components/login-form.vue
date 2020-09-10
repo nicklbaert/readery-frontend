@@ -11,7 +11,7 @@
     <div class="row" id="password-wrapper">
       <div id="password-01-wrapper" class="field">
         <label for id="password-01-label">Password</label>
-        <input v-model="password" type="text" id="password" />
+        <input v-model="password" type="password" id="password" />
         <span v-bind:class="{ showError: passwordError !== null }" class="error">{{passwordError}}</span>
       </div>
     </div>
@@ -116,6 +116,10 @@ input::placeholder {
 input:focus {
   border: none;
   outline: none;
+}
+
+#password{
+  letter-spacing: 3px;
 }
 
 label {
