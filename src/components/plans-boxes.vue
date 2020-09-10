@@ -1,46 +1,322 @@
 <template>
-  <div class="plans-boxes">
-    <div class="plan-box" id="plan-student">
-      <h3 class="plan-title" id="student-title">Student</h3>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="70.681"
-        height="57.83"
-        viewBox="0 0 70.681 57.83"
-      >
-        <path
-          id="Icon_metro-school"
-          data-name="Icon metro-school"
-          d="M16.707,39.133V51.984L39.2,64.257,61.686,51.984V39.133L39.2,51.406ZM39.2,6.427,3.856,25.7,39.2,44.98,68.112,29.205v22.2h6.426V25.7L39.2,6.427Z"
-          transform="translate(-3.856 -6.427)"
-          fill="#d0dbe8"
-        />
-      </svg>
-      <div class="price-container" id="price-student">
-        <h3 class="price" id="price-student">14$</h3>
-        <h3 class="price-rate">per month</h3>
+  <div class="plans">
+    <div class="plan" id="plan-free">
+      <div class="plan-content">
+        <h3 class="plan-title" id="student-title">Free</h3>
+      <div class="price-wrapper" id="price-wrapper-free">
+        <span class="dollar-sign">$</span>
+        <span class="price" id="price-free">0</span>
+        <span class="price-rate">/mo</span>
       </div>
+      
+      </div>
+      <div class="benefits" id="benefits-free">
+        <div class="benefit">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">Personalized reading plan</span>
+        </div>
+      </div>
+      <a href="#" class="plan-button" id="plan-button-free">CHOOSE PLAN</a>
+      
     </div>
-    <div class="plan-box" id="plan-standard">
-      <h3 class="plan-title" id="standard-title">Standard</h3>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="83.318"
-        height="58.201"
-        viewBox="0 0 83.318 58.201"
-      >
-        <path
-          id="Icon_metro-books"
-          data-name="Icon metro-books"
-          d="M19.547,8.571H5A2.432,2.432,0,0,0,2.571,11V64.347A2.432,2.432,0,0,0,5,66.772h14.55a2.432,2.432,0,0,0,2.425-2.425V11a2.432,2.432,0,0,0-2.425-2.425Zm-2.425,14.55h-9.7v-4.85h9.7v4.85ZM43.8,8.571H29.247A2.432,2.432,0,0,0,26.822,11V64.347a2.432,2.432,0,0,0,2.425,2.425H43.8a2.432,2.432,0,0,0,2.425-2.425V11A2.432,2.432,0,0,0,43.8,8.571Zm-2.425,14.55h-9.7v-4.85h9.7Zm19.18-10.8L47.558,18.868a2.432,2.432,0,0,0-1.074,3.257L68.307,65.438a2.432,2.432,0,0,0,3.257,1.074l12.994-6.547a2.432,2.432,0,0,0,1.074-3.257L63.808,13.4a2.432,2.432,0,0,0-3.257-1.075ZM72.9,64.347a2.425,2.425,0,1,1-2.425-2.425A2.425,2.425,0,0,1,72.9,64.347Z"
-          transform="translate(-2.571 -8.571)"
-          fill="#d0dbe8"
-        />
-      </svg>
-      <div class="price-container" id="price-standard">
-        <h3 class="price" id="price-standard">18$</h3>
-        <h3 class="price-rate">per month</h3>
+    <div class="plan" id="plan-premium">
+      <div class="plan-content">
+        <h3 class="plan-title" id="plan-title-premium">Hustle Mode</h3>
+      <div class="price-wrapper" id="price-wrapper-premium">
+        <span class="dollar-sign">$</span>
+        <span class="price" id="price-premium">19</span>
+        <span class="price-rate">/mo</span>
       </div>
+      </div>
+
+      <div class="benefits" id="benefits-premium">
+        <div class="benefit">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">Personalized reading plan</span>
+        </div>
+        <div class="benefit">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">1 book a month</span>
+        </div>
+        <div class="benefit">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">Full customizability</span>
+        </div>
+      </div>
+      
+      <router-link to="/signup" class="plan-button" id="plan-button-premium">CHOOSE PLAN</router-link>
+      
+    </div>
+    <div class="plan" id="plan-ultimate">
+      <div class="plan-content">
+        <h3 class="plan-title" id="plan-title-ultimate">CEO Mode</h3>
+      <div class="price-wrapper" id="price-wrapper-ultimate">
+        <span class="dollar-sign">$</span>
+        <span class="price" id="price-ultimate">39</span>
+        <span class="price-rate">/mo</span>
+      </div>
+      </div>
+      <div class="benefits" id="benefits-ultimate">
+        <div class="benefit">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">Hardcovers</span>
+        </div>
+        <div class="benefit">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">Up to 3 books a month</span>
+        </div>
+        <div class="benefit">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#46ccff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">Everything from the Hustle Mode Plan</span>
+        </div>
+      </div>
+      <router-link to="/signup" class="plan-button" id="plan-button-ultimate">CHOOSE PLAN</router-link>
+      
     </div>
   </div>
 </template>
@@ -53,20 +329,20 @@ export default {
 </script>
 
 <style scoped>
-.plans-boxes {
-  padding: 0 15%;
+.plans{
+  padding: 0 5%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
-.plan-box {
+.plan {
   margin: 5% 1%;
-  padding: 20px;
-  height: 250px;
-  width: 250px;
-  min-width: 250px;
-  min-height: 250px;
+  padding: 50px;
+  height: 300px;
+  width: 200px;
+  min-width: 150px;
+  min-height: 300px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 15px 0 rgba(17, 17, 20, 0.1);
@@ -75,14 +351,26 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.plan-title {
-  color: #40caff;
-  font-weight: 500;
-  font-size: 20px;
+#plan-premium{
+  height: 400px;
+  width: 250px;
+  min-height: 400px;
+  min-width: 200px;
 }
-.price {
-  font-size: 30px;
+.plan-title {
+  color: #8595A8;
   font-weight: 500;
+  font-size: 25px;
+}
+
+/*PRICE SECTION */
+.price-wrapper {
+  margin: 10% 0
+}
+.price{
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0 5px;
 }
 .price-rate {
   margin-top: 5px;
@@ -91,4 +379,59 @@ export default {
   font-weight: 400;
   font-size: 14px;
 }
+.dollar-sign{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/*BENEFITS SECTION */
+.benefits{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.benefit{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.benefit-icon{
+  margin-right: 10px;
+  min-width: 16px;
+  min-height: 16px;
+
+}
+.benefit-text{
+  font-weight: 300;
+  font-size: 14px;
+  text-align: left;
+  word-break: break-all;
+}
+
+/*BUTTON */
+.plan-button{
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #46CCFF;
+  color: #fff;
+}
+
+#plan-button-free{
+  color: #fff;
+  background-color: #fff;
+}
+
+#plan-button-ultimate{
+  background-color: #F1F6FC;
+  color: #8595A8;
+}
+
+
 </style>

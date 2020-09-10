@@ -77,9 +77,15 @@
         <input v-model="email" type="email" placeholder="Enter your E-Mail" id="newsletter-input" />
         <button id="newsletter-send" @click="signupSubscriber()">Send</button>
       </div>
-      <span v-bind:class="{ showErrorEmail: emailError !== null }" class="error-email">{{emailError}}</span>
+      <span
+        v-bind:class="{ showErrorEmail: emailError !== null }"
+        class="error-email"
+      >{{emailError}}</span>
       <div id="success-message">
-      <span v-bind:class="{ showSuccessMessage: (successMessage!== null) }" class="success-message">{{successMessage}}</span>
+        <span
+          v-bind:class="{ showSuccessMessage: (successMessage!== null) }"
+          class="success-message"
+        >{{successMessage}}</span>
       </div>
       <div id="spinner-wrapper">
         <HalfCircleSpinner
@@ -90,7 +96,6 @@
           v-bind:class="{loadingSpinner: loadSpinner}"
         />
       </div>
-      
     </div>
 
     <div id="footer-bottom">
@@ -143,64 +148,68 @@ export default {
     HalfCircleSpinner
   },
   data() {
-    return{
+    return {
       email: null,
       emailError: null,
-    successMessage : null,
-    loadSpinner :false,
-    }
+      successMessage: null,
+      loadSpinner: false
+    };
   },
   methods: {
     signupSubscriber() {
-      this.emailError = null;
-      this.successMessage = null;
+      //Check if currently loading
+      if (this.loadSpinner === false) {
+        this.emailError = null;
+        this.successMessage = null;
 
-      this.email = this.email.toString().toLowerCase();
+        this.email = this.email.toString().toLowerCase();
 
-      if (this.validateEmail(this.email)) {
-        //send request to sign up
+        if (this.validateEmail(this.email)) {
+          //send request to sign up
 
-        const subscriber = {
-          email: this.email,
-          time_joined: Date.now()
-        };
+          const subscriber = {
+            email: this.email,
+            time_joined: Date.now()
+          };
 
-        this.loadSpinner = true;
+          this.loadSpinner = true;
 
-        axios
-          .post(
-            "https://readery-backend.herokuapp.com/api/newsletter/signup",
-            subscriber
-          )
-          .then(response => {
-            this.loadSpinner = false;
+          axios
+            .post(
+              "https://readery-backend.herokuapp.com/api/newsletter/signup",
+              subscriber
+            )
+            .then(response => {
+              this.loadSpinner = false;
 
-            if (
-              response.data.error !== undefined &&
-              response.data.error !== null
-            ) {
-              //Error
-              console.log(
-                "An error occured: " + response.data.error.toString()
-              );
-              this.emailError = response.data.error;
-            } else {
-              //Login user
-              this.successMessage = this.email+ " was added to our subscriber list. Thank you!";
-              this.email = "";
-            }
-          })
-          .catch(e => {
-            console.log("User creation request Error: " + e.toString());
-          });
-      } else {
-        this.emailError = "Please enter a valid email";
+              if (
+                response.data.error !== undefined &&
+                response.data.error !== null
+              ) {
+                //Error
+                console.log(
+                  "An error occured: " + response.data.error.toString()
+                );
+                this.emailError = response.data.error;
+              } else {
+                //Login user
+                this.successMessage =
+                  this.email + " was added to our subscriber list. Thank you!";
+                this.email = "";
+              }
+            })
+            .catch(e => {
+              console.log("User creation request Error: " + e.toString());
+            });
+        } else {
+          this.emailError = "Please enter a valid email";
+        }
       }
     },
-    validateEmail(email){
-      if(email !== null && email !== ""){
-        if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)){
-           return true;
+    validateEmail(email) {
+      if (email !== null && email !== "") {
+        if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+          return true;
         }
       }
       return false;
@@ -341,8 +350,7 @@ export default {
   margin-top: 10px;
 }
 
-
-#success-message{
+#success-message {
   width: 100%;
 }
 .success-message {
@@ -357,7 +365,6 @@ export default {
   margin-top: 10px;
   transition: 0.2s ease-out;
 }
-
 
 #footer-bottom {
   margin-top: 3%;

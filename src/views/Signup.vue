@@ -151,8 +151,9 @@ export default {
 #subheading {
   margin-top: 10px;
   font-weight: 300;
-  font-size:calc(20px + 0.3vw);
-  color: #454D57;
+  font-size:calc(20px + 0.2vw);
+  color: #8595A8;
+    padding: 0 5%;
 }
 #topics-wrapper {
   width: 100%;

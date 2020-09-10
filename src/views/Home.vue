@@ -20,14 +20,6 @@
           </div>
         </div>
     </div>
-    <!-- <div id="image-1-wrapper">
-      <h2 id="newsletter-heading">Want 30% off?</h2>
-      <h3 id="newsletter-subheading">join our newsletter and get 30% off on all plans</h3>
-      <div id="newsletter-input-wrapper">
-        <input type="text" placeholder="Enter your E-Mail address" id="newsletter-input" />
-        <button id="newsletter-send">Send</button>
-      </div>
-    </div>-->
     <div class="step" id="step-1">
       <div class="step-content" id="step-content-1">
         <h4 class="step-number">STEP 1</h4>
@@ -226,69 +218,6 @@ export default {
   100% { transform: translateY(15px); opacity: 0;}
 }
 
-#image-1-wrapper {
-  width: 100%;
-  height: 500px;
-  background-image: url("../assets/images/photos/man-window-reading.png");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-#newsletter-heading {
-  font-size: 50px;
-}
-#newsletter-subheading {
-  margin-top: 0.5%;
-  font-weight: 300;
-  font-size: 20px;
-}
-#newsletter-input-wrapper {
-  margin-top: 2%;
-  width: 40vw;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#newsletter-input-wrapper input {
-  height: 100%;
-  border: none;
-  width: 75%;
-  font-family: cera-pro;
-  font-size: 16px;
-  padding: 0 15px;
-  font-weight: 300;
-  outline: none;
-}
-#newsletter-input-wrapper input:focus {
-  border: none;
-  outline: none;
-}
-#newsletter-input-wrapper button {
-  height: 100%;
-  border: none;
-  padding: 0;
-  width: 20%;
-  background-color: #40caff;
-  color: #fff;
-  font-family: cera-pro;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s ease-in;
-}
-#newsletter-input-wrapper button:hover {
-  border: none;
-  outline: none;
-  background-color: #1ab5f1;
-  transition: 0.2s ease-out;
-}
-#newsletter-input-wrapper button:focus {
-  border: none;
-  outline: none;
-}
 
 .step {
   margin: 10% 0;

@@ -4,6 +4,7 @@
       We want to be
       <br />part of your story
     </h1>
+    <h1 id="subheading">Our goal is to make it easier for you to learn from books.</h1>
     <div id="benefits">
       <div class="benefit-wrapper" id="benefit-1">
         <div class="benefit-image" id="benefit-image-1"></div>
@@ -37,7 +38,7 @@
       </div>
     </div>
     <h1 id="heading">You are in full control</h1>
-    <h1 id="sub-subheading">With our online configuration tool</h1>
+    <h1 id="subheading">With our online configuration tool</h1>
     <div id="screenshot">
       <img src="../assets/images/photos/tool-screenshot.png" alt />
     </div>
@@ -79,10 +80,19 @@ export default {
   height: 100%;
   width: 100%;
 }
+
 #heading {
   margin-top: 150px;
   font-size:calc(30px + 1.5vw);
   font-weight: 500;
+}
+
+#subheading {
+  margin-top: 10px;
+  font-weight: 300;
+  font-size:calc(20px + 0.2vw);
+  color: #8595A8;
+  padding: 0 5%;
 }
 
 #benefits {
@@ -125,10 +135,7 @@ export default {
   font-weight: 300;
   line-height: 30px;
 }
-#subheading {
-  margin-top: 5%;
-  font-size: 50px;
-}
+
 #sub-subheading {
   margin-top: 10px;
   font-size: 25px;
