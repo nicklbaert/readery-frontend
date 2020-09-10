@@ -25,7 +25,7 @@
         <h4 class="step-number">STEP 1</h4>
         <h2 class="step-heading">You tell us what you are interested in</h2>
         <h3 class="step-subheading">
-          Select from over 50 different categories, which ones you like the
+          Select from over 20 different categories, which ones you like the
           most. Wether you want to learn about entrepreneurship or just want to
           dive into the world of vampire love stories, we got you covered.
         </h3>
@@ -271,16 +271,16 @@ export default {
   flex-direction: row-reverse;
 }
 #step-image-1 {
-  background-image: url("../assets/images/photos/interest-demo-2.png");
+  background-image: url("../assets/images/photos/girl-laptop-2.png");
 }
 #step-image-2 {
   background-image: url("../assets/images/photos/man-chill.png");
 }
 #step-image-3 {
-  background-image: url("../assets/images/photos/plan-demo.png");
+  background-image: url("../assets/images/photos/readery-shipping-mockup.png");
 }
 #step-image-4 {
-  background-image: url("../assets/images/photos/girl-laptop-2.png");
+  background-image: url("../assets/images/photos/control.png");
 }
 .step-cta {
   margin-top: 5%;
@@ -320,7 +320,6 @@ export default {
   .step {
     padding: 0 5%;
   }
-
   .step-content {
     width: 100%;
     min-width: 0px;
