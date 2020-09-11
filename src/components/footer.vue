@@ -120,6 +120,7 @@
     <div id="footer-bottom">
       <h3>© Readery GmbH 2020</h3>
       <div id="social-media">
+        <a href="https://instagram.com/readery.io" target="_blank" id="instagram">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 81.577 81.558">
           <path
             id="Icon_awesome-instagram"
@@ -129,6 +130,7 @@
             fill="#454D57"
           />
         </svg>
+        </a>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
