@@ -1,10 +1,14 @@
 <template>
-  <div class="login">
-    <h1 id="heading">Welcome back</h1>
-    
-    <h1 id="subheading">Please enter your login credentials</h1>
+  <div class="contact">
+    <h1 id="heading">Get in touch</h1>
+    <!-- <h1 id="subheading">Please choose a plan</h1>
+    <PlansBoxesSelectable v-on:changeSelectedPlan="updatePlan($event)" />
 
-    <LoginForm v-on:finishLogin="finishLogin($event)" />
+    <h1 id="heading">We're almost done</h1>-->
+    <h1 id="subheading">Please send us a message about your inquiry</h1>
+
+    <ContactForm v-on:send="send($event)" />
+
 
     <div id="error-message">
       <span v-bind:class="{ showError: (loginError !== null) }" class="error">{{loginError}}</span>
@@ -26,9 +30,7 @@
 
 <script>
 import Footer from "../components/footer.vue";
-/* import PlansBoxesSelectable from "../components/plans-boxes-selectable.vue"; */
-import LoginForm from "../components/login-form.vue";
-import axios from 'axios';
+import ContactForm from "../components/contact-form.vue";
 import { HalfCircleSpinner } from 'epic-spinners';
 
 export default {
@@ -36,16 +38,11 @@ export default {
   components: {
     Footer,
     /* PlansBoxesSelectable, */
-    LoginForm,
+    ContactForm,
     HalfCircleSpinner
   },
   data() {
     return {
-      loadSpinner: false,
-      customer: null,
-      selectedPlan: null,
-      selectedItems: [],
-      loginError: null,
       items: [
         "Business",
         "Finance",
@@ -68,53 +65,25 @@ export default {
   },
   methods: {
 
-    finishLogin(customer) {
-      this.loadSpinner = true;
-      this.customer = customer;
-      var userObject = Object.assign({}, this.customer);
-
-      console.log("Logging in: "+JSON.stringify(userObject));
-
-     axios.post("https://readery-backend.herokuapp.com/api/auth/login", userObject)
-    .then(response => {
-      this.loadSpinner = false;
-
-      if(response.data.error !== undefined && response.data.error !== null){
-        //Error
-        console.log("An error occured: "+response.data.error.toString());
-        this.loginError = response.data.error;
-      }else{
-        //Login user
-        console.log("User logged in: " + response.data)
-        var userID = response.data._id;
-        var jwt = response.data.access_token;
-
-        this.$emit("loggedInUser", response.data);
-        this.$router.push({ name: "Account", params: { userId: userID, access_token: jwt } });
-      }
-
-      
-    })
-    .catch(e => {
-      console.log("User creation request Error: "+e.toString());
-    })
-    }
   }
 };
 </script>
 
 <style scoped>
-.login {
+.contact {
   height: 100%;
   width: 100%;
 }
+
 #heading {
   margin-top: 150px;
   font-size:calc(30px + 1.5vw);
   font-weight: 500;
+  padding: 0 5%;
 }
 #subheading {
   margin-top: 10px;
+  padding: 0 5%;
   font-weight: 300;
   font-size:calc(20px + 0.2vw);
   color: #8595A8;

@@ -44,9 +44,9 @@
           <td>
             <router-link to="/">Home</router-link>
           </td>
-          <!--<td>
-            <router-link to="/about">Privacy</router-link>
-          </td>-->
+          <td>
+            <router-link to="/contact">Contact us</router-link>
+          </td>
         </tr>
         <tr>
           <td>
