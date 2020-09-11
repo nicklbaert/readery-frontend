@@ -13,9 +13,9 @@
      <h1 class="subheading" id="subheading2">
      Our services are currently <span id="in_dev_link">still in development</span>, hence we are not yet able to start shipping books. 
      However, we appreciate you signing up so early and want to give you a free book in exchange for your trust. 
-     Tap the button below to get notified via email once you can claim your free book.
+     You will be notified via email once you can claim your free book.
     </h1>
-    <button type="submit" id="notify-button" @click="notifyUser()">Notify me</button>
+    <!--<button type="submit" id="notify-button" @click="notifyUser()">Notify me</button>-->
     <h1 class="subheading" id="subheading3">
      Sincerely, <br>
      Niclas (CEO)
