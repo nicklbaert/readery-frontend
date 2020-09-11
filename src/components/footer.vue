@@ -71,8 +71,9 @@
         </tr>
       </table>
     </div>
+
     <div id="newsletter-wrapper">
-      <h3 id="newsletter-heading">Stay updated</h3>
+      <h3 id="newsletter-heading">Sign up to our newsletter</h3>
       <div id="newsletter-field">
         <input v-model="email" type="email" placeholder="Enter your E-Mail" id="newsletter-input" />
         <button id="newsletter-send" @click="signupSubscriber()">Send</button>
@@ -96,6 +97,24 @@
           v-bind:class="{loadingSpinner: loadSpinner}"
         />
       </div>
+    </div>
+
+    <div id="email-address-wrapper">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="15"
+        viewBox="0 0 41.05 32.84"
+      >
+        <path
+          id="Icon_material-email"
+          data-name="Icon material-email"
+          d="M39.945,6H7.105a4.1,4.1,0,0,0-4.084,4.105L3,34.735A4.117,4.117,0,0,0,7.105,38.84h32.84a4.117,4.117,0,0,0,4.105-4.105V10.105A4.117,4.117,0,0,0,39.945,6Zm0,8.21L23.525,24.473,7.105,14.21V10.105l16.42,10.263,16.42-10.263Z"
+          transform="translate(-3 -6)"
+          fill="#454D57"
+        />
+      </svg>
+      <a id="email-address" href="mailto:support@readery.io">support@readery.io</a>
     </div>
 
     <div id="footer-bottom">
@@ -240,7 +259,7 @@ export default {
 }
 
 #footer-links {
-  margin-top: 2%;
+  margin: 1%;
   min-width: 300px;
 }
 #footer-links td {
@@ -261,12 +280,27 @@ export default {
   font-size: 14px;
   letter-spacing: 1px;
 }
+
+#email-address-wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#email-address{
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1b1f23;
+}
+
+
 #newsletter-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding: 5% 0 0 0;
 }
 #newsletter-heading {
   font-size: 20px;
@@ -367,8 +401,7 @@ export default {
 }
 
 #footer-bottom {
-  margin-top: 3%;
-  width: 50%;
+  width: 100%;
   min-width: 350px;
   display: flex;
   align-items: center;
