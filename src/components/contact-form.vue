@@ -7,12 +7,7 @@
         data-netlify="true"
         id="form-wrapper"
       >
-        <p class="hidden" style="display: none;">
-          <label>
-            Don’t fill this out if you're human:
-            <input name="bot-field" />
-          </label>
-        </p>
+       <input type="hidden" name="form-name" value="contact" />
 
 
 
@@ -44,6 +39,7 @@
          </div>
         </div>
         <button type="submit" id="send-button">Send</button>
+        <span v-bind:class="{ showSuccess: successMessage !== null}" class="success">{{successMessage}}</span>
         <div id="spinner-wrapper">
     <HalfCircleSpinner
     :animation-duration="1000"
@@ -68,6 +64,7 @@ export default {
     loadSpinner : false,
     emailError : null,
     messageError : null,
+    successMessage: null,
     form: {
       email: "",
       message: ""
@@ -123,10 +120,10 @@ export default {
       })
         .then(() => {
           this.loadSpinner = false;
+          this.form.email = "";
+          this.form.message = "";
           console.log("success");
-          alert(
-            "Your message was sent. Thank you!"
-          );
+          this.successMessage = "Your message was sent! Thank you.";
         })
         .catch(e => {
           console.log(e);
@@ -222,6 +219,20 @@ textarea {
   font-weight: 400;
   text-align: left;
   line-height: 30px;
+  transition: 0.2s ease-out;
+}
+
+.success {
+  display: none;
+  color: #40caff;
+  transition: 0.2s ease-in;
+}
+.showSuccess {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 80px;
   transition: 0.2s ease-out;
 }
 
