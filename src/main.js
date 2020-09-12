@@ -8,7 +8,7 @@ Vue.use(AxiosPlugin);
 Vue.use(VueAnalytics, {
     id: 'UA-117438770-2',
     router
-}
+});
 
 
 
