@@ -310,11 +310,11 @@ export default {
 
   #nav a {
     margin: 40px 0px 40px 0;
-    color: white;
   }
 
   #signup-button {
     margin: 40px 0;
+    color: white;
   }
 }
 </style>
