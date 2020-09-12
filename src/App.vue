@@ -312,6 +312,7 @@ export default {
     margin: 40px 0px 40px 0;
   }
 
+/*sheesh*/
   #signup-button {
     margin: 40px 0;
     color: white;
