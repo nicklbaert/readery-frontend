@@ -1,140 +1,157 @@
 <template>
   <div class="home">
-    <div id="landing-page">
-      <video autoplay muted loop id="background-video" poster="../assets/videos/video-poster.png">
-        <source src="../assets/videos/readery-landingpage-video_whiter.mp4" type="video/mp4" />Your browser does not support HTML5 video.
-      </video>
-      <div id="landingpage-content">
-        <h1 id="heading">
-          Make reading a regular habit
-        </h1>
-        <h2 id="subheading">The book subscription based on your goals and interests.</h2>
-        <div id="action-buttons">
-          <router-link to="/signup" id="get-started-button">Sign up for free</router-link>
-        </div>
-      </div>
-      <div class="scroll-downs">
-          <div class="mousey">
-            <div class="scroller"></div>
-            <div class="mouse-caption"><span>scroll down</span></div>
+    <div id="background">
+      
+    </div>
+
+    <div id="home-content">
+
+      <div id="landing-page">
+        <div id="landingpage-content">
+          <h1 id="heading">
+            The right books
+            for your goals.
+          </h1>
+          <h2
+            id="subheading"
+          >Welcome to readery - the book subscription based on your goals and interests.</h2>
+          <div id="action-buttons">
+            <router-link to="/signup" id="get-started-button">Sign up for free</router-link>
           </div>
         </div>
-    </div>
-    <div class="step" id="step-1">
-      <div class="step-content" id="step-content-1">
-        <h4 class="step-number">STEP 1</h4>
-        <h2 class="step-heading">You tell us what you are interested in</h2>
-        <h3 class="step-subheading">
-          Select from over 20 different categories, which ones you like the
-          most. Wether you want to learn about entrepreneurship or just want to
-          dive into the world of vampire love stories, we got you covered.
-        </h3>
-        <div id="step-1-cta" class="step-cta">
-          <router-link to="/signup">Get started &rarr;</router-link>
-        </div>
       </div>
-      <div class="step-image" id="step-image-1"></div>
-    </div>
-    <div class="step" id="step-2">
-      <div class="step-content" id="step-content-2">
-        <h4 class="step-number">STEP 2</h4>
-        <h2 class="step-heading">Lean back and watch us work</h2>
-        <h3 class="step-subheading">
-          Readery plots out your reading journey by selecting the best books for
-          your your preferences.
-        </h3>
-        <div id="step-2-cta" class="step-cta">
-          <router-link to="/about">How we choose your books &rarr;</router-link>
-        </div>
-      </div>
-      <div class="step-image" id="step-image-2"></div>
-    </div>
-    <div class="step" id="step-3">
-      <div class="step-content" id="step-content-3">
-        <h4 class="step-number">STEP 3</h4>
-        <h2 class="step-heading">We send you a new book each month</h2>
-        <h3 class="step-subheading">
-          Grab a cup of coffee and start learning. When you're finished with your book, the next one is
-          already waiting to be shipped to your doorstep.
-        </h3>
-        <div id="step-3-cta" class="step-cta">
-          <router-link to="/about">Find out how it works &rarr;</router-link>
-        </div>
-      </div>
-      <div class="step-image" id="step-image-3"></div>
-    </div>
-    <div class="step" id="step-4">
-      <div class="step-content" id="step-content-4">
-        <h4 class="step-number">STEP 4</h4>
-        <h2 class="step-heading">You are in full control</h2>
-        <h3 class="step-subheading">
-          Skip a month, swap out a book you've already read or cancel your
-          subscription at any time online with our configuration tool
-        </h3>
-        <div id="step-4-cta" class="step-cta">
-          <router-link to="/signup">Start your reading journey &rarr;</router-link>
-        </div>
-      </div>
-      <div class="step-image" id="step-image-4"></div>
-    </div>
 
-    <SignUpCTA/>
+      <div id="newsletter">
+        <Newsletter/>
+      </div>
 
-    <Footer />
+      <div id="steps">
+        <div class="step" id="step-1">
+          <div class="step-content" id="step-content-1">
+            <h4 class="step-number">STEP 1</h4>
+            <h2 class="step-heading">You tell us what you are interested in</h2>
+            <h3 class="step-subheading">
+              Select from over 20 different categories, which ones you like the
+              most. Wether you want to learn about entrepreneurship or just want to
+              dive into the world of vampire love stories, we got you covered.
+            </h3>
+            <div id="step-1-cta" class="step-cta">
+              <router-link to="/signup">Get started &rarr;</router-link>
+            </div>
+          </div>
+          <div class="step-image" id="step-image-1"></div>
+        </div>
+        <div class="step" id="step-2">
+          <div class="step-content" id="step-content-2">
+            <h4 class="step-number">STEP 2</h4>
+            <h2 class="step-heading">Lean back and watch us work</h2>
+            <h3 class="step-subheading">
+              Readery plots out your reading journey by selecting the best books for
+              your your preferences.
+            </h3>
+            <div id="step-2-cta" class="step-cta">
+              <router-link to="/about">How we choose your books &rarr;</router-link>
+            </div>
+          </div>
+          <div class="step-image" id="step-image-2"></div>
+        </div>
+        <div class="step" id="step-3">
+          <div class="step-content" id="step-content-3">
+            <h4 class="step-number">STEP 3</h4>
+            <h2 class="step-heading">We send you a new book each month</h2>
+            <h3 class="step-subheading">
+              Grab a cup of coffee and start learning. When you're finished with your book, the next one is
+              already waiting to be shipped to your doorstep.
+            </h3>
+            <div id="step-3-cta" class="step-cta">
+              <router-link to="/about">Find out how it works &rarr;</router-link>
+            </div>
+          </div>
+          <div class="step-image" id="step-image-3"></div>
+        </div>
+        <div class="step" id="step-4">
+          <div class="step-content" id="step-content-4">
+            <h4 class="step-number">STEP 4</h4>
+            <h2 class="step-heading">You are in full control</h2>
+            <h3 class="step-subheading">
+              Skip a month, swap out a book you've already read or cancel your
+              subscription at any time online with our configuration tool
+            </h3>
+            <div id="step-4-cta" class="step-cta">
+              <router-link to="/signup">Start your reading journey &rarr;</router-link>
+            </div>
+          </div>
+          <div class="step-image" id="step-image-4"></div>
+        </div>
+      </div>
+
+      <SignUpCTA />
+
+      <Footer />
+    </div>
   </div>
 </template>
 
 <script>
 import Footer from "../components/footer.vue";
 import SignUpCTA from "../components/signup-cta.vue";
+import Newsletter from "../components/newsletter-signup.vue";
+
 
 export default {
   name: "Home",
   components: {
     Footer,
-    SignUpCTA
-  },
+    SignUpCTA,
+    Newsletter
+  }
 };
 </script>
 
 <style scoped>
 .home {
-  height: 100%;
   width: 100%;
 }
-#landingpage-content {
+
+#background {
+  width: 100%;
+  height: 170%;
   position: absolute;
+  z-index: -1000;
+  background-image: url("../assets/images/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+#home-content{
+  width: 100%;
+  height: 100%;
+}
+
+#landingpage-content {
   width: 90%;
 }
 #landing-page {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
-  z-index: 1000;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
-#background-video {
-  /* position: absolute;
-  right: 0;
-  top: 0;
-  height: 100vh; */
-  height: 100%;
-  width: 177.77777778vh; /* 100 * 16 / 9 */
-  min-width: 100%;
-  min-height: 56.25vw; /* 100 * 9 / 16 */
-}
+
 #heading {
-  font-size:calc(30px + 1.5vw);
+  font-size: calc(30px + 1.5vw);
   font-weight: 500;
 }
 #subheading {
   margin-top: 2%;
   font-weight: 300;
-  font-size:calc(20px + 0.3vw);
-  color: #454D57;
+  font-size: calc(20px + 0.3vw);
+  color: #454d57;
 }
 #action-buttons {
   margin-top: 3%;
@@ -146,17 +163,6 @@ export default {
 }
 #action-buttons a {
   margin: 0 1em;
-}
-#learn-more-button {
-  background-color: #fff;
-  padding: 15px 30px;
-  color: #1b1f23;
-  text-decoration: none;
-  box-shadow: inset 0px 0px 0px 2px #1b1f23;
-  transition: 0.2s ease-in;
-}
-#learn-more-button:hover {
-  transition: 0.2s ease-out;
 }
 #get-started-button {
   background-color: #40caff;
@@ -170,54 +176,15 @@ export default {
   transition: 0.2s ease-out;
 }
 
-/*Mouse animation*/ 
-.scroll-downs {
-  position: absolute;
-  width: 100px;
-  height: 80px;
-  right: 0;
-  left: 0;
-  bottom: 40px;
-  margin: 5% auto 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
-.mousey {
-  width: 3px;
-  padding: 10px 10px;
-  height: 20px;
-  border: 2px solid #1b1f23;
-  border-radius: 25px;
-  opacity: 0.75;
-  box-sizing: content-box;
-}
-.mouse-caption{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 14px;
-  width: 100%;
-}
-.scroller {
-  width: 3px;
-  height: 10px;
-  border-radius: 25%;
-  background-color: #1b1f23;
-  animation-name: scroll;
-  animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-  animation-iteration-count: infinite;
-}
-@keyframes scroll {
-  0% { opacity: 0; }
-  10% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(15px); opacity: 0;}
+#newsletter{
+  margin: 15% 0;
+  padding: 0 20%; 
 }
 
+#steps {
+  width: 100%;
+  margin-top: 20%;
+}
 
 .step {
   margin: 10% 0;
@@ -343,14 +310,18 @@ export default {
     font-weight: 300;
     line-height: 30px;
   }
+  #newsletter{
+    margin: 60% 0 30% 0;
+    padding: 0 5%;
+  }
 }
 
 @media screen and (max-width: 400px) {
   #subheading {
-  margin-top: 8%;
-}
-#action-buttons {
-  margin-top: 8%;
-}
+    margin-top: 8%;
+  }
+  #action-buttons {
+    margin-top: 8%;
+  }
 }
 </style>
