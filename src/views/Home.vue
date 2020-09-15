@@ -1,11 +1,8 @@
 <template>
   <div class="home">
-    <div id="background">
-      
-    </div>
+    <div id="background"></div>
 
     <div id="home-content">
-
       <div id="landing-page">
         <div id="landingpage-content">
           <h1 id="heading">
@@ -22,7 +19,7 @@
       </div>
 
       <div id="newsletter">
-        <Newsletter/>
+        <Newsletter />
       </div>
 
       <div id="steps">
@@ -97,7 +94,6 @@ import Footer from "../components/footer.vue";
 import SignUpCTA from "../components/signup-cta.vue";
 import Newsletter from "../components/newsletter-signup.vue";
 
-
 export default {
   name: "Home",
   components: {
@@ -124,9 +120,7 @@ export default {
   background-repeat: no-repeat;
 }
 
-
-
-#home-content{
+#home-content {
   width: 100%;
   height: 100%;
 }
@@ -176,9 +170,9 @@ export default {
   transition: 0.2s ease-out;
 }
 
-#newsletter{
+#newsletter {
   margin: 15% 0;
-  padding: 0 20%; 
+  padding: 0 20%;
 }
 
 #steps {
@@ -310,7 +304,7 @@ export default {
     font-weight: 300;
     line-height: 30px;
   }
-  #newsletter{
+  #newsletter {
     margin: 60% 0 30% 0;
     padding: 0 5%;
   }

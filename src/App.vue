@@ -5,45 +5,47 @@
         <router-link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="150"
-            height="33.912"
-            viewBox="0 0 177.5 33.912"
+            width="162.851"
+            height="26"
+            viewBox="0 0 162.851 28.497"
+            id="logo"
           >
-            <g id="logo-svg" transform="translate(-278 -73)">
-              <g id="Gruppe_7" data-name="Gruppe 7" transform="translate(-28)">
-                <path
-                  id="Pfad_7"
-                  data-name="Pfad 7"
-                  d="M13.356-17.82a5.267,5.267,0,0,0-1.584-.216,6.179,6.179,0,0,0-4.9,2.34V-17.82H2.412V0h4.86V-8.892c0-3.06,1.872-4.644,4.788-4.644h1.3ZM32.4-7.272a11.464,11.464,0,0,0,.324-2.664,8.108,8.108,0,0,0-8.388-8.28,9.191,9.191,0,0,0-9.324,9.324A9.341,9.341,0,0,0,24.768.432,10.9,10.9,0,0,0,31.9-2.232L29.88-5.544a8.035,8.035,0,0,1-4.968,1.8c-2.592,0-4.428-1.26-5-3.528Zm-12.492-3.42a4.389,4.389,0,0,1,4.248-3.6,3.626,3.626,0,0,1,3.852,3.6Zm31.536.108c0-4.932-2.988-7.632-7.632-7.632a9.717,9.717,0,0,0-7.776,3.672l2.52,2.988C40.14-13.248,41.436-14,43.272-14c2.16,0,3.312,1.152,3.312,3.132v.792H42.12c-4.14,0-6.732,1.98-6.732,5.184,0,3.132,2.376,5.328,6.156,5.328a7.424,7.424,0,0,0,5.436-2.16V0h4.464ZM46.584-6.66A3.543,3.543,0,0,1,42.84-3.132c-1.548,0-2.556-.756-2.556-1.944s.9-1.8,2.484-1.8h3.816ZM69.084-27v10.908a6.887,6.887,0,0,0-5.328-2.124c-4.968,0-8.64,3.96-8.64,9.324S58.788.432,63.756.432A6.78,6.78,0,0,0,69.48-2.2V0h4.464V-27Zm.072,18.108c0,3.2-2.052,4.9-4.5,4.9-2.628,0-4.608-1.944-4.608-4.932a4.6,4.6,0,0,1,4.608-4.9C67.1-13.824,69.156-12.06,69.156-8.892Zm25.992,1.62a11.463,11.463,0,0,0,.324-2.664,8.108,8.108,0,0,0-8.388-8.28A9.191,9.191,0,0,0,77.76-8.892,9.341,9.341,0,0,0,87.516.432a10.9,10.9,0,0,0,7.128-2.664L92.628-5.544a8.035,8.035,0,0,1-4.968,1.8c-2.592,0-4.428-1.26-5-3.528Zm-12.492-3.42a4.389,4.389,0,0,1,4.248-3.6,3.626,3.626,0,0,1,3.852,3.6ZM110.2-17.82a5.267,5.267,0,0,0-1.584-.216,6.179,6.179,0,0,0-4.9,2.34V-17.82H99.252V0h4.86V-8.892c0-3.06,1.872-4.644,4.788-4.644h1.3Zm15.192,0-4.644,11.7-4.356-11.7H111.24l6.84,16.74L117.54.144a3.547,3.547,0,0,1-3.708,2.412c-.288,0-.972-.036-2.088-.144V6.48a12.14,12.14,0,0,0,3.132.432c3.312,0,5.472-1.656,7.092-5.364L130.5-17.82Z"
-                  transform="translate(353 100)"
-                  fill="#282B37"
-                />
-                <g
-                  id="Icon_ionic-ios-book"
-                  data-name="Icon ionic-ios-book"
-                  transform="translate(302.618 73.5)"
-                >
-                  <path
-                    id="Pfad_1"
-                    data-name="Pfad 1"
-                    d="M11.895,4.507c4.7,0,8.7,1.962,8.7,5.766V11.4h0V31.359c0,.155-.27.19-.33.049V31.4A7.846,7.846,0,0,0,13.1,26.445a12.548,12.548,0,0,0-8.1,2.609,1.054,1.054,0,0,1-.574.2H4.043c-.322,0-.661-.19-.661-.429V8.452C3.373,6.195,7.191,4.507,11.895,4.507Z"
-                    fill="#46ccff"
-                  />
-                  <path
-                    id="Pfad_2"
-                    data-name="Pfad 2"
-                    d="M27.4,4.5c-4.7,0-8.7,1.962-8.7,5.766v1.125h0V31.352c0,.155.27.19.33.049v-.007a7.935,7.935,0,0,1,7.156-4.957,12.546,12.546,0,0,1,8.1,2.609,1.113,1.113,0,0,0,.574.2h.391c.322,0,.661-.19.661-.429V8.438C35.92,6.188,32.1,4.5,27.4,4.5Z"
-                    transform="translate(3.626)"
-                    fill="#46ccff"
-                  />
-                </g>
-              </g>
+            <g id="Gruppe_182" data-name="Gruppe 182" transform="translate(-261.643 -84.971)">
+              <path
+                id="Pfad_1920"
+                data-name="Pfad 1920"
+                d="M13.2,3.135h5.414l-4.69-8.09a7.262,7.262,0,0,0,4.061-6.39A7.537,7.537,0,0,0,10.434-18.9H1.62V3.135H6.656v-7.24H9.049ZM6.656-14.178h3.777a2.668,2.668,0,0,1,2.518,2.833,2.668,2.668,0,0,1-2.518,2.833H6.656Zm17.6,11.332H35.427a9.15,9.15,0,0,0,.189-1.889,7.947,7.947,0,0,0-8-8.31,8.07,8.07,0,0,0-8.373,8.31c0,4.69,3.337,8.31,8.719,8.31A7.987,7.987,0,0,0,34.829.333L31.052-1.839a4.11,4.11,0,0,1-3.022,1.2C26.3-.643,24.851-1.209,24.253-2.846Zm-.094-3.526a3.249,3.249,0,0,1,3.431-2.487,3.24,3.24,0,0,1,3.337,2.487Zm25.4-6.233v1.479a5.912,5.912,0,0,0-4.69-1.92c-4.124,0-7.523,3.62-7.523,8.31s3.4,8.31,7.523,8.31a5.912,5.912,0,0,0,4.69-1.92V3.135h4.722V-12.6ZM45.815-.895a3.594,3.594,0,0,1-3.746-3.84,3.594,3.594,0,0,1,3.746-3.84,3.594,3.594,0,0,1,3.746,3.84A3.594,3.594,0,0,1,45.815-.895ZM69.172-18.9v7.775a5.912,5.912,0,0,0-4.69-1.92c-4.124,0-7.523,3.62-7.523,8.31s3.4,8.31,7.523,8.31a5.912,5.912,0,0,0,4.69-1.92V3.135h4.722V-18.9ZM65.426-.895a3.594,3.594,0,0,1-3.746-3.84,3.594,3.594,0,0,1,3.746-3.84,3.594,3.594,0,0,1,3.746,3.84A3.594,3.594,0,0,1,65.426-.895ZM81.574-2.846H92.749a9.15,9.15,0,0,0,.189-1.889,7.947,7.947,0,0,0-8-8.31,8.07,8.07,0,0,0-8.373,8.31c0,4.69,3.337,8.31,8.719,8.31A7.987,7.987,0,0,0,92.151.333L88.373-1.839a4.11,4.11,0,0,1-3.022,1.2C83.62-.643,82.172-1.209,81.574-2.846ZM81.48-6.372a3.249,3.249,0,0,1,3.431-2.487,3.24,3.24,0,0,1,3.337,2.487ZM100.335-9.8v-2.8H95.613V3.135h4.722V-3.979c0-3.116,2.77-3.9,4.722-3.588v-5.351A4.727,4.727,0,0,0,100.335-9.8Zm17.155-2.8-2.959,9.632L111.037-12.6h-5.194l6.264,15.015c-.693,1.92-1.731,2.613-3.935,2.613V9.43c4.407.22,7.208-1.763,8.971-6.768L122.527-12.6Z"
+                transform="translate(301.967 104.021)"
+                fill="#312a55"
+              />
+              <path
+                id="Icon_metro-books"
+                data-name="Icon metro-books"
+                d="M9.056,8.571H3.5a.929.929,0,0,0-.926.926v20.38A.929.929,0,0,0,3.5,30.8H9.056a.929.929,0,0,0,.926-.926V9.5a.929.929,0,0,0-.926-.926Zm9.264,0H12.762a.929.929,0,0,0-.926.926v20.38a.929.929,0,0,0,.926.926H18.32a.929.929,0,0,0,.926-.926V9.5a.929.929,0,0,0-.926-.926ZM24.72,10l-4.964,2.5a.929.929,0,0,0-.41,1.244l8.337,16.546a.929.929,0,0,0,1.244.41l4.964-2.5a.929.929,0,0,0,.41-1.244L25.964,10.414A.929.929,0,0,0,24.72,10Zm4.716,19.874a.926.926,0,1,1-.926-.926A.926.926,0,0,1,29.436,29.878Z"
+                transform="translate(259.071 76.4)"
+                fill="#0294ff"
+              />
             </g>
           </svg>
         </router-link>
       </div>
+
+      <div class="links" v-bind:class="{nav_open: this.showNav}">
+        <div class="links-left">
+          <router-link to="/" class="link">Home</router-link>
+          <router-link to="/about" class="link">How it works</router-link>
+          <router-link to="/plans" class="link">Pricing</router-link>
+        </div>
+        <div class="links-right">
+          <div class="login-button">
+            <router-link to="/login" class="link">Login</router-link>
+          </div>
+
+          <router-link id="signup-button" to="/signup">Sign Up</router-link>
+        </div>
+      </div>
       <div class="nav-icon" @click="openNav()" v-bind:class="{nav_icon_opened: this.showNav}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="80" viewBox="0 0 191 152">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 191 152">
           <g id="Group_43" data-name="Group 43" transform="translate(-1948 -4244)">
             <rect
               id="Rectangle_56"
@@ -83,7 +85,7 @@
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
-          height="80"
+          height="30"
           viewBox="0 0 173.282 173.282"
         >
           <g id="Group_43" data-name="Group 43" transform="translate(-1956.718 -4482)">
@@ -108,21 +110,9 @@
           </g>
         </svg>
       </div>
-      <div class="links" @click="closeNav()" v-bind:class="{nav_open: this.showNav}">
-        <router-link to="/" class="link">Home</router-link>
-        <router-link to="/about" class="link">Why Readery</router-link>
-        <router-link to="/plans" class="link">Pricing</router-link>
-        <router-link to="/login" class="link">Login</router-link>
-        <!--<router-link to="/configuration">Login</router-link>-->
-        <div id="signup-button" class="link">
-          <router-link to="/signup">Sign Up</router-link>
-        </div>
-      </div>
     </div>
-    <router-view id="router-view" v-on:loggedInUser="setUserData($event)" />
-    <div id="chat-icon">
-      
-    </div>
+    <!--<router-view id="router-view" v-on:loggedInUser="setUserData($event)" />-->
+    <div id="chat-icon"></div>
   </div>
 </template>
 <script>
@@ -188,7 +178,7 @@ export default {
   font-family: cera-pro;
   text-align: center;
   margin: 0;
-  color: #1b1f23;
+  color: #312a55;
 }
 #router-view {
   position: absolute;
@@ -196,17 +186,23 @@ export default {
   height: 100%;
 }
 
+#heading {
+  font-family: "Merriweather", serif;
+}
+
 #nav {
-  padding: 0 15%;
-  margin-top: 3%;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  padding: 45px 45px;
+  position: relative;
+  max-width: 1332px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+}
+
+#logo {
+  margin-top: 3px;
 }
 
 .nav-icon {
@@ -219,53 +215,66 @@ export default {
 
 .links {
   display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5%;
 }
 
-#nav a {
+.links-left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.links-left a {
   text-decoration: none;
-  color: #1b1f23;
+  color: #8595a8;
   font-size: 16px;
-  margin: 0 30px;
+  margin: 0 40px;
 }
 
-#nav a.router-link-exact-active {
-  color: #40caff;
+.links-left a.router-link-exact-active,
+.links-right a.router-link-exact-active {
+  color: #0294ff;
 }
 
-#signup-button a {
-  background-color: #40caff;
-  padding: 12px 35px;
+.links-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.links-right a {
+  text-decoration: none;
+  color: #8595a8;
+  font-size: 16px;
+  margin: 0 50px 0 0;
+}
+
+#signup-button {
+  margin: 0;
+  background-color: #0294ff;
+  padding: 15px 50px;
   color: #fff;
   transition: 0.2s ease-in;
   word-wrap: none;
   overflow-wrap: initial;
+  border-radius: 100px;
 }
-#signup-button a:hover {
-  background-color: #1ab5f1;
+#signup-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px 0 rgb(2, 148, 255, 0.8);
   transition: 0.2s ease-out;
 }
 #signup-button a.router-link-exact-active {
   color: #fff;
 }
-@media screen and (max-width: 1280px) {
-  #nav {
-    padding: 0 5%;
-  }
-}
 
-@media screen and (max-width: 970px) {
-  #nav {
-    align-items: center;
-    height: 80px;
-    margin: 0;
-    padding: 0 20px;
-  }
+@media screen and (max-width: 1100px) {
   .nav-icon {
     display: block;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    right: 20px;
   }
 
   .nav_icon_opened {
@@ -275,8 +284,9 @@ export default {
   .nav-close-icon {
     position: fixed;
     z-index: 100;
-    top: 0;
-    right: 20px;
+    z-index: 100;
+    top: 45px;
+    right: 45px;
   }
 
   .nav_icon_close_opened {
@@ -284,13 +294,15 @@ export default {
   }
 
   .links {
-    width: 50%;
+    padding: 0 45px 0 45px;
+    width: 100%;
     height: 100vh;
     position: fixed;
-    top: 0;
+    box-sizing: border-box;
+    bottom: 0;
     right: 0;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: rgba(255, 255, 255, 1);
     display: none;
@@ -298,6 +310,16 @@ export default {
     -webkit-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
     -moz-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
     box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
+  }
+  .links-left {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .links-right {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
   }
   #first-link {
     margin-top: 80px;
@@ -310,12 +332,25 @@ export default {
 
   #nav a {
     margin: 40px 0px 40px 0;
+    font-size: 20px;
+    text-align: left;
   }
 
-/*sheesh*/
+  /*sheesh*/
+  .links-right a {
+    text-decoration: none;
+    width: 100%;
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+  }
+
   #signup-button {
-    margin: 40px 0;
-    color: white;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
 </style>
