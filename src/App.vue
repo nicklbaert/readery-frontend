@@ -266,7 +266,6 @@ export default {
   font-size: 16px;
   margin: 0;
 }
-
 #login-button {
   margin-right: 50px;
   display: flex;
