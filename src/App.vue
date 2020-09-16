@@ -16,7 +16,7 @@
                 data-name="Pfad 1920"
                 d="M13.2,3.135h5.414l-4.69-8.09a7.262,7.262,0,0,0,4.061-6.39A7.537,7.537,0,0,0,10.434-18.9H1.62V3.135H6.656v-7.24H9.049ZM6.656-14.178h3.777a2.668,2.668,0,0,1,2.518,2.833,2.668,2.668,0,0,1-2.518,2.833H6.656Zm17.6,11.332H35.427a9.15,9.15,0,0,0,.189-1.889,7.947,7.947,0,0,0-8-8.31,8.07,8.07,0,0,0-8.373,8.31c0,4.69,3.337,8.31,8.719,8.31A7.987,7.987,0,0,0,34.829.333L31.052-1.839a4.11,4.11,0,0,1-3.022,1.2C26.3-.643,24.851-1.209,24.253-2.846Zm-.094-3.526a3.249,3.249,0,0,1,3.431-2.487,3.24,3.24,0,0,1,3.337,2.487Zm25.4-6.233v1.479a5.912,5.912,0,0,0-4.69-1.92c-4.124,0-7.523,3.62-7.523,8.31s3.4,8.31,7.523,8.31a5.912,5.912,0,0,0,4.69-1.92V3.135h4.722V-12.6ZM45.815-.895a3.594,3.594,0,0,1-3.746-3.84,3.594,3.594,0,0,1,3.746-3.84,3.594,3.594,0,0,1,3.746,3.84A3.594,3.594,0,0,1,45.815-.895ZM69.172-18.9v7.775a5.912,5.912,0,0,0-4.69-1.92c-4.124,0-7.523,3.62-7.523,8.31s3.4,8.31,7.523,8.31a5.912,5.912,0,0,0,4.69-1.92V3.135h4.722V-18.9ZM65.426-.895a3.594,3.594,0,0,1-3.746-3.84,3.594,3.594,0,0,1,3.746-3.84,3.594,3.594,0,0,1,3.746,3.84A3.594,3.594,0,0,1,65.426-.895ZM81.574-2.846H92.749a9.15,9.15,0,0,0,.189-1.889,7.947,7.947,0,0,0-8-8.31,8.07,8.07,0,0,0-8.373,8.31c0,4.69,3.337,8.31,8.719,8.31A7.987,7.987,0,0,0,92.151.333L88.373-1.839a4.11,4.11,0,0,1-3.022,1.2C83.62-.643,82.172-1.209,81.574-2.846ZM81.48-6.372a3.249,3.249,0,0,1,3.431-2.487,3.24,3.24,0,0,1,3.337,2.487ZM100.335-9.8v-2.8H95.613V3.135h4.722V-3.979c0-3.116,2.77-3.9,4.722-3.588v-5.351A4.727,4.727,0,0,0,100.335-9.8Zm17.155-2.8-2.959,9.632L111.037-12.6h-5.194l6.264,15.015c-.693,1.92-1.731,2.613-3.935,2.613V9.43c4.407.22,7.208-1.763,8.971-6.768L122.527-12.6Z"
                 transform="translate(301.967 104.021)"
-                fill="#312a55"
+                fill="#00006D"
               />
               <path
                 id="Icon_metro-books"
@@ -54,7 +54,6 @@
               />
             </svg>
           </router-link>
-
           <router-link @click="closeNav()" id="signup-button" to="/signup">Early Access</router-link>
         </div>
       </div>
@@ -125,8 +124,7 @@
         </svg>
       </div>
     </div>
-    <!--<router-view id="router-view" v-on:loggedInUser="setUserData($event)" />-->
-    <div id="chat-icon"></div>
+    <router-view id="router-view" v-on:loggedInUser="setUserData($event)" />
   </div>
 </template>
 <script>
@@ -160,7 +158,10 @@ export default {
   margin: 0;
   padding: 0;
 }
-
+body {
+  background-color: #f8fbfd;
+  overflow: hidden;
+}
 @font-face {
   font-family: "cera-pro";
   src: url("./assets/fonts/cera-light.otf");
@@ -190,18 +191,28 @@ export default {
 
 #app {
   font-family: cera-pro;
-  text-align: center;
   margin: 0;
-  color: #312a55;
+  padding: 0;
+  color: #00006d;
 }
 #router-view {
-  position: absolute;
   width: 100%;
   height: 100%;
 }
 
-#heading {
+.heading {
   font-family: "Merriweather", serif;
+}
+.title {
+  font-size: 52px;
+  line-height: 1.5;
+}
+
+.text {
+  color: #4c5d77;
+  font-weight: 300;
+  font-family: "cera-pro";
+  font-size: 24px;
 }
 
 #nav {
@@ -247,6 +258,12 @@ export default {
   color: #8595a8;
   font-size: 16px;
   margin: 0 40px;
+  transition: 0.1s ease-in;
+}
+
+.links-left a:hover {
+  color: #0294ff;
+  transition: 0.1s ease-out;
 }
 
 .links-left a.router-link-exact-active,
@@ -266,6 +283,10 @@ export default {
   font-size: 16px;
   margin: 0;
 }
+.links-right a:hover {
+  color: #0294ff;
+  transition: 0.1s ease-out;
+}
 #login-button {
   margin-right: 50px;
   display: flex;
@@ -276,12 +297,10 @@ export default {
   margin-left: 20px;
 }
 
-
-
 #signup-button {
   margin: 0;
   background-color: #0294ff;
-  padding: 15px 50px;
+  padding: 18px 40px;
   color: #fff;
   transition: 0.2s ease-in;
   word-wrap: none;
@@ -289,8 +308,8 @@ export default {
   border-radius: 100px;
 }
 #signup-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px 0 rgb(2, 148, 255, 0.8);
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px 0 rgb(2, 148, 255, 0.5);
   transition: 0.2s ease-out;
 }
 #signup-button a.router-link-exact-active {
@@ -306,32 +325,22 @@ export default {
     display: none;
   }
 
-  .nav-close-icon {
-    position: fixed;
-    z-index: 100;
-    z-index: 100;
-    top: 45px;
-    right: 45px;
-  }
-
   .nav_icon_close_opened {
     display: block;
   }
 
   .links {
-    padding: 0 45px 0 45px;
+    padding: 0 45px 80px 45px;
     width: 100%;
     height: calc(100vh - 120px);
     position: fixed;
     box-sizing: border-box;
     bottom: 0;
-    right: 0;
+    right: -100%;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-
-    display: none;
-    transition: 0.2s ease-out;
+    justify-content: space-between;
+    transition: 0.2s ease-in;
     /*-webkit-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
     -moz-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
     box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);*/
@@ -341,33 +350,33 @@ export default {
     align-items: flex-start;
     width: 100%;
   }
+
+  .links-left a {
+    margin: 40px 0px 40px 0;
+    font-size: 30px;
+    text-align: left;
+    color: #312a55;
+    font-family: "Merriweather", serif;
+  }
+
   .links-right {
     width: 100%;
     flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: flex-end;
-    border: 1px solid blue;
     padding: 0;
   }
- 
 
-  .nav_open {
-    display: flex;
-    transition: 0.2s ease-out;
-  }
-
-  #nav a {
-    margin: 40px 0px 40px 0;
-    font-size: 20px;
-    text-align: left;
-  }
-
-  /*sheesh*/
   .links-right a {
     text-decoration: none;
     width: 100%;
-    margin: 0;
+    margin: 50px 0;
     padding: 0;
+  }
+
+  .nav_open {
+    right: 0;
+    transition: 0.2s ease-out;
   }
 
   #login-button {
@@ -377,7 +386,6 @@ export default {
     display: flex;
     justify-content: center;
     margin: 0;
-    border: 1px solid red;
   }
 
   #login-button a {
@@ -389,18 +397,25 @@ export default {
   #signup-button {
     width: 100%;
     padding: 15px 0;
-    margin: 0;
+    margin: 30px 0;
     text-align: center;
     display: flex;
     justify-content: center;
   }
 
-  #signup-button:hover{
-    background-color: #0486E5;
+  #signup-button:hover {
+    background-color: #0486e5;
     transform: none;
     box-shadow: none;
   }
+}
 
-
+@media screen and (max-width: 500px) {
+  #nav {
+    padding: 45px 25px;
+  }
+  .links {
+    padding: 0 25px 80px 25px;
+  }
 }
 </style>
