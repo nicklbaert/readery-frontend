@@ -140,7 +140,7 @@
           <h1 class="heading subtitle benefit-title">Save money</h1>
           <h3
             class="text benefit-text"
-          >Your first book is free, after that it’s only $25 a month with our 'Hustle Mode' Plan. A small investment for your personal growth</h3>
+          >Your first book is free, after that it’s only a small investment for your personal growth</h3>
           <router-link to="/plans" class="benefit-link" href="#">
             Explore pricing
             <svg
