@@ -32,9 +32,9 @@
 
       <div class="links" v-bind:class="{nav_open: this.showNav}">
         <div class="links-left">
-          <router-link @click="closeNav()" to="/" class="link">Home</router-link>
           <router-link @click="closeNav()" to="/about" class="link">How it works</router-link>
           <router-link @click="closeNav()" to="/plans" class="link">Pricing</router-link>
+          <router-link @click="closeNav()" to="/faq" class="link">FAQ</router-link>
         </div>
         <div class="links-right">
           <router-link @click="closeNav()" id="login-button" to="/login" class="link">
@@ -157,10 +157,11 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 body {
   background-color: #f8fbfd;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 @font-face {
   font-family: "cera-pro";
@@ -208,11 +209,39 @@ body {
   line-height: 1.5;
 }
 
+.subtitle {
+  font-size: 38px;
+  line-height: 1.5;
+  text-align: left;
+}
+
 .text {
   color: #4c5d77;
   font-weight: 300;
   font-family: "cera-pro";
   font-size: 24px;
+  text-align: left;
+}
+
+.highlighted {
+  color: #0294ff;
+  position: relative;
+  cursor: pointer;
+}
+.highlighted::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #0294ff;
+  opacity: 1;
+  transition: all 0.2s ease-in-out 0s;
+}
+.highlighted:hover::before {
+  opacity: 0;
+  transition: all 0.2s ease-in-out 0s;
 }
 
 #nav {
@@ -232,10 +261,12 @@ body {
 
 .nav-icon {
   display: none;
+  cursor: pointer;
 }
 
 .nav-close-icon {
   display: none;
+  cursor: pointer;
 }
 
 .links {
@@ -334,6 +365,7 @@ body {
     width: 100%;
     height: calc(100vh - 120px);
     position: fixed;
+    z-index: 1000;
     box-sizing: border-box;
     bottom: 0;
     right: -100%;
@@ -341,6 +373,7 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     transition: 0.2s ease-in;
+    background-color: #f8fbfd;
     /*-webkit-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
     -moz-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
     box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);*/
