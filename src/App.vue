@@ -220,15 +220,34 @@ body {
   font-weight: 300;
   font-family: "cera-pro";
   font-size: 24px;
+  line-height: 1.5;
   text-align: left;
 }
 
 .highlighted {
-  color: #0294ff;
   position: relative;
   cursor: pointer;
 }
 .highlighted::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0px;
+  background-color: #0294ff;
+  transition: all 0.2s ease-in-out 0s;
+}
+.highlighted:hover::before {
+  width: 100%;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.highlighted-reverse {
+  color: #0294ff;
+  position: relative;
+  cursor: pointer;
+}
+.highlighted-reverse::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -239,7 +258,7 @@ body {
   opacity: 1;
   transition: all 0.2s ease-in-out 0s;
 }
-.highlighted:hover::before {
+.highlighted-reverse:hover::before {
   opacity: 0;
   transition: all 0.2s ease-in-out 0s;
 }
@@ -286,7 +305,7 @@ body {
 
 .links-left a {
   text-decoration: none;
-  color: #8595a8;
+  color: #4c5d77;
   font-size: 16px;
   margin: 0 40px;
   transition: 0.1s ease-in;
@@ -310,7 +329,7 @@ body {
 
 .links-right a {
   text-decoration: none;
-  color: #8595a8;
+  color: #4c5d77;
   font-size: 16px;
   margin: 0;
 }
@@ -388,7 +407,7 @@ body {
     margin: 40px 0px 40px 0;
     font-size: 30px;
     text-align: left;
-    color: #312a55;
+    color: #00006d;
     font-family: "Merriweather", serif;
   }
 

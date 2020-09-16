@@ -1,10 +1,35 @@
 <template>
-  <div class="signup-cta">
-    <h1 id="heading">Get started today</h1>
-    <h1 id="subheading">Sign up and get your first book for free</h1>
-    <div id="action-buttons">
-          <router-link to="/signup" id="get-started-button">Sign up for free</router-link>
-        </div>
+  <div id="signup-cta-wrapper">
+    <div id="signup-cta">
+      <div id="signup-cta-content">
+        <h1 class="heading subtitle cta-title">
+          Sign up for early access and
+          get your first book for free
+        </h1>
+        <h3
+          class="text cta-text"
+        >Take action now and sign up to claim our offer for early supporters.</h3>
+      </div>
+      <div id="signup-cta-button">
+        <router-link id="get-started" to="/signup" class="action-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13.503"
+            height="18.616"
+            viewBox="0 0 13.503 23.616"
+          >
+            <path
+              id="Icon_ionic-ios-arrow-forward"
+              data-name="Icon ionic-ios-arrow-forward"
+              d="M20.679,18,11.742,9.07a1.681,1.681,0,0,1,0-2.384,1.7,1.7,0,0,1,2.391,0L24.258,16.8a1.685,1.685,0,0,1,.049,2.327L14.14,29.32a1.688,1.688,0,0,1-2.391-2.384Z"
+              transform="translate(-11.246 -6.196)"
+              fill="#ffffff"
+            />
+          </svg>
+          <span>Get started</span>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,59 +41,69 @@ export default {
 </script>
 
 <style scoped>
-.signup-cta{
-  margin: 15% 0;
-  padding: 0 15%;
+#signup-cta-wrapper {
+  padding: 0 45px;
+  position: relative;
+  max-width: 1332px;
+  margin: 0 auto 144px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
-#heading {
-  font-size:calc(30px + 1.5vw);
-  font-weight: 500;
-}
-#subheading {
-  margin-top: 10px;
-  font-weight: 300;
-  font-size:calc(20px + 0.3vw);
-  color: #454D57;
-}
-#action-buttons {
-  margin-top: 3%;
+#signup-cta {
+  padding: 104px 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 10%;
+  height: 100%;
+  border-radius: 56px;
+  background-image: url("../assets/img-new/pattern.svg");
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: cover;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: #e0f7ff;
+}
+
+#signup-cta-content {
+  max-width: 670px;
+}
+
+.cta-title {
+  margin-bottom: 32px;
+}
+
+#get-started span {
+  margin-left: 20px;
+}
+
+#get-started {
+  text-decoration: none;
+  width: 220px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-#action-buttons a {
-  margin: 0 1em;
-}
-#get-started-button {
-  background-color: #40caff;
-  padding: 15px 30px;
+  margin: 0;
+  background-color: #0294ff;
   color: #fff;
-  text-decoration: none;
   transition: 0.2s ease-in;
+  word-wrap: none;
+  overflow-wrap: initial;
+  border-radius: 100px;
+  font-size: 20px;
 }
-#get-started-button:hover {
-  background-color: #1ab5f1;
+#get-started:hover {
+  background-color: #018cf2;
   transition: 0.2s ease-out;
 }
-@media screen and (max-width: 1280px) {
-  .signup-cta {
-    padding: 0 10%;
-    
-  }
-  
+#get-started a.router-link-exact-active {
+  color: #fff;
 }
-@media screen and (max-width: 700px) {
-  .signup-cta{
-    margin: 20% 0 30% 0;
-  }
-#subheading {
-  margin-top: 5%;
-}
-#action-buttons {
-  margin-top: 8%;
-}
-}
-
 </style>

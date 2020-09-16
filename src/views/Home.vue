@@ -40,11 +40,12 @@
         />
       </div>
     </div>
+
     <div id="quality-section">
       <div id="quality-heading">
         <h1 id="quality-heading-title" class="heading subtitle">
           Adapted to
-          <span class="highlighted">your</span> interests
+          <span class="highlighted-reverse">your</span> interests
         </h1>
         <div id="quality-heading-subtitle" class="text">Personalized. Easy. Effective.</div>
       </div>
@@ -69,6 +70,7 @@
         </div>
       </div>
     </div>
+
     <div id="benefits-section">
       <div class="benefit">
         <div class="benefit-img">
@@ -140,7 +142,7 @@
           <h1 class="heading subtitle benefit-title">Save money</h1>
           <h3
             class="text benefit-text"
-          >Your first book is free, after that it’s only a small investment for your personal growth</h3>
+          >Your first book is free, after that you can choose the pricing model that fits your needs best</h3>
           <router-link to="/plans" class="benefit-link" href="#">
             Explore pricing
             <svg
@@ -162,11 +164,12 @@
         </div>
       </div>
     </div>
+
     <div id="demo-section">
       <div id="demo-heading">
         <h1 id="demo-heading-title" class="heading subtitle">
           Get your own
-          <span class="highlighted">smart</span> reading plan
+          <span class="highlighted-reverse">smart</span> reading plan
         </h1>
         <div id="demo-heading-subtitle" class="text">So you can focus on the actual reading.</div>
       </div>
@@ -184,10 +187,16 @@
         />
       </div>
     </div>
+
+    <SignupCTA />
+    <Footer />
   </div>
 </template>
 
 <script>
+import SignupCTA from "../components/signup-cta.vue";
+import Footer from "../components/footer.vue";
+
 export default {
   name: "Home",
   data() {
@@ -195,7 +204,10 @@ export default {
       showDemoPreview: false
     };
   },
-  components: {},
+  components: {
+    SignupCTA,
+    Footer
+  },
   methods: {
     toggleDemoPreview() {
       if (this.showDemoPreview === false) {
@@ -221,7 +233,7 @@ export default {
   padding: 93px 45px;
   position: relative;
   max-width: 1332px;
-  margin: 20px auto 144px auto;
+  margin: 20px auto 150px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
