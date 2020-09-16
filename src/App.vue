@@ -32,16 +32,30 @@
 
       <div class="links" v-bind:class="{nav_open: this.showNav}">
         <div class="links-left">
-          <router-link to="/" class="link">Home</router-link>
-          <router-link to="/about" class="link">How it works</router-link>
-          <router-link to="/plans" class="link">Pricing</router-link>
+          <router-link @click="closeNav()" to="/" class="link">Home</router-link>
+          <router-link @click="closeNav()" to="/about" class="link">How it works</router-link>
+          <router-link @click="closeNav()" to="/plans" class="link">Pricing</router-link>
         </div>
         <div class="links-right">
-          <div class="login-button">
-            <router-link to="/login" class="link">Login</router-link>
-          </div>
+          <router-link @click="closeNav()" id="login-button" to="/login" class="link">
+            <span>Login</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13.503"
+              height="18.616"
+              viewBox="0 0 13.503 23.616"
+            >
+              <path
+                id="Icon_ionic-ios-arrow-forward"
+                data-name="Icon ionic-ios-arrow-forward"
+                d="M20.679,18,11.742,9.07a1.681,1.681,0,0,1,0-2.384,1.7,1.7,0,0,1,2.391,0L24.258,16.8a1.685,1.685,0,0,1,.049,2.327L14.14,29.32a1.688,1.688,0,0,1-2.391-2.384Z"
+                transform="translate(-11.246 -6.196)"
+                fill="#0294ff"
+              />
+            </svg>
+          </router-link>
 
-          <router-link id="signup-button" to="/signup">Sign Up</router-link>
+          <router-link @click="closeNav()" id="signup-button" to="/signup">Early Access</router-link>
         </div>
       </div>
       <div class="nav-icon" @click="openNav()" v-bind:class="{nav_icon_opened: this.showNav}">
@@ -250,8 +264,20 @@ export default {
   text-decoration: none;
   color: #8595a8;
   font-size: 16px;
-  margin: 0 50px 0 0;
+  margin: 0;
 }
+
+#login-button {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+#login-button svg {
+  margin-left: 20px;
+}
+
+
 
 #signup-button {
   margin: 0;
@@ -296,7 +322,7 @@ export default {
   .links {
     padding: 0 45px 0 45px;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 120px);
     position: fixed;
     box-sizing: border-box;
     bottom: 0;
@@ -304,12 +330,12 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 1);
+
     display: none;
     transition: 0.2s ease-out;
-    -webkit-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
+    /*-webkit-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
     -moz-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
-    box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
+    box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);*/
   }
   .links-left {
     flex-direction: column;
@@ -318,12 +344,13 @@ export default {
   }
   .links-right {
     width: 100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
+    justify-content: flex-end;
+    border: 1px solid blue;
+    padding: 0;
   }
-  #first-link {
-    margin-top: 80px;
-  }
+ 
 
   .nav_open {
     display: flex;
@@ -340,17 +367,41 @@ export default {
   .links-right a {
     text-decoration: none;
     width: 100%;
-    border: 1px solid red;
     margin: 0;
     padding: 0;
+  }
+
+  #login-button {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border: 1px solid red;
+  }
+
+  #login-button a {
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   #signup-button {
     width: 100%;
     padding: 15px 0;
+    margin: 0;
     text-align: center;
     display: flex;
     justify-content: center;
   }
+
+  #signup-button:hover{
+    background-color: #0486E5;
+    transform: none;
+    box-shadow: none;
+  }
+
+
 }
 </style>
