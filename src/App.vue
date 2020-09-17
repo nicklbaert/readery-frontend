@@ -467,14 +467,54 @@ body {
     transform: none;
     box-shadow: none;
   }
+
+  .title {
+  font-size: 38px;
+  line-height: 1.5;
 }
 
-@media screen and (max-width: 500px) {
+.subtitle {
+  font-size: 30px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.text {
+  color: #4c5d77;
+  font-weight: 300;
+  font-family: "cera-pro";
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: left;
+}
+}
+
+@media screen and (max-width: 600px) {
   #nav {
     padding: 45px 25px;
   }
   .links {
     padding: 0 25px 80px 25px;
   }
+    .title {
+  font-size: 38px;
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.text {
+  color: #4c5d77;
+  font-weight: 300;
+  font-family: "cera-pro";
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: left;
+}
+
 }
 </style>

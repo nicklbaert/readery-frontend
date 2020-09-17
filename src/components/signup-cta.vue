@@ -115,4 +115,71 @@ export default {
 #get-started a.router-link-exact-active {
   color: #fff;
 }
+
+@media screen and (max-width: 1150px) {
+  /*Centered Mobile Mode */
+
+  .subtitle {
+    text-align: center;
+  }
+
+ #signup-cta-wrapper {
+  padding: 0 45px;
+  position: relative;
+  max-width: 1332px;
+  margin: 0 auto 144px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+#signup-cta {
+  padding: 0px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  background-image: none;
+  background-color: initial;
+}
+
+
+.cta-title {
+  margin-bottom: 48px;
+}
+.cta-text{
+  text-align: center;
+  margin-bottom: 48px;
+}
+}
+
+@media screen and (max-width: 600px){
+  .subtitle {
+    text-align: center;
+  }
+
+ #signup-cta-wrapper {
+  padding: 0 45px;
+  width: 100%;
+  border: 1px solid red;
+}
+#signup-cta {
+  padding: 0px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  background-image: none;
+  background-color: initial;
+  border: 1px solid blue;
+}
+  #get-started {
+}
+}
 </style>
