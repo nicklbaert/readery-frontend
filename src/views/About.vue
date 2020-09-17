@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div id="steps-section">
-      <div class="step">
+      <div class="step" id="step-1">
         <div class="step-img" id="step-img-1"></div>
         <div class="step-content">
           <div class="step-no" id="step-no-1">Step 1</div>
@@ -15,7 +15,7 @@
           </h3>
         </div>
       </div>
-      <div class="step">
+      <div class="step" id="step-2">
         <div class="step-content">
           <div class="step-no" id="step-no-2">Step 2</div>
           <h1 class="heading subtitle step-title">
@@ -28,7 +28,7 @@
         </div>
         <div class="step-img" id="step-img-2"></div>
       </div>
-      <div class="step">
+      <div class="step" id="step-3">
         <div class="step-img" id="step-img-3"></div>
         <div class="step-content">
           <div class="step-no" id="step-no-3">Step 3</div>
@@ -135,5 +135,45 @@ export default {
 
 .step-text {
   margin-bottom: 48px;
+}
+
+@media screen and (max-width: 1200px) {
+  /*Centered Mobile Mode */
+  .heading{
+    text-align: center;
+  }
+
+
+  /*steps section */
+  .step {
+    flex-direction: column;
+  }
+  #step-2 {
+    flex-direction: column-reverse;
+  }
+
+  
+
+  .step-img {
+    margin: 0 auto 72px auto;
+  }
+
+  .step-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .step-title {
+    margin-bottom: 32px;
+  }
+
+  .step-text {
+    margin-bottom: 48px;
+    text-align: center;
+  }
 }
 </style>

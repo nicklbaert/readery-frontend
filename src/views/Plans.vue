@@ -36,7 +36,7 @@
           </router-link>
         </div>
       </div>
-      <div class="benefit">
+      <div class="benefit" id="benefit-2">
         <div class="benefit-content">
           <h1 class="heading subtitle benefit-title">Cancel at any time</h1>
           <h3
@@ -189,5 +189,49 @@ export default {
 .benefit-link:hover .benefit-link-icon {
   transition: 0.2s ease-out;
   margin-left: 22px;
+}
+
+@media screen and (max-width: 1200px) {
+  /*Centered Mobile Mode */
+
+  /*Landing section */
+  .title {
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+
+  /*benefits section */
+  .benefit {
+    flex-direction: column;
+  }
+  #benefit-2 {
+    flex-direction: column-reverse;
+  }
+
+  .benefit-img {
+    margin: 0 auto 72px auto;
+  }
+
+  .benefit-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .benefit-title {
+    margin-bottom: 32px;
+  }
+
+  .benefit-text {
+    margin-bottom: 48px;
+    text-align: center;
+  }
 }
 </style>

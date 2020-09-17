@@ -61,6 +61,7 @@
       <div class="benefits" id="benefits-hustle">
         <div class="benefit benefit-hustle">
           <svg
+          id="last-plan-icon"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
@@ -210,6 +211,7 @@
       <div class="benefits" id="benefits-ceo">
         <div class="benefit">
           <svg
+          id="last-plan-icon"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
@@ -459,5 +461,21 @@ export default {
 #plan-title-ceo {
   background-color: #7737ff;
   color: #fff;
+}
+
+@media screen and (max-width: 1050px) {
+  /*Centered Mobile Mode */
+  .plans {
+  flex-direction: column;
+}
+.plan{
+  margin-bottom: 92px;
+}
+#last-plan-icon{
+  transform: rotate(90deg);
+}
+
+
+  
 }
 </style>

@@ -315,7 +315,7 @@ export default {
   z-index: -100;
   right: calc(40% - 800px);
 }
-#landing-page-right img{
+#landing-page-right img {
   width: 900px;
 }
 
@@ -544,7 +544,7 @@ export default {
     height: auto;
   }
 
-  #landing-page-right img{
+  #landing-page-right img {
     width: 100%;
     max-width: 800px;
   }
