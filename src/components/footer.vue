@@ -192,7 +192,7 @@ export default {
 }
 .social {
   display: flex;
-  margin-bottom: 55px;
+  margin-bottom: 35px;
 }
 .social-icon {
   cursor: pointer;

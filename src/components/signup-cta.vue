@@ -13,6 +13,7 @@
       <div id="signup-cta-button">
         <router-link id="get-started" to="/signup" class="action-button">
           <svg
+            class="get-started-icon"
             xmlns="http://www.w3.org/2000/svg"
             width="13.503"
             height="18.616"
@@ -82,6 +83,9 @@ export default {
 #get-started span {
   margin-left: 20px;
 }
+.get-started-icon {
+  transition: 0.2s ease-out;
+}
 
 #get-started {
   text-decoration: none;
@@ -98,10 +102,15 @@ export default {
   overflow-wrap: initial;
   border-radius: 100px;
   font-size: 20px;
+  transition: 0.2s ease-out;
 }
 #get-started:hover {
   background-color: #018cf2;
   transition: 0.2s ease-out;
+}
+#get-started:hover .get-started-icon {
+  transform: translateX(3px);
+  transition: 0.2s ease-in;
 }
 #get-started a.router-link-exact-active {
   color: #fff;

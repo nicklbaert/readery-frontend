@@ -17,6 +17,7 @@
               width="13.503"
               height="18.616"
               viewBox="0 0 13.503 23.616"
+              class="get-started-icon"
             >
               <path
                 id="Icon_ionic-ios-arrow-forward"
@@ -276,6 +277,9 @@ export default {
 #get-started span {
   margin-left: 20px;
 }
+.get-started-icon {
+  transition: 0.2s ease-out;
+}
 
 #get-started {
   text-decoration: none;
@@ -292,10 +296,15 @@ export default {
   overflow-wrap: initial;
   border-radius: 100px;
   font-size: 20px;
+  transition: 0.2s ease-out;
 }
 #get-started:hover {
   background-color: #018cf2;
   transition: 0.2s ease-out;
+}
+#get-started:hover .get-started-icon {
+  transform: translateX(3px);
+  transition: 0.2s ease-in;
 }
 #get-started a.router-link-exact-active {
   color: #fff;

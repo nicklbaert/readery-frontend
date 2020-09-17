@@ -32,13 +32,13 @@
 
       <div class="links" v-bind:class="{nav_open: this.showNav}">
         <div class="links-left">
-          <router-link @click="closeNav()" to="/about" class="link">How it works</router-link>
-          <router-link @click="closeNav()" to="/plans" class="link">Pricing</router-link>
-          <router-link @click="closeNav()" to="/faq" class="link">FAQ</router-link>
+          <router-link @click="closeNav()" to="/about" class="link highlighted">How it works</router-link>
+          <router-link @click="closeNav()" to="/plans" class="link highlighted">Pricing</router-link>
+          <router-link @click="closeNav()" to="/faq" class="link highlighted">FAQ</router-link>
         </div>
         <div class="links-right">
-          <router-link @click="closeNav()" id="login-button" to="/login" class="link">
-            <span>Login</span>
+          <a href="#" @click="closeNav()" id="login-button" class="link">
+            <span class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13.503"
@@ -53,11 +53,16 @@
                 fill="#0294ff"
               />
             </svg>
-          </router-link>
-          <router-link @click="closeNav()" id="signup-button" to="/signup">Early Access</router-link>
+          </a>
+          <a href="#" @click="closeNav()" id="signup-button">Early Access</a>
         </div>
       </div>
-      <div class="nav-icon" @click="openNav()" v-bind:class="{nav_icon_opened: this.showNav}">
+      <div
+        href="#"
+        class="nav-icon"
+        @click="openNav()"
+        v-bind:class="{nav_icon_opened: this.showNav}"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 191 152">
           <g id="Group_43" data-name="Group 43" transform="translate(-1948 -4244)">
             <rect
@@ -232,8 +237,8 @@ body {
   content: "";
   position: absolute;
   width: 0%;
-  height: 2px;
-  bottom: 0px;
+  height: 1px;
+  bottom: -1px;
   background-color: #0294ff;
   transition: all 0.2s ease-in-out 0s;
 }
@@ -267,7 +272,7 @@ body {
   padding: 45px 45px;
   position: relative;
   max-width: 1332px;
-  margin: 0 auto;
+  margin: 0 auto 24px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -356,6 +361,7 @@ body {
   word-wrap: none;
   overflow-wrap: initial;
   border-radius: 100px;
+  cursor: pointer;
 }
 #signup-button:hover {
   transform: scale(1.02);

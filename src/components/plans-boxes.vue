@@ -1,15 +1,13 @@
 <template>
   <div class="plans">
     <div class="plan" id="plan-free">
-      <div class="plan-content">
-        <h3 class="plan-title" id="student-title">Free</h3>
+      <div class="plan-title" id="plan-title-free">Free</div>
       <div class="price-wrapper" id="price-wrapper-free">
         <span class="dollar-sign">$</span>
         <span class="price" id="price-free">0</span>
         <span class="price-rate">/mo</span>
       </div>
-      
-      </div>
+
       <div class="benefits" id="benefits-free">
         <div class="benefit">
           <svg
@@ -30,7 +28,7 @@
                 d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
                 transform="translate(-3 -2.991)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -41,70 +39,45 @@
                 d="M22.8,6l-7.151,7.158L13.5,11.013"
                 transform="translate(-8.495 -4.565)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
               />
             </g>
           </svg>
-          <span class="benefit-text">Personalized reading plan</span>
+          <span class="benefit-text">Personal reading plan</span>
         </div>
       </div>
-      <a href="#" class="plan-button" id="plan-button-free">CHOOSE PLAN</a>
-      
     </div>
-    <div class="plan" id="plan-premium">
-      <div class="plan-content">
-        <h3 class="plan-title" id="plan-title-premium">Hustle Mode</h3>
-      <div class="price-wrapper" id="price-wrapper-premium">
+    <div class="plan" id="plan-hustle">
+      <div class="plan-title" id="plan-title-hustle">Hustle</div>
+      <div class="price-wrapper" id="price-wrapper-hustle">
         <span class="dollar-sign">$</span>
-        <span class="price" id="price-premium">19</span>
+        <span class="price" id="price-hustle">25</span>
         <span class="price-rate">/mo</span>
-      </div>
       </div>
 
-      <div class="benefits" id="benefits-premium">
-        <div class="benefit">
+      <div class="benefits" id="benefits-hustle">
+        <div class="benefit benefit-hustle">
           <svg
-            class="benefit-icon"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            viewBox="0 0 16.912 16.561"
+            viewBox="0 0 13.503 23.616"
           >
-            <g
-              id="Icon_feather-check-circle"
-              data-name="Icon feather-check-circle"
-              transform="translate(1.197 1.158)"
-            >
-              <path
-                id="Path_17"
-                data-name="Path 17"
-                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
-                transform="translate(-3 -2.991)"
-                fill="none"
-                stroke="#46ccff"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-              <path
-                id="Path_18"
-                data-name="Path 18"
-                d="M22.8,6l-7.151,7.158L13.5,11.013"
-                transform="translate(-8.495 -4.565)"
-                fill="none"
-                stroke="#46ccff"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-            </g>
+            <path
+              id="Icon_ionic-ios-arrow-forward"
+              data-name="Icon ionic-ios-arrow-forward"
+              d="M15.317,18l8.937-8.93a1.681,1.681,0,0,0,0-2.384,1.7,1.7,0,0,0-2.391,0L11.738,16.8a1.685,1.685,0,0,0-.049,2.327L21.856,29.32a1.688,1.688,0,0,0,2.391-2.384Z"
+              transform="translate(-11.246 -6.196)"
+              fill="#0294ff"
+            />
           </svg>
-          <span class="benefit-text">Personalized reading plan</span>
+
+          <span class="benefit-text">Everything in Free</span>
         </div>
-        <div class="benefit">
+        <div class="benefit benefit-hustle">
           <svg
             class="benefit-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +96,7 @@
                 d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
                 transform="translate(-3 -2.991)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -134,16 +107,16 @@
                 d="M22.8,6l-7.151,7.158L13.5,11.013"
                 transform="translate(-8.495 -4.565)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
               />
             </g>
           </svg>
-          <span class="benefit-text">1 book a month</span>
+          <span class="benefit-text">One book a month</span>
         </div>
-        <div class="benefit">
+        <div class="benefit benefit-hustle">
           <svg
             class="benefit-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +135,7 @@
                 d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
                 transform="translate(-3 -2.991)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -173,68 +146,85 @@
                 d="M22.8,6l-7.151,7.158L13.5,11.013"
                 transform="translate(-8.495 -4.565)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
               />
             </g>
           </svg>
-          <span class="benefit-text">Full customizability</span>
+          <span class="benefit-text">Free shipping</span>
+        </div>
+        <div class="benefit benefit-hustle">
+          <svg
+            class="benefit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16.912 16.561"
+          >
+            <g
+              id="Icon_feather-check-circle"
+              data-name="Icon feather-check-circle"
+              transform="translate(1.197 1.158)"
+            >
+              <path
+                id="Path_17"
+                data-name="Path 17"
+                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
+                transform="translate(-3 -2.991)"
+                fill="none"
+                stroke="#0294FF"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+              <path
+                id="Path_18"
+                data-name="Path 18"
+                d="M22.8,6l-7.151,7.158L13.5,11.013"
+                transform="translate(-8.495 -4.565)"
+                fill="none"
+                stroke="#0294FF"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+          <span class="benefit-text">Full customization</span>
         </div>
       </div>
-      
-      <router-link to="/signup" class="plan-button" id="plan-button-premium">CHOOSE PLAN</router-link>
-      
+      <div class="plan-button-wrapper">
+        <a href="#" class="plan-button" id="plan-button-hustle">Choose plan</a>
+      </div>
     </div>
-    <div class="plan" id="plan-ultimate">
-      <div class="plan-content">
-        <h3 class="plan-title" id="plan-title-ultimate">CEO Mode</h3>
-      <div class="price-wrapper" id="price-wrapper-ultimate">
+    <div class="plan" id="plan-ceo">
+      <div class="plan-title" id="plan-title-ceo">CEO</div>
+      <div class="price-wrapper" id="price-wrapper-ceo">
         <span class="dollar-sign">$</span>
-        <span class="price" id="price-ultimate">39</span>
+        <span class="price" id="price-ceo">35</span>
         <span class="price-rate">/mo</span>
       </div>
-      </div>
-      <div class="benefits" id="benefits-ultimate">
+
+      <div class="benefits" id="benefits-ceo">
         <div class="benefit">
           <svg
-            class="benefit-icon"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            viewBox="0 0 16.912 16.561"
+            viewBox="0 0 13.503 23.616"
           >
-            <g
-              id="Icon_feather-check-circle"
-              data-name="Icon feather-check-circle"
-              transform="translate(1.197 1.158)"
-            >
-              <path
-                id="Path_17"
-                data-name="Path 17"
-                d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
-                transform="translate(-3 -2.991)"
-                fill="none"
-                stroke="#46ccff"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-              <path
-                id="Path_18"
-                data-name="Path 18"
-                d="M22.8,6l-7.151,7.158L13.5,11.013"
-                transform="translate(-8.495 -4.565)"
-                fill="none"
-                stroke="#46ccff"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-            </g>
+            <path
+              id="Icon_ionic-ios-arrow-forward"
+              data-name="Icon ionic-ios-arrow-forward"
+              d="M15.317,18l8.937-8.93a1.681,1.681,0,0,0,0-2.384,1.7,1.7,0,0,0-2.391,0L11.738,16.8a1.685,1.685,0,0,0-.049,2.327L21.856,29.32a1.688,1.688,0,0,0,2.391-2.384Z"
+              transform="translate(-11.246 -6.196)"
+              fill="#0294ff"
+            />
           </svg>
-          <span class="benefit-text">Hardcovers</span>
+
+          <span class="benefit-text">Everything in Hustle</span>
         </div>
         <div class="benefit">
           <svg
@@ -255,7 +245,7 @@
                 d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
                 transform="translate(-3 -2.991)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -266,14 +256,14 @@
                 d="M22.8,6l-7.151,7.158L13.5,11.013"
                 transform="translate(-8.495 -4.565)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
               />
             </g>
           </svg>
-          <span class="benefit-text">Up to 3 books a month</span>
+          <span class="benefit-text">Premium Hardcovers</span>
         </div>
         <div class="benefit">
           <svg
@@ -294,7 +284,7 @@
                 d="M17.3,9.488v.658a7.151,7.151,0,1,1-4.24-6.536"
                 transform="translate(-3 -2.991)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
@@ -305,18 +295,20 @@
                 d="M22.8,6l-7.151,7.158L13.5,11.013"
                 transform="translate(-8.495 -4.565)"
                 fill="none"
-                stroke="#46ccff"
+                stroke="#0294FF"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
               />
             </g>
           </svg>
-          <span class="benefit-text">Hustle Mode included</span>
+          <span class="benefit-text">Free shipping</span>
         </div>
       </div>
-      <router-link to="/signup" class="plan-button" id="plan-button-ultimate">CHOOSE PLAN</router-link>
-      
+
+      <div class="plan-button-wrapper">
+        <a href="#" class="plan-button" id="plan-button-ceo">Choose plan</a>
+      </div>
     </div>
   </div>
 </template>
@@ -329,123 +321,143 @@ export default {
 </script>
 
 <style scoped>
-.plans{
-  padding: 0 5%;
+.plans {
+  padding: 0 45px 0 45px;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto 144px auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 .plan {
-  margin: 5% 1%;
-  padding: 50px;
-  height: 350px;
-  width: 200px;
-  min-width: 150px;
-  min-height: 350px;
+  height: 450px;
+  width: 300px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 15px 0 rgba(17, 17, 20, 0.1);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 }
-#plan-premium{
-  height: 400px;
-  width: 250px;
-  min-height: 400px;
-  min-width: 200px;
-  box-shadow: 0 4px 30px 0 rgba(41, 41, 48, 0.1);
-}
 .plan-title {
-  color: #8595A8;
-  font-weight: 500;
-  font-size: 25px;
+  height: 80px;
+  width: 300px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
 }
-
-/*PRICE SECTION */
 .price-wrapper {
-  margin: 10% 0
+  text-align: center;
+  padding: 20px 0;
 }
-.price{
-  font-size: 50px;
+.price {
+  font-size: 64px;
   font-weight: 700;
-  margin: 0 5px;
+  margin: 0 10px;
 }
 .price-rate {
   margin-top: 5px;
   text-decoration: none;
-  color: #d0dbe8;
+  color: #4c5d77;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
 }
-.dollar-sign{
-  font-size: 20px;
+.dollar-sign {
+  font-size: 24px;
   font-weight: 700;
 }
 
-/*BENEFITS SECTION */
-.benefits{
-  height: 30%;
+.benefits {
+  padding: 10px 50px 0 50px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 160px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
 }
-.benefit{
+
+.benefit {
+  margin: 10px 0;
   display: flex;
-  width: 100%;
+  align-items: center;
   justify-content: flex-start;
-  align-items: flex-start;
 }
-.benefit-icon{
-  margin-right: 10px;
-  min-width: 16px;
-  min-height: 16px;
-
+.benefit-text {
+  font-size: 15px;
+  margin-left: 10px;
 }
-.benefit-text{
-  font-weight: 300;
-  font-size: 14px;
-  text-align: left;
-  word-break: break-all;
+.plan-button-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-/*BUTTON */
-.plan-button{
-  width: 90%;
-  height: 40px;
-  line-height: 40px;
+.plan-button {
   text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  background-color: #46CCFF;
+  width: 160px;
+  height: 50px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 50px;
+}
+
+/*SPECIFICS */
+#plan-title-free {
+  background-color: #f1f6fc;
+  color: #00006d;
+}
+
+#plan-hustle {
+  height: 550px;
+  width: 320px;
+}
+
+#plan-title-hustle {
+  width: 320px;
+  background-color: #0294ff;
+  color: #fff;
+}
+
+#benefits-hustle {
+  height: 250px;
+  padding: 10px 55px 0 55px;
+}
+.benefit-hustle {
+  margin: 15px 0;
+}
+
+#plan-button-hustle {
+  background-color: #0294ff;
+  color: white;
+  transition: 0.2s ease-out;
+}
+
+#plan-button-hustle:hover {
+  background-color: #018cf2;
   transition: 0.2s ease-in;
+}
+
+#plan-button-ceo {
+  background-color: #7737ff;
+  color: white;
+  transition: 0.2s ease-out;
+}
+#plan-button-ceo:hover {
+  transition: 0.2s ease-out;
+  background-color: #6e34ea;
+}
+
+#plan-title-ceo {
+  background-color: #7737ff;
   color: #fff;
 }
-
-.plan-button:hover{
-    background-color: #1ab5f1;
-    transition: 0.2s ease-out;
-}
-
-#plan-button-free{
-  color: #fff;
-  background-color: #fff;
-}
-
-#plan-button-free:hover{
-  background-color: #fff;
-}
-
-#plan-button-ultimate{
-  background-color: #F1F6FC;
-  color: #8595A8;
-}
-#plan-button-ultimate:hover{
-    background-color: #DFE7F0;
-}
-
-
 </style>
