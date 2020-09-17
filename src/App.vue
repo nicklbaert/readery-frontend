@@ -240,11 +240,11 @@ body {
   height: 1px;
   bottom: -1px;
   background-color: #0294ff;
-  transition: all 0.2s ease-in-out 0s;
+  transition: all 0.1s ease-in-out 0s;
 }
 .highlighted:hover::before {
   width: 100%;
-  transition: all 0.2s ease-in-out 0s;
+  transition: all 0.1s ease-in-out 0s;
 }
 
 .highlighted-reverse {
@@ -387,13 +387,14 @@ body {
 
   .links {
     padding: 0 45px 80px 45px;
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 120px);
     position: fixed;
-    z-index: 1000;
+    z-index: 100000;
     box-sizing: border-box;
-    bottom: 0;
-    right: -100%;
+    top: 120px;
+    right: 0;
+    transform: translateX(100%);
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -433,7 +434,7 @@ body {
   }
 
   .nav_open {
-    right: 0;
+    transform: translateX(0);
     transition: 0.2s ease-out;
   }
 

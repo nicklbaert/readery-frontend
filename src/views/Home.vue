@@ -37,7 +37,6 @@
           id="landingpage-illustration"
           src="../assets/img-new/landingpage/landingpage-illustration.svg"
           alt="Illustration"
-          width="900"
         />
       </div>
     </div>
@@ -103,7 +102,7 @@
           </router-link>
         </div>
       </div>
-      <div class="benefit">
+      <div class="benefit" id="benefit-2">
         <div class="benefit-content">
           <h1 class="heading subtitle benefit-title">
             Stop searching
@@ -316,6 +315,9 @@ export default {
   z-index: -100;
   right: calc(40% - 800px);
 }
+#landing-page-right img{
+  width: 900px;
+}
 
 /*Quality section */
 
@@ -506,5 +508,75 @@ export default {
 
 @media screen and (max-width: 1200px) {
   /*Centered Mobile Mode */
+
+  /*Landing section */
+  #landing-page {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 45px;
+  }
+
+  #landing-page-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 704px;
+    margin: 0 auto 100px auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  #landingpage-subtext {
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  #landing-page-right {
+    position: initial;
+    margin: auto 0;
+    height: auto;
+  }
+
+  #landing-page-right img{
+    width: 100%;
+    max-width: 800px;
+  }
+
+  /*benefits section */
+  .benefit {
+    flex-direction: column;
+  }
+  #benefit-2 {
+    flex-direction: column-reverse;
+  }
+
+  .benefit-img {
+    margin: 0 auto 72px auto;
+  }
+
+  .benefit-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .benefit-title {
+    margin-bottom: 32px;
+  }
+
+  .benefit-text {
+    margin-bottom: 48px;
+    text-align: center;
+  }
 }
 </style>
