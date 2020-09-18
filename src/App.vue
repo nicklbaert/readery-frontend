@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app" v-bind:class="{no_scroll: this.showNav}">
     <div id="nav">
       <div id="logo">
         <router-link to="/">
@@ -166,8 +166,11 @@ export default {
 }
 body {
   background-color: #f8fbfd;
-  overflow-x: hidden;
+ 
 }
+
+
+
 @font-face {
   font-family: "cera-pro";
   src: url("./assets/fonts/cera-light.otf");
@@ -195,11 +198,12 @@ body {
   font-weight: 900;
 }
 
-#app {
+.app {
   font-family: cera-pro;
   margin: 0;
   padding: 0;
   color: #00006d;
+   overflow-x: hidden;
 }
 #router-view {
   width: 100%;
@@ -372,7 +376,11 @@ body {
   color: #fff;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1020px) {
+  .no_scroll{
+  height: 100vh;
+  overflow-y: hidden;
+}
   .nav-icon {
     display: block;
   }
@@ -388,8 +396,9 @@ body {
   .links {
     padding: 0 45px 80px 45px;
     width: 100vw;
-    height: calc(100vh - 120px);
-    position: fixed;
+    height: calc(100vh - 100px);
+    min-height: 300px;
+    position: absolute;
     z-index: 100000;
     box-sizing: border-box;
     top: 120px;
@@ -400,14 +409,12 @@ body {
     justify-content: space-between;
     transition: 0.2s ease-in;
     background-color: #f8fbfd;
-    /*-webkit-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
-    -moz-box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);
-    box-shadow: 0px 0px 40px -2px rgba(133, 149, 168, 1);*/
   }
   .links-left {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    height: initial;
   }
 
   .links-left a {
@@ -455,7 +462,7 @@ body {
 
   #signup-button {
     width: 100%;
-    padding: 15px 0;
+    padding: 18px 0;
     margin: 30px 0;
     text-align: center;
     display: flex;
@@ -494,7 +501,7 @@ body {
     padding: 45px 25px;
   }
   .links {
-    padding: 0 25px 80px 25px;
+    padding: 0 25px 60px 25px;
   }
     .title {
   font-size: 38px;
@@ -516,5 +523,16 @@ body {
   text-align: left;
 }
 
+
+}
+
+@media screen and (max-height: 800px){
+  .links-left a {
+    margin: 20px 0px 20px 0;
+    font-size: 20px;
+    text-align: left;
+    color: #00006d;
+    font-family: "Merriweather", serif;
+  }
 }
 </style>
