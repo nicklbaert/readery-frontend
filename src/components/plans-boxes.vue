@@ -395,7 +395,7 @@ export default {
 }
 .benefit-text {
   font-size: 15px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .plan-button-wrapper {
   width: 100%;

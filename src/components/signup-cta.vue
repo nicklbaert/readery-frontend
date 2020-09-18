@@ -72,7 +72,7 @@ export default {
 }
 
 #signup-cta-content {
-  max-width: 670px;
+  max-width: 400px;
 }
 
 .cta-title {
@@ -115,7 +115,15 @@ export default {
   color: #fff;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1370px) {
+  /*Slightly less padding */
+#signup-cta {
+  padding: 64px 48px;
+}
+  
+}
+
+@media screen and (max-width: 1020px) {
   /*Centered Mobile Mode */
 
   .subtitle {

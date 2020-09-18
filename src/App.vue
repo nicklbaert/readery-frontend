@@ -522,17 +522,18 @@ body {
   line-height: 1.5;
   text-align: left;
 }
-
-
-}
-
-@media screen and (max-height: 800px){
-  .links-left a {
+.links-left a {
     margin: 20px 0px 20px 0;
     font-size: 20px;
     text-align: left;
     color: #00006d;
     font-family: "Merriweather", serif;
   }
+
+
+}
+
+@media screen and (max-height: 400px){
+  
 }
 </style>
