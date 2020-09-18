@@ -3,8 +3,8 @@
     <div id="signup-cta">
       <div id="signup-cta-content">
         <h1 class="heading subtitle cta-title">
-          Sign up for early access and
-          get your first book for free
+          Sign up and get your 
+          personal reading plan for free
         </h1>
         <h3
           class="text cta-text"

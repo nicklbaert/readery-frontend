@@ -9,6 +9,7 @@ import Account from "../views/Account.vue";
 import Login from "../views/Login.vue";
 import Students from "../views/Students.vue";
 import Contact from "../views/Contact.vue";
+import Faq from "../views/FAQ.vue";
 
 Vue.use(VueRouter);
 
@@ -46,6 +47,11 @@ const routes = [{
         path: "/contact",
         name: "Contact",
         component: Contact
+    },
+    {
+        path: "/faq",
+        name: "FAQ",
+        component: Faq
     },
     {
         path: "/account/:userId",
