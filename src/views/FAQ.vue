@@ -162,7 +162,7 @@ export default {
 .question-main {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 30px;
   cursor: pointer;
@@ -172,8 +172,11 @@ export default {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
+  max-width: 700px;
 }
 .question-arrow {
+    width: 20px;
+    margin: 6px 0 0 20px;
   transform: rotate(90deg);
   transition: 0.3s ease-out;
 }
@@ -215,6 +218,9 @@ export default {
   /*Centered Mobile Mode */
   .question-title {
   font-size: 16px;
+}
+#questions-section {
+  padding: 0px 24px 90px 24px;
 }
 }
 </style>

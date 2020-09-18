@@ -32,13 +32,13 @@
 
       <div class="links" v-bind:class="{nav_open: this.showNav}">
         <div class="links-left">
-          <router-link @click="closeNav()" to="/about" class="link highlighted">How it works</router-link>
-          <router-link @click="closeNav()" to="/plans" class="link highlighted">Pricing</router-link>
-          <router-link @click="closeNav()" to="/faq" class="link highlighted">FAQ</router-link>
+          <router-link to="/about" class="link highlighted"><span @click="closeNav()">How it works</span></router-link>
+          <router-link to="/plans" class="link highlighted"><span @click="closeNav()">Pricing</span></router-link>
+          <router-link to="/faq" class="link highlighted"><span @click="closeNav()">FAQ</span></router-link>
         </div>
         <div class="links-right">
-          <a href="#" @click="closeNav()" id="login-button" class="link">
-            <span class="highlighted">Login</span>
+          <a href="#"  id="login-button" class="link">
+            <span @click="closeNav()" class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13.503"
@@ -54,7 +54,7 @@
               />
             </svg>
           </a>
-          <a href="#" @click="closeNav()" id="signup-button">Early Access</a>
+          <a href="#" id="signup-button"><span @click="closeNav()">Early Access</span></a>
         </div>
       </div>
       <div

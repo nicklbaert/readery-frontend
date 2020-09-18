@@ -256,6 +256,9 @@ export default {
 }
 }
 @media screen and (max-width: 600px){
+.footer {
+  padding: 0 24px;
+}
 .footer-col {
   padding: 24px 0;
   width: 100%;
