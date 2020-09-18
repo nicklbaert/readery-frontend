@@ -46,7 +46,7 @@ export default {
   padding: 0 45px;
   position: relative;
   max-width: 1332px;
-  margin: 0 auto 144px auto;
+  margin: 0 auto 96px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,8 +64,7 @@ export default {
   background-position-x: 50%;
   background-position-y: 50%;
   background-size: cover;
-  background-repeat-x: no-repeat;
-  background-repeat-y: no-repeat;
+  background-repeat: no-repeat;
   background-attachment: initial;
   background-origin: initial;
   background-clip: initial;
@@ -123,63 +122,69 @@ export default {
     text-align: center;
   }
 
- #signup-cta-wrapper {
-  padding: 0 45px;
-  position: relative;
-  max-width: 1332px;
-  margin: 0 auto 144px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
-#signup-cta {
-  padding: 0px 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  border-radius: 0px;
-  background-image: none;
-  background-color: initial;
+  #signup-cta-wrapper {
+    padding: 0 45px;
+    position: relative;
+    max-width: 1332px;
+    margin: 0 auto 144px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  #signup-cta {
+    padding: 0px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    background-image: none;
+    background-color: initial;
+  }
+
+  .cta-title {
+    margin-bottom: 48px;
+  }
+  .cta-text {
+    text-align: center;
+    margin-bottom: 48px;
+  }
 }
 
-
-.cta-title {
-  margin-bottom: 48px;
-}
-.cta-text{
-  text-align: center;
-  margin-bottom: 48px;
-}
-}
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   .subtitle {
     text-align: center;
   }
 
- #signup-cta-wrapper {
-  padding: 0 45px;
-  width: 100%;
-  border: 1px solid red;
-}
-#signup-cta {
-  padding: 0px 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  border-radius: 0px;
-  background-image: none;
-  background-color: initial;
-  border: 1px solid blue;
-}
+  #signup-cta-wrapper {
+    padding: 0 45px;
+    width: 100%;
+  }
+  #signup-cta {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    background-image: none;
+    background-color: initial;
+    min-width: unset;
+  }
+  #signup-cta-button{
+    width: 100%;
+  }
   #get-started {
+
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  
 }
 }
 </style>

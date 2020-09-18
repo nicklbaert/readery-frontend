@@ -32,15 +32,17 @@
         </div>
         <div id="copyright">© Readery GmbH 2020</div>
       </div>
-      <div class="footer-col">
+      <div class="footer-col" id="footer-col-links">
+        <div class="footer-col-links">
         <router-link to="/about" class="link highlighted">How it works</router-link>
         <router-link to="/plans" class="link highlighted">Pricing</router-link>
         <router-link to="/faq" class="link highlighted">FAQ</router-link>
       </div>
-      <div class="footer-col">
+      <div class="footer-col-links">
         <router-link to="/about" class="link highlighted">Terms of Service</router-link>
         <router-link to="/plans" class="link highlighted">Privacy Policy</router-link>
         <router-link to="/faq" class="link highlighted">Imprint</router-link>
+      </div>
       </div>
       <div class="footer-col">
         <div class="social">
@@ -142,7 +144,7 @@ export default {
   padding: 0 45px;
   position: relative;
   max-width: 1236px;
-  margin: 0 auto 80px auto;
+  margin: 0 auto 40px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -151,15 +153,38 @@ export default {
   width: 100%;
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .footer-col {
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   box-sizing: border-box;
   height: 100%;
+  min-width: 100px;
+}
+#footer-col-links{
+  flex-direction: row;
+}
+
+.footer-col-links{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%;
+  min-width: 150px;
+}
+.footer-col-links:first-child{
+  margin-right: 144px;
+}
+
+.footer-col:not(:last-child){
+  margin-right: 40px;
 }
 
 /*Column 1 */
@@ -217,5 +242,39 @@ export default {
 #created {
   color: #0294ff;
   font-size: 14px;
+}
+
+@media screen and (max-width: 980px) {
+  #logo {
+  margin-bottom: 16px;
+}
+.footer-col:last-child {
+  align-items: flex-start;
+}
+.social {
+  margin-bottom: 14px;
+}
+}
+@media screen and (max-width: 600px){
+.footer-col {
+  padding: 24px 0;
+  width: 100%;
+}
+
+#footer-col-links{
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer-col-links{
+  padding: 24px 0;
+  height: 100%;
+  margin: 0;
+
+}
+.footer-col-links:first-child{
+  margin-right: 0;
+}
+
 }
 </style>

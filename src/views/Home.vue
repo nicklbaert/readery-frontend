@@ -633,17 +633,11 @@ export default {
   }
   .benefit-title {
     margin-bottom: 32px;
-    text-align: left;
   }
 
   .benefit-text {
     margin-bottom: 48px;
-    text-align: left;
     line-height: 2;
   }
-  .benefit-content {
-  align-items: flex-start;
-  text-align: left;
-}
 }
 </style>
