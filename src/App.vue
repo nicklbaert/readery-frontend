@@ -1,5 +1,5 @@
 <template>
-  <div class="app" v-bind:class="{no_scroll: this.showNav}">
+  <div class="app" :class="{no_scroll: this.showNav}">
     <div id="nav">
       <div id="logo">
         <router-link to="/">
@@ -38,7 +38,7 @@
         </div>
         <div class="links-right">
           <a href="#"  id="login-button" class="link">
-            <span @click="closeNav()" class="highlighted">Login</span>
+            <span @click="openLogin()" class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13.503"
@@ -130,11 +130,20 @@
       </div>
     </div>
     <router-view id="router-view" v-on:loggedInUser="setUserData($event)" />
+    
+    <div class="login_overlay" @click="closeLogin()" :class="{login_overlay_open: this.showLogin}"></div>
+    <PopupLogin class="popup_login" :class="{popup_login_open: this.showLogin}"/>
+
+
   </div>
 </template>
 <script>
+import PopupLogin from "./components/popup-login.vue";
 export default {
   name: "App",
+  components: {
+    PopupLogin,
+  },
   methods: {
     openNav() {
       this.showNav = true;
@@ -143,6 +152,14 @@ export default {
     closeNav() {
       this.showNav = false;
       console.log("Nav closed");
+    },
+    openLogin(){
+      this.showLogin = true;
+      console.log("Login opened");
+    },
+    closeLogin(){
+      this.showLogin = false;
+      console.log("Login closed");
     },
     setUserData(data) {
       this.userData = data;
@@ -153,6 +170,8 @@ export default {
   data() {
     return {
       showNav: false,
+      showLogin: false,
+      showSignup: false,
       userData: null
     };
   }
@@ -166,10 +185,7 @@ export default {
 }
 body {
   background-color: #f8fbfd;
- 
 }
-
-
 
 @font-face {
   font-family: "cera-pro";
@@ -223,7 +239,10 @@ body {
   line-height: 1.5;
   text-align: left;
 }
-
+ .no_scroll{
+  height: 100vh;
+  overflow-y: hidden;
+}
 .text {
   color: #4c5d77;
   font-weight: 300;
@@ -376,11 +395,45 @@ body {
   color: #fff;
 }
 
-@media screen and (max-width: 1020px) {
-  .no_scroll{
+/*Login Popup */
+.login_overlay{
+  opacity: 1;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
   height: 100vh;
-  overflow-y: hidden;
+  background-color: rgba(0,0,0,0.5);
+  visibility: hidden;
+  transition: 0.2s ease-out;
 }
+.login_overlay_open{
+  visibility: visible;
+  transition: 0.2s ease-in;
+}
+
+.popup_login{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 100px;
+  position: fixed;
+  z-index: 1000000;
+  transform: scale(0);
+  transition: 0.2s ease-out;
+}
+.popup_login_open{
+  transform: scale(1);
+  border: 1px solid red;
+  transition: 0.2s ease-in;
+}
+
+@media screen and (max-width: 1020px) {
+ 
   .nav-icon {
     display: block;
   }

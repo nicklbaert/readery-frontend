@@ -176,13 +176,11 @@
       <div id="demo-img">
         <div
           class="preview-background"
-          @click="toggleDemoPreview()"
-          v-bind:class="{previewBackgroundActive: showDemoPreview}"
+          :class="{previewBackgroundActive: showDemoPreview}"
         ></div>
         <img
           src="../assets/img-new/landingpage/plan-demo.png"
-          @click="toggleDemoPreview()"
-          v-bind:class="{preview: showDemoPreview}"
+          :class="{preview: showDemoPreview}"
           alt="Reading Plan Demo"
         />
       </div>
