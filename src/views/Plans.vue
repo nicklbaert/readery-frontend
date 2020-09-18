@@ -10,7 +10,9 @@
 
     <div id="benefits-section">
       <div class="benefit">
-        <div class="benefit-img" id="benefit-img-1"></div>
+        <div class="benefit-img" id="benefit-img-1">
+          <img src="../assets/img-new/pricing/student.png" alt="Man reading on a couch" />
+        </div>
         <div class="benefit-content">
           <h1 class="heading subtitle benefit-title">Student Discounts</h1>
           <h3
@@ -61,7 +63,9 @@
             </svg>
           </router-link>
         </div>
-        <div class="benefit-img" id="benefit-img-2"></div>
+        <div class="benefit-img" id="benefit-img-2">
+          <img src="../assets/img-new/pricing/cancel.png" alt="Man reading on a couch" />
+        </div>
       </div>
     </div>
 
@@ -108,6 +112,7 @@ export default {
   margin-bottom: 0px;
 }
 #plans-heading-subtitle {
+  text-align: center;
 }
 
 /*Benefits section */
@@ -139,17 +144,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.benefit-img img {
   height: 550px;
   width: 550px;
   border-radius: 1000px;
-  background-size: 130%;
-  background-position-x: center;
-}
-#benefit-img-1 {
-  background-image: url("../assets/img-new/pricing/student.png");
-}
-#benefit-img-2 {
-  background-image: url("../assets/img-new/pricing/cancel.png");
 }
 
 .benefit-content {
@@ -232,6 +232,26 @@ export default {
   .benefit-text {
     margin-bottom: 48px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /*Centered Mobile Mode */
+  #get-started {
+    width: 100%;
+    height: 50px;
+  }
+  .benefit-img img {
+    width: 100%;
+    height: auto;
+  }
+  .benefit-title {
+    margin-bottom: 32px;
+  }
+
+  .benefit-text {
+    margin-bottom: 48px;
+    line-height: 2;
   }
 }
 

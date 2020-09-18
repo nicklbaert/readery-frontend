@@ -2,7 +2,9 @@
   <div class="about">
     <div id="steps-section">
       <div class="step" id="step-1">
-        <div class="step-img" id="step-img-1"></div>
+        <div class="step-img" id="step-img-1">
+          <img src="../assets/img-new/about/interests.png" alt="">
+        </div>
         <div class="step-content">
           <div class="step-no" id="step-no-1">Step 1</div>
           <h1 class="heading subtitle step-title">
@@ -26,10 +28,14 @@
             class="text step-text"
           >Readery plots out your reading journey by selecting the best books for your your preferences.</h3>
         </div>
-        <div class="step-img" id="step-img-2"></div>
+        <div class="step-img" id="step-img-2">
+          <img src="../assets/img-new/about/plan.png" alt="">
+        </div>
       </div>
       <div class="step" id="step-3">
-        <div class="step-img" id="step-img-3"></div>
+        <div class="step-img" id="step-img-3">
+          <img src="../assets/img-new/about/delivery.png" alt="">
+        </div>
         <div class="step-content">
           <div class="step-no" id="step-no-3">Step 3</div>
           <h1 class="heading subtitle step-title">
@@ -91,22 +97,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.step-img img {
   height: 550px;
   width: 550px;
   border-radius: 1000px;
-  background-size: 150%;
-  background-position-y: center;
-}
-#step-img-1 {
-  background-image: url("../assets/img-new/about/interests.png");
-}
-#step-img-2 {
-  background-image: url("../assets/img-new/about/plan.png");
-}
-#step-img-3 {
-  background-image: url("../assets/img-new/about/delivery.png");
-  background-position: center;
-  background-size: cover;
 }
 
 .step-content {
@@ -174,6 +170,24 @@ export default {
   .step-text {
     margin-bottom: 48px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #steps-section {
+  margin: 20px auto 144px auto;
+}
+  .step-img img {
+    width: 100%;
+    height: auto;
+  }
+  .step-title {
+    margin-bottom: 32px;
+  }
+
+  .step-text {
+    margin-bottom: 48px;
+    line-height: 2;
   }
 }
 </style>
