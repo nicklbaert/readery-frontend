@@ -32,12 +32,18 @@
 
       <div class="links" v-bind:class="{nav_open: this.showNav}">
         <div class="links-left">
-          <router-link to="/about" class="link highlighted"><span @click="closeNav()">How it works</span></router-link>
-          <router-link to="/plans" class="link highlighted"><span @click="closeNav()">Pricing</span></router-link>
-          <router-link to="/faq" class="link highlighted"><span @click="closeNav()">FAQ</span></router-link>
+          <router-link to="/about" class="link highlighted">
+            <span @click="closeNav()">How it works</span>
+          </router-link>
+          <router-link to="/plans" class="link highlighted">
+            <span @click="closeNav()">Pricing</span>
+          </router-link>
+          <router-link to="/faq" class="link highlighted">
+            <span @click="closeNav()">FAQ</span>
+          </router-link>
         </div>
         <div class="links-right">
-          <a href="#"  id="login-button" class="link">
+          <a href="#" id="login-button" class="link">
             <span @click="openLogin()" class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +60,9 @@
               />
             </svg>
           </a>
-          <a href="#" id="signup-button"><span @click="closeNav()">Early Access</span></a>
+          <a href="#" id="signup-button">
+            <span @click="closeNav()">Early Access</span>
+          </a>
         </div>
       </div>
       <div
@@ -130,11 +138,11 @@
       </div>
     </div>
     <router-view id="router-view" v-on:loggedInUser="setUserData($event)" />
-    
+
     <div class="login_overlay" @click="closeLogin()" :class="{login_overlay_open: this.showLogin}"></div>
-    <PopupLogin class="popup_login" :class="{popup_login_open: this.showLogin}"/>
-
-
+    <div class="popup_login_wrapper" :class="{popup_login_open: this.showLogin}" >
+      <PopupLogin id="popup_login"/>
+    </div>
   </div>
 </template>
 <script>
@@ -142,7 +150,7 @@ import PopupLogin from "./components/popup-login.vue";
 export default {
   name: "App",
   components: {
-    PopupLogin,
+    PopupLogin
   },
   methods: {
     openNav() {
@@ -153,11 +161,11 @@ export default {
       this.showNav = false;
       console.log("Nav closed");
     },
-    openLogin(){
+    openLogin() {
       this.showLogin = true;
       console.log("Login opened");
     },
-    closeLogin(){
+    closeLogin() {
       this.showLogin = false;
       console.log("Login closed");
     },
@@ -219,7 +227,7 @@ body {
   margin: 0;
   padding: 0;
   color: #00006d;
-   overflow-x: hidden;
+  overflow-x: hidden;
 }
 #router-view {
   width: 100%;
@@ -239,7 +247,7 @@ body {
   line-height: 1.5;
   text-align: left;
 }
- .no_scroll{
+.no_scroll {
   height: 100vh;
   overflow-y: hidden;
 }
@@ -396,7 +404,7 @@ body {
 }
 
 /*Login Popup */
-.login_overlay{
+.login_overlay {
   opacity: 1;
   position: fixed;
   z-index: 99999;
@@ -406,34 +414,42 @@ body {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   transition: 0.2s ease-out;
 }
-.login_overlay_open{
+.login_overlay_open {
   visibility: visible;
   transition: 0.2s ease-in;
 }
 
-.popup_login{
-  top: 0;
+.popup_login_wrapper{
   left: 0;
   right: 0;
+  top: 0;
   bottom: 0;
-  margin: 100px;
+  margin: auto;
   position: fixed;
   z-index: 1000000;
   transform: scale(0);
   transition: 0.2s ease-out;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  max-height: 600px;
 }
-.popup_login_open{
+
+#popup_login {
+}
+
+.popup_login_open {
   transform: scale(1);
-  border: 1px solid red;
   transition: 0.2s ease-in;
 }
 
 @media screen and (max-width: 1020px) {
- 
   .nav-icon {
     display: block;
   }
@@ -529,24 +545,24 @@ body {
   }
 
   .title {
-  font-size: 38px;
-  line-height: 1.5;
-}
+    font-size: 38px;
+    line-height: 1.5;
+  }
 
-.subtitle {
-  font-size: 30px;
-  line-height: 1.5;
-  text-align: left;
-}
+  .subtitle {
+    font-size: 30px;
+    line-height: 1.5;
+    text-align: left;
+  }
 
-.text {
-  color: #4c5d77;
-  font-weight: 300;
-  font-family: "cera-pro";
-  font-size: 22px;
-  line-height: 1.5;
-  text-align: left;
-}
+  .text {
+    color: #4c5d77;
+    font-weight: 300;
+    font-family: "cera-pro";
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: left;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -556,37 +572,34 @@ body {
   .links {
     padding: 0 25px 60px 25px;
   }
-    .title {
-  font-size: 38px;
-  line-height: 1.5;
-}
+  .title {
+    font-size: 38px;
+    line-height: 1.5;
+  }
 
-.subtitle {
-  font-size: 24px;
-  line-height: 1.5;
-  text-align: left;
-}
+  .subtitle {
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: left;
+  }
 
-.text {
-  color: #4c5d77;
-  font-weight: 300;
-  font-family: "cera-pro";
-  font-size: 20px;
-  line-height: 1.5;
-  text-align: left;
-}
-.links-left a {
+  .text {
+    color: #4c5d77;
+    font-weight: 300;
+    font-family: "cera-pro";
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .links-left a {
     margin: 20px 0px 20px 0;
     font-size: 20px;
     text-align: left;
     color: #00006d;
     font-family: "Merriweather", serif;
   }
-
-
 }
 
-@media screen and (max-height: 400px){
-  
+@media screen and (max-height: 400px) {
 }
 </style>

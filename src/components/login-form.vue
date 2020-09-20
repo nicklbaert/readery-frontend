@@ -35,6 +35,12 @@ export default {
         console.log("Something went wrong");
       }
     },
+    validateEmail(email){
+      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+        return true;
+      }
+      return false;
+    },
     validateForm() {
     
        this.emailError = null;
@@ -42,8 +48,16 @@ export default {
 
       if (this.email !== null && this.email !== "") {
             if (this.password !== null && this.password !== "") {
-              console.log("All fine, ma man");
-              return true;
+              if(this.validateEmail(this.email)){
+                if(this.password.length > 6){
+                  console.log("All fine, ma man");
+                  return true;
+                }else{
+                  this.passwordError = "Your password can't be that short"
+                }
+              }else{
+                this.emailError = "Please enter a valid email"
+              }
             } else {
               this.passwordError = "Please enter the password";
             }
