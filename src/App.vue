@@ -43,8 +43,8 @@
           </router-link>
         </div>
         <div class="links-right">
-          <a href="#" id="login-button" class="link">
-            <span @click="openLogin()" class="highlighted">Login</span>
+          <a href="#" id="login-button" class="link" @click="handleLoginClick()" >
+            <span class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13.503"
@@ -60,7 +60,7 @@
               />
             </svg>
           </a>
-          <a href="#" id="signup-button">
+          <a href="#" id="signup-button" @click="openSignup()">
             <span @click="closeNav()">Early Access</span>
           </a>
         </div>
@@ -141,16 +141,25 @@
 
     <div class="login_overlay" @click="closeLogin()" :class="{login_overlay_open: this.showLogin}"></div>
     <div class="popup_login_wrapper" :class="{popup_login_open: this.showLogin}" >
-      <PopupLogin id="popup_login"/>
+      <PopupLogin id="popup_login" v-on:event="handleEvent($event)"/>
     </div>
+
+    <div class="signup_overlay" @click="closeSignup()" :class="{signup_overlay_open: this.showSignup}"></div>
+    <div class="popup_signup_wrapper" :class="{popup_signup_open: this.showSignup}" >
+      <PopupSignup id="popup_signup" v-on:event="handleEvent($event)"/>
+    </div>
+
+
   </div>
 </template>
 <script>
 import PopupLogin from "./components/popup-login.vue";
+import PopupSignup from "./components/popup-signup.vue";
 export default {
   name: "App",
   components: {
-    PopupLogin
+    PopupLogin,
+    PopupSignup,
   },
   methods: {
     openNav() {
@@ -161,6 +170,16 @@ export default {
       this.showNav = false;
       console.log("Nav closed");
     },
+    handleLoginClick(){
+      if(this.userData === null){
+        this.openLogin();
+      }else{
+        this.$router.push({
+              name: "Account",
+              params: { userId: this.userData._id, access_token: this.userData.access_token }
+            });
+      }
+    },
     openLogin() {
       this.showLogin = true;
       console.log("Login opened");
@@ -169,11 +188,25 @@ export default {
       this.showLogin = false;
       console.log("Login closed");
     },
-    setUserData(data) {
-      this.userData = data;
-      console.log("This user is now logged in");
-      console.log(data);
-    }
+    handleEvent(event){
+      if(event === "close"){
+        this.closeLogin();
+      }else{
+        console.log("User data received.");
+        console.log(event);
+        this.userData = event.userData;
+        console.log("Access token: "+this.userData.access_token);
+        this.closeLogin();
+      }
+    },
+    openSignup() {
+      this.showSignup = true;
+      console.log("Login opened");
+    },
+    closeSignup() {
+      this.showSignup = false;
+      console.log("Login closed");
+    },
   },
   data() {
     return {
@@ -263,6 +296,9 @@ body {
 .highlighted {
   position: relative;
   cursor: pointer;
+}
+.highlighted:hover{
+  color: #0294ff;
 }
 .highlighted::before {
   content: "";
@@ -441,13 +477,54 @@ body {
   max-height: 600px;
 }
 
-#popup_login {
-}
-
 .popup_login_open {
   transform: scale(1);
   transition: 0.2s ease-in;
 }
+
+/*Signup Popup */
+.signup_overlay {
+  opacity: 1;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  transition: 0.2s ease-out;
+}
+.signup_overlay_open {
+  visibility: visible;
+  transition: 0.2s ease-in;
+}
+
+.popup_signup_wrapper{
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: fixed;
+  z-index: 1000000;
+  transform: scale(0);
+  transition: 0.2s ease-out;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  max-height: 600px;
+}
+
+.popup_signup_open {
+  transform: scale(1);
+  transition: 0.2s ease-in;
+}
+
 
 @media screen and (max-width: 1020px) {
   .nav-icon {

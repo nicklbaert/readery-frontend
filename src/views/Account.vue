@@ -54,7 +54,7 @@ export default {
       console.log("User Data Fetch Response"+JSON.stringify(response.data));
 
       if(response.data.error === "Invalid token"){
-        this.$router.push({path: "/login"});
+        this.$router.push({path: "/"});
       }
 
       //this.loadSpinner = false;

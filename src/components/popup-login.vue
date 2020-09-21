@@ -1,104 +1,135 @@
 <template>
   <div class="popup-login">
-    <form id="login-form">
-      <div class="login-heading">Login</div>
+    <div id="left">
+      <div class="login-heading-wrapper">
+        <div class="login-heading">Welcome back.</div>
       <div class="login-subheading">Log in using your email and password.</div>
-      <div class="form-field-wrapper" id="email-wrapper">
-        <label>Email</label>
-        <div class="form-field">
-          <input v-model="email" />
-          <svg
-            class="field-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="19.26"
-            height="15.18"
-            viewBox="0 0 19.26 15.18"
-          >
-            <g id="Icon_feather-mail" data-name="Icon feather-mail" transform="translate(1.393 1)">
-              <path
-                id="Path_1923"
-                data-name="Path 1923"
-                d="M4.647,6h13.18a1.652,1.652,0,0,1,1.647,1.647v9.885a1.652,1.652,0,0,1-1.647,1.647H4.647A1.652,1.652,0,0,1,3,17.532V7.647A1.652,1.652,0,0,1,4.647,6Z"
-                transform="translate(-3 -6)"
-                fill="none"
-                stroke="#8595a8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-              <path
-                id="Path_1924"
-                data-name="Path 1924"
-                d="M19.475,9l-8.237,5.766L3,9"
-                transform="translate(-3 -7.353)"
-                fill="none"
-                stroke="#8595a8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-            </g>
-          </svg>
+      </div>
+      <form class="login-form">
+        <div class="form-field-wrapper" id="email-wrapper">
+          <label>Email</label>
+          <div class="form-field">
+            <input v-model="email" />
+            <svg
+              class="field-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19.26"
+              height="15.18"
+              viewBox="0 0 19.26 15.18"
+            >
+              <g
+                id="Icon_feather-mail"
+                data-name="Icon feather-mail"
+                transform="translate(1.393 1)"
+              >
+                <path
+                  id="Path_1923"
+                  data-name="Path 1923"
+                  d="M4.647,6h13.18a1.652,1.652,0,0,1,1.647,1.647v9.885a1.652,1.652,0,0,1-1.647,1.647H4.647A1.652,1.652,0,0,1,3,17.532V7.647A1.652,1.652,0,0,1,4.647,6Z"
+                  transform="translate(-3 -6)"
+                  fill="none"
+                  stroke="#8595a8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  id="Path_1924"
+                  data-name="Path 1924"
+                  d="M19.475,9l-8.237,5.766L3,9"
+                  transform="translate(-3 -7.353)"
+                  fill="none"
+                  stroke="#8595a8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </g>
+            </svg>
+          </div>
+          <span :class="{ showError: emailError !== null}" class="error">{{emailError}}</span>
         </div>
-        <span :class="{ showError: emailError !== null}" class="error">{{emailError}}</span>
-      </div>
-      <div class="form-field-wrapper" id="password-wrapper">
-        <label>Password</label>
-        <div class="form-field">
-          <input v-model="password" type="password"/>
-          <svg
-            class="field-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="18.582"
-            height="21.532"
-            viewBox="0 0 18.582 21.532"
-          >
-            <g id="Icon_feather-lock" data-name="Icon feather-lock" transform="translate(1 1)">
-              <path
-                id="Path_1925"
-                data-name="Path 1925"
-                d="M6.342,16.5h12.9a1.9,1.9,0,0,1,1.842,1.953V25.29a1.9,1.9,0,0,1-1.842,1.953H6.342A1.9,1.9,0,0,1,4.5,25.29V18.453A1.9,1.9,0,0,1,6.342,16.5Z"
-                transform="translate(-4.5 -7.71)"
-                fill="none"
-                stroke="#8595a8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-              <path
-                id="Path_1926"
-                data-name="Path 1926"
-                d="M10.5,11.79V7.883A4.751,4.751,0,0,1,15.106,3a4.751,4.751,0,0,1,4.606,4.883V11.79"
-                transform="translate(-6.815 -3)"
-                fill="none"
-                stroke="#8595a8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-            </g>
-          </svg>
+        <div class="form-field-wrapper" id="password-wrapper">
+          <label>Password</label>
+          <div class="form-field">
+            <input v-model="password" type="password" />
+            <svg
+              class="field-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18.582"
+              height="21.532"
+              viewBox="0 0 18.582 21.532"
+            >
+              <g id="Icon_feather-lock" data-name="Icon feather-lock" transform="translate(1 1)">
+                <path
+                  id="Path_1925"
+                  data-name="Path 1925"
+                  d="M6.342,16.5h12.9a1.9,1.9,0,0,1,1.842,1.953V25.29a1.9,1.9,0,0,1-1.842,1.953H6.342A1.9,1.9,0,0,1,4.5,25.29V18.453A1.9,1.9,0,0,1,6.342,16.5Z"
+                  transform="translate(-4.5 -7.71)"
+                  fill="none"
+                  stroke="#8595a8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  id="Path_1926"
+                  data-name="Path 1926"
+                  d="M10.5,11.79V7.883A4.751,4.751,0,0,1,15.106,3a4.751,4.751,0,0,1,4.606,4.883V11.79"
+                  transform="translate(-6.815 -3)"
+                  fill="none"
+                  stroke="#8595a8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </g>
+            </svg>
+          </div>
+          <span :class="{ showError: passwordError !== null }" class="error">{{passwordError}}</span>
         </div>
-        <span :class="{ showError: passwordError !== null }" class="error">{{passwordError}}</span>
+        <button class="login-button" @click="initializeLogin()">Login</button>
+        <span :class="{ showError: (loginError !== null) }" class="error login-error">{{loginError}}</span>
+        <div id="spinner-wrapper">
+          <HalfCircleSpinner
+            :animation-duration="1000"
+            :size="30"
+            color="#0294ff"
+            class="spinner"
+            :class="{loadingSpinner: loadSpinner}"
+          />
+        </div>
+      </form>
+      <div class="help">
+        <div class="forgot-password">
+          <router-link to="/password_reset">Forgot password?</router-link>
+        </div>
+        <div class="signup">
+          Don't have an account?
+          <a href="#" id="signup-link">
+            <span class="highlighted">Sign Up</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13.503"
+              height="13.616"
+              viewBox="0 0 13.503 23.616"
+            >
+              <path
+                id="Icon_ionic-ios-arrow-forward"
+                data-name="Icon ionic-ios-arrow-forward"
+                d="M20.679,18,11.742,9.07a1.681,1.681,0,0,1,0-2.384,1.7,1.7,0,0,1,2.391,0L24.258,16.8a1.685,1.685,0,0,1,.049,2.327L14.14,29.32a1.688,1.688,0,0,1-2.391-2.384Z"
+                transform="translate(-11.246 -6.196)"
+                fill="#0294ff"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
-      <button class="login-button" @click="initializeLogin()">Login</button>
-      <div id="error-message">
-        <span v-bind:class="{ showError: (loginError !== null) }" class="error">{{loginError}}</span>
-      </div>
-      <div id="spinner-wrapper">
-        <HalfCircleSpinner
-          :animation-duration="1000"
-          :size="30"
-          color="rgb(70, 204, 255)"
-          class="spinner"
-          v-bind:class="{loadingSpinner: loadSpinner}"
-        />
-      </div>
-    </form>
-    <div id="login-illustration">
+    </div>
+    <div id="right">
       <img src="../assets/img-new/forms/login-illu.png" alt />
     </div>
-    <div id="close-button">
+    <div id="close-button" @click="closeLogin()">
       <img src="../assets/icons-new/forms/Close Login.png" alt />
     </div>
   </div>
@@ -124,7 +155,13 @@ export default {
     };
   },
   methods: {
+    closeLogin() {
+      this.$emit("event", "close");
+    },
     initializeLogin() {
+      this.loginError = null;
+      this.passwordError = null;
+      this.emailError = null;
       console.log("Initializing...");
       if (this.validateForm()) {
         console.log("Entries valid.");
@@ -170,7 +207,8 @@ export default {
             var userID = response.data._id;
             var jwt = response.data.access_token;
 
-            this.$emit("loggedInUser", response.data);
+            this.$emit("event", { userData: response.data });
+
             this.$router.push({
               name: "Account",
               params: { userId: userID, access_token: jwt }
@@ -178,7 +216,7 @@ export default {
           }
         })
         .catch(e => {
-          console.log("User creation request Error: " + e.toString());
+          console.log("Login request Error: " + e.toString());
         });
     },
     validateForm() {
@@ -201,16 +239,16 @@ export default {
           this.passwordError = "Please enter the password";
         }
       } else {
-        this.emailError = "Plase enter your email";
+        this.emailError = "Please enter your email";
       }
       return false;
     },
-    validateEmail(email){
-      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+    validateEmail(email) {
+      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
         return true;
       }
       return false;
-    },
+    }
   }
 };
 </script>
@@ -224,28 +262,39 @@ export default {
   width: 100%;
   border-radius: 38px;
 }
-#login-form {
+#left {
   padding: 45px;
   width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-heading-wrapper{
+  width: 100%;
 }
 .login-heading {
   font-size: 25px;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+  width: 100%;
+  text-align: left;
 }
 .login-subheading {
   font-size: 15px;
   font-weight: 400;
   color: #8595a8;
-  margin-bottom: 32px;
+  width: 100%;
+  text-align: left;
+}
+.login-form{
+  width: 100%;
 }
 .form-field-wrapper {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: 24px;
-}
-#password-wrapper {
-  margin-bottom: 48px;
+  width: 100%;
+  margin-bottom: 8px;
 }
 .form-field {
   display: flex;
@@ -299,10 +348,19 @@ export default {
   text-align: left;
   line-height: 30px;
   transition: 0.2s ease-in;
+  height: 30px;
+  line-height: 30px;
 }
 .showError {
   visibility: visible;
   transition: 0.2s ease-out;
+}
+.login-error {
+  line-height: 30px;
+  height: 30px;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 
 .login-button {
@@ -317,6 +375,7 @@ export default {
   font-size: 16px;
   font-weight: 400;
   background-color: #0294ff;
+  margin-bottom: 20px;
 }
 
 #spinner-wrapper {
@@ -324,7 +383,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5%;
 }
 
 .spinner {
@@ -334,10 +392,42 @@ export default {
   display: block;
 }
 
-#login-illustration {
+.help{
+  font-size: 12px;
+  width: 100%;
+}
+.forgot-password{
+  margin-bottom: 10px;
+}
+.forgot-password a{
+  color: #0294ff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.signup{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-weight: 400;
+  color: #8595a8;
+}
+#signup-link {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #00006d;
+}
+#signup-link svg {
+  margin-left: 20px;
+}
+
+
+
+#right {
   height: 100%;
 }
-#login-illustration img {
+#right img {
   height: 100%;
   width: auto;
 }
