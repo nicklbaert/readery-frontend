@@ -1,5 +1,5 @@
 <template>
-  <div class="app" :class="{no_scroll: this.showNav}">
+  <div class="app" :class="{no_scroll: this.bodyScroll()}">
     <div id="nav">
       <div id="logo">
         <router-link to="/">
@@ -141,12 +141,12 @@
 
     <div class="login_overlay" @click="closeLogin()" :class="{login_overlay_open: this.showLogin}"></div>
     <div class="popup_login_wrapper" :class="{popup_login_open: this.showLogin}" >
-      <PopupLogin id="popup_login" v-on:event="handleEvent($event)"/>
+      <PopupLogin id="popup_login" v-on:event="handleLoginEvent($event)"/>
     </div>
 
     <div class="signup_overlay" @click="closeSignup()" :class="{signup_overlay_open: this.showSignup}"></div>
     <div class="popup_signup_wrapper" :class="{popup_signup_open: this.showSignup}" >
-      <PopupSignup id="popup_signup" v-on:event="handleEvent($event)"/>
+      <PopupSignup id="popup_signup" v-on:event="handleSignupEvent($event)"/>
     </div>
 
 
@@ -162,6 +162,16 @@ export default {
     PopupSignup,
   },
   methods: {
+    bodyScroll(){
+      if(this.showNav){
+        return true;
+      }else if(this.showLogin){
+        return true;
+      }else if(this.showSignup){
+        return true;
+      }
+      return false;
+    },
     openNav() {
       this.showNav = true;
       console.log("Nav open");
@@ -188,7 +198,7 @@ export default {
       this.showLogin = false;
       console.log("Login closed");
     },
-    handleEvent(event){
+    handleLoginEvent(event){
       if(event === "close"){
         this.closeLogin();
       }else{
@@ -197,6 +207,17 @@ export default {
         this.userData = event.userData;
         console.log("Access token: "+this.userData.access_token);
         this.closeLogin();
+      }
+    },
+    handleSignupEvent(event){
+      if(event === "close"){
+        this.closeSignup();
+      }else{
+        console.log("User data received.");
+        console.log(event);
+        this.userData = event.userData;
+        console.log("Access token: "+this.userData.access_token);
+        this.closeSignup();
       }
     },
     openSignup() {
@@ -503,10 +524,10 @@ body {
 }
 
 .popup_signup_wrapper{
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
   margin: auto;
   position: fixed;
   z-index: 1000000;
@@ -517,7 +538,6 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 1100px;
-  max-height: 600px;
 }
 
 .popup_signup_open {

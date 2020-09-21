@@ -1,11 +1,11 @@
 <template>
   <div class="popup-signup">
     <div id="left">
-      <div class="login-heading-wrapper">
-        <div class="login-heading">Henlo.</div>
-      <div class="login-subheading">Log in using your email and password.</div>
+      <div class="signup-heading-wrapper">
+        <div class="signup-heading">Sign up. It's free.</div>
+      <div class="signup-subheading">Join Readery using your email and password.</div>
       </div>
-      <form class="login-form">
+      <form class="signup-form">
         <div class="form-field-wrapper" id="email-wrapper">
           <label>Email</label>
           <div class="form-field">
@@ -88,8 +88,47 @@
           </div>
           <span :class="{ showError: passwordError !== null }" class="error">{{passwordError}}</span>
         </div>
-        <button class="login-button" @click="initializeLogin()">Login</button>
-        <span :class="{ showError: (loginError !== null) }" class="error login-error">{{loginError}}</span>
+        <div class="form-field-wrapper" id="password-confirm-wrapper">
+          <label>Confirm password</label>
+          <div class="form-field">
+            <input v-model="password_confirm" type="password" />
+            <svg
+              class="field-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18.582"
+              height="21.532"
+              viewBox="0 0 18.582 21.532"
+            >
+              <g id="Icon_feather-lock" data-name="Icon feather-lock" transform="translate(1 1)">
+                <path
+                  id="Path_1925"
+                  data-name="Path 1925"
+                  d="M6.342,16.5h12.9a1.9,1.9,0,0,1,1.842,1.953V25.29a1.9,1.9,0,0,1-1.842,1.953H6.342A1.9,1.9,0,0,1,4.5,25.29V18.453A1.9,1.9,0,0,1,6.342,16.5Z"
+                  transform="translate(-4.5 -7.71)"
+                  fill="none"
+                  stroke="#8595a8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  id="Path_1926"
+                  data-name="Path 1926"
+                  d="M10.5,11.79V7.883A4.751,4.751,0,0,1,15.106,3a4.751,4.751,0,0,1,4.606,4.883V11.79"
+                  transform="translate(-6.815 -3)"
+                  fill="none"
+                  stroke="#8595a8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </g>
+            </svg>
+          </div>
+          <span :class="{ showError: passwordConfirmError !== null }" class="error">{{passwordConfirmError}}</span>
+        </div>
+        <button class="signup-button" @click="initializeSignup()">Sign Up</button>
+        <span :class="{ showError: (signupError !== null) }" class="error signup-error">{{signupError}}</span>
         <div id="spinner-wrapper">
           <HalfCircleSpinner
             :animation-duration="1000"
@@ -101,13 +140,10 @@
         </div>
       </form>
       <div class="help">
-        <div class="forgot-password">
-          <router-link to="/password_reset">Forgot password?</router-link>
-        </div>
-        <div class="signup">
-          Don't have an account?
-          <a href="#" id="signup-link">
-            <span class="highlighted">Sign Up</span>
+        <div class="help-login">
+          Already have an account?
+          <a href="#" id="login-link">
+            <span class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13.503"
@@ -127,9 +163,9 @@
       </div>
     </div>
     <div id="right">
-      <img src="../assets/img-new/forms/login-illu.png" alt />
+      <img src="../assets/img-new/forms/signup-illu.png" alt />
     </div>
-    <div id="close-button" @click="closeLogin()">
+    <div id="close-button" @click="closeSignup()">
       <img src="../assets/icons-new/forms/Close Login.png" alt />
     </div>
   </div>
@@ -147,34 +183,32 @@ export default {
     return {
       email: null,
       password: null,
+      password_confirm: null,
       emailError: null,
       passwordError: null,
       loadSpinner: false,
-      loginError: null,
+      signupError: null,
+      passwordConfirmError: null,
       customer: null
     };
   },
   methods: {
-    closeLogin() {
+    closeSignup() {
       this.$emit("event", "close");
     },
-    initializeLogin() {
-      this.loginError = null;
+    initializeSignup() {
+      this.signupError = null;
       this.passwordError = null;
       this.emailError = null;
       console.log("Initializing...");
       if (this.validateForm()) {
         console.log("Entries valid.");
-        this.finishLogin();
+        this.finishSignup();
       } else {
         console.log("Something went wrong");
       }
     },
-    finishLogin() {
-      console.log("Sending request...");
-      console.log("Email: " + this.email);
-      console.log("Password: " + this.password);
-
+    finishSignup() {
       var customer = {
         email: this.email,
         password: this.password
@@ -183,12 +217,14 @@ export default {
       this.loadSpinner = true;
       this.customer = customer;
       var userObject = Object.assign({}, this.customer);
+      //userObject.interests = this.selectedItems;
+      userObject.time_joined = Date.now();
 
-      console.log("Logging in: " + JSON.stringify(userObject));
+      console.log("Creating user: " + JSON.stringify(userObject));
 
       axios
         .post(
-          "https://readery-backend.herokuapp.com/api/auth/login",
+          "https://readery-backend.herokuapp.com/api/auth/signup",
           userObject
         )
         .then(response => {
@@ -200,10 +236,9 @@ export default {
           ) {
             //Error
             console.log("An error occured: " + response.data.error.toString());
-            this.loginError = response.data.error;
+            this.signupError = response.data.error;
           } else {
             //Login user
-            console.log("User logged in: " + response.data);
             var userID = response.data._id;
             var jwt = response.data.access_token;
 
@@ -216,19 +251,25 @@ export default {
           }
         })
         .catch(e => {
-          console.log("Login request Error: " + e.toString());
+          console.log("User creation request Error: " + e.toString());
         });
     },
     validateForm() {
       this.emailError = null;
       this.passwordError = null;
+      this.signupError = null;
+      this.passwordConfirmError = null;
 
       if (this.email !== null && this.email !== "") {
         if (this.password !== null && this.password !== "") {
           if (this.validateEmail(this.email)) {
             if (this.password.length > 6) {
-              console.log("All fine, ma man");
-              return true;
+              if(this.password === this.password_confirm){
+                  console.log("All fine, ma man");
+                  return true;
+              }else{
+                  this.passwordConfirmError = "Your passwords don't match. Please re-enter your password"
+              }
             } else {
               this.passwordError = "Your password can't be that short";
             }
@@ -254,7 +295,7 @@ export default {
 </script>
 
 <style scoped>
-.popup-login {
+.popup-signup {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -270,23 +311,23 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.login-heading-wrapper{
+.signup-heading-wrapper{
   width: 100%;
 }
-.login-heading {
+.signup-heading {
   font-size: 25px;
   margin-bottom: 16px;
   width: 100%;
   text-align: left;
 }
-.login-subheading {
+.signup-subheading {
   font-size: 15px;
   font-weight: 400;
   color: #8595a8;
   width: 100%;
   text-align: left;
 }
-.login-form{
+.signup-form{
   width: 100%;
 }
 .form-field-wrapper {
@@ -355,7 +396,7 @@ export default {
   visibility: visible;
   transition: 0.2s ease-out;
 }
-.login-error {
+.signup-error {
   line-height: 30px;
   height: 30px;
   text-align: center;
@@ -363,7 +404,7 @@ export default {
   display: block;
 }
 
-.login-button {
+.signup-button {
   outline: none;
   border: none;
   width: 100%;
@@ -404,21 +445,21 @@ export default {
   cursor: pointer;
   text-decoration: none;
 }
-.signup{
+.help-login{
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   font-weight: 400;
   color: #8595a8;
 }
-#signup-link {
+#login-link {
   margin-left: 20px;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #00006d;
 }
-#signup-link svg {
+#login-link svg {
   margin-left: 20px;
 }
 
