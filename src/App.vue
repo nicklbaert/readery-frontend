@@ -537,7 +537,6 @@ body {
   display: flex;
   justify-content: center;
   transition: 0.2s ease-out;
-  border: 1px solid red;
 }
 
 .popup_signup_open {
