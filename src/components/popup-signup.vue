@@ -370,11 +370,17 @@ export default {
 
 <style scoped>
 .popup-signup {
+  position: fixed;
+  margin: auto;
+  top:90px;
+  left:90px;
+  right: 90px;
+  bottom: 90px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
   border-radius: 38px;
-  min-height: 700px;
+  min-height: 650px;
   max-width: 1200px;
 }
 #left {
@@ -572,9 +578,9 @@ export default {
   .popup-signup {
     flex-direction: column;
     align-items: center;
-    padding: 0 45px;
+    padding: 0 45px 45px 45px;
     max-width: 500px;
-
+    height: 600px;
   }
   #left {
     width: 100%;
@@ -605,7 +611,13 @@ export default {
 
 @media screen and (max-width: 600px) {
   .popup-signup {
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
     padding: 24px;
+    border-radius: 0px;
+    height: initial;
   }
   #close-button-mobile {
     top: 10px;

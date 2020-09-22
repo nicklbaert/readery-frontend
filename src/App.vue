@@ -60,7 +60,7 @@
               />
             </svg>
           </a>
-          <a href="#" id="signup-button" @click="openSignup()">
+          <a href="#" id="signup-button" @click="handleSignupClick()">
             <span @click="closeNav()">Early Access</span>
           </a>
         </div>
@@ -181,6 +181,7 @@ export default {
       console.log("Nav closed");
     },
     handleLoginClick() {
+      this.closeNav();
       if (this.userData === null) {
         this.openLogin();
       } else {
@@ -192,6 +193,10 @@ export default {
           }
         });
       }
+    },
+    handleSignupClick() {
+      this.closeNav();
+      this.openSignup();
     },
     openLogin() {
       this.showLogin = true;
@@ -474,7 +479,7 @@ body {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   visibility: hidden;
   transition: 0.2s ease-out;
 }
@@ -484,24 +489,23 @@ body {
 }
 
 .popup_login_wrapper {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
   position: fixed;
-  z-index: 1000000;
+  z-index: 100000;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 0 auto;
   transform: scale(0);
+  display: flex;
+  justify-content: center;
   transition: 0.2s ease-out;
-  max-width: 1100px;
-  max-height: 600px;
-  min-height: 600px;
-  overflow-y: scroll;
 }
 
 .popup_login_open {
   transform: scale(1);
   transition: 0.2s ease-in;
+  overflow-y: scroll;
 }
 
 /*Signup Popup */
@@ -513,14 +517,13 @@ body {
   right: 0;
   bottom: 0;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   visibility: hidden;
   transition: 0.2s ease-out;
 }
 .signup_overlay_open {
   visibility: visible;
   transition: 0.2s ease-in;
-  overflow-y: scroll;
 }
 
 .popup_signup_wrapper {
@@ -530,12 +533,11 @@ body {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  margin: 0 auto;
   transform: scale(0);
-  padding: 45px;
   display: flex;
   justify-content: center;
   transition: 0.2s ease-out;
+  border: 1px solid red;
 }
 
 .popup_signup_open {
@@ -698,6 +700,9 @@ body {
     font-family: "Merriweather", serif;
   }
   .popup_signup_wrapper {
+  padding: 0px;
+}
+.popup_login_wrapper {
   padding: 0px;
 }
 }

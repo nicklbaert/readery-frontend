@@ -99,6 +99,21 @@
             :class="{loadingSpinner: loadSpinner}"
           />
         </div>
+        <div id="close-button-mobile" @click="closeLogin()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17.389"
+            height="17.389"
+            viewBox="0 0 17.389 17.389"
+          >
+            <path
+              id="Path_1928"
+              data-name="Path 1928"
+              d="M14.116,16.827,8.694,11.405,3.272,16.827A1.917,1.917,0,0,1,.562,14.116L5.984,8.694.562,3.272A1.917,1.917,0,0,1,3.273.562L8.695,5.983,14.116.562a1.917,1.917,0,0,1,2.711,2.711L11.405,8.694l5.422,5.422a1.917,1.917,0,1,1-2.711,2.711Z"
+              fill="#ffffff"
+            />
+          </svg>
+        </div>
       </form>
       <div class="help">
         <div class="forgot-password">
@@ -128,9 +143,21 @@
     </div>
     <div id="right">
       <img src="../assets/img-new/forms/login-illu.png" alt />
-    </div>
-    <div id="close-button" @click="closeLogin()">
-      <img src="../assets/icons-new/forms/Close Login.png" alt />
+      <div id="close-button" @click="closeLogin()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17.389"
+          height="17.389"
+          viewBox="0 0 17.389 17.389"
+        >
+          <path
+            id="Path_1928"
+            data-name="Path 1928"
+            d="M14.116,16.827,8.694,11.405,3.272,16.827A1.917,1.917,0,0,1,.562,14.116L5.984,8.694.562,3.272A1.917,1.917,0,0,1,3.273.562L8.695,5.983,14.116.562a1.917,1.917,0,0,1,2.711,2.711L11.405,8.694l5.422,5.422a1.917,1.917,0,1,1-2.711,2.711Z"
+            fill="#0294ff"
+          />
+        </svg>
+      </div>
     </div>
   </div>
 </template>
@@ -255,12 +282,18 @@ export default {
 
 <style scoped>
 .popup-login {
+  position: fixed;
+  margin: auto;
+  top:90px;
+  left:90px;
+  right: 90px;
+  bottom: 90px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  height: 100%;
-  width: 100%;
   border-radius: 38px;
+  min-height: 650px;
+  max-width: 1200px;
 }
 #left {
   padding: 45px;
@@ -426,6 +459,7 @@ export default {
 
 #right {
   height: 100%;
+  position: relative;
 }
 #right img {
   height: 100%;
@@ -433,16 +467,72 @@ export default {
 }
 #close-button {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 25px;
+  right: 25px;
   background-color: #fff;
   border-radius: 50px;
   width: 50px;
   height: 50px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#close-button img {
-  height: 50px;
-  width: 50px;
+
+#close-button-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .popup-login {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 45px;
+    max-width: 500px;
+    height: 400px;
+
+  }
+  #left {
+    width: 100%;
+    height: initial;
+    position: relative;
+    z-index: 50;
+    height: 100%;
+    min-width:initial;
+
+  }
+  #right {
+    display: none;
+  }
+  #close-button-mobile {
+    background-color: #0294FF;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .popup-login {
+    padding: 24px;
+    border-radius: 0px;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    height: initial;
+  }
+  #close-button-mobile {
+    top: 10px;
+    right: 48px;
+  }
 }
 </style>
