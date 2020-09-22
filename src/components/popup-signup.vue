@@ -1,9 +1,12 @@
 <template>
-  <div class="popup-signup">
+  <div class="popup-signup" v-click-outside="{
+    exclude: [],
+    handler: 'closeSignup'
+  }">
     <div id="left">
       <div class="signup-heading-wrapper">
         <div class="signup-heading">Sign up. It's free.</div>
-      <div class="signup-subheading">Join Readery using your email and password.</div>
+        <div class="signup-subheading">Join Readery using your email and password.</div>
       </div>
       <form class="signup-form">
         <div class="form-field-wrapper" id="email-wrapper">
@@ -125,10 +128,16 @@
               </g>
             </svg>
           </div>
-          <span :class="{ showError: passwordConfirmError !== null }" class="error">{{passwordConfirmError}}</span>
+          <span
+            :class="{ showError: passwordConfirmError !== null }"
+            class="error"
+          >{{passwordConfirmError}}</span>
         </div>
         <button class="signup-button" @click="initializeSignup()">Sign Up</button>
-        <span :class="{ showError: (signupError !== null) }" class="error signup-error">{{signupError}}</span>
+        <span
+          :class="{ showError: (signupError !== null) }"
+          class="error signup-error"
+        >{{signupError}}</span>
         <div id="spinner-wrapper">
           <HalfCircleSpinner
             :animation-duration="1000"
@@ -137,6 +146,21 @@
             class="spinner"
             :class="{loadingSpinner: loadSpinner}"
           />
+        </div>
+        <div id="close-button-mobile" @click="closeSignup()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17.389"
+            height="17.389"
+            viewBox="0 0 17.389 17.389"
+          >
+            <path
+              id="Path_1928"
+              data-name="Path 1928"
+              d="M14.116,16.827,8.694,11.405,3.272,16.827A1.917,1.917,0,0,1,.562,14.116L5.984,8.694.562,3.272A1.917,1.917,0,0,1,3.273.562L8.695,5.983,14.116.562a1.917,1.917,0,0,1,2.711,2.711L11.405,8.694l5.422,5.422a1.917,1.917,0,1,1-2.711,2.711Z"
+              fill="#ffffff"
+            />
+          </svg>
         </div>
       </form>
       <div class="help">
@@ -164,9 +188,21 @@
     </div>
     <div id="right">
       <img src="../assets/img-new/forms/signup-illu.png" alt />
-    </div>
-    <div id="close-button" @click="closeSignup()">
-      <img src="../assets/icons-new/forms/Close Login.png" alt />
+      <div id="close-button" @click="closeSignup()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17.389"
+          height="17.389"
+          viewBox="0 0 17.389 17.389"
+        >
+          <path
+            id="Path_1928"
+            data-name="Path 1928"
+            d="M14.116,16.827,8.694,11.405,3.272,16.827A1.917,1.917,0,0,1,.562,14.116L5.984,8.694.562,3.272A1.917,1.917,0,0,1,3.273.562L8.695,5.983,14.116.562a1.917,1.917,0,0,1,2.711,2.711L11.405,8.694l5.422,5.422a1.917,1.917,0,1,1-2.711,2.711Z"
+            fill="#0294ff"
+          />
+        </svg>
+      </div>
     </div>
   </div>
 </template>
@@ -174,11 +210,48 @@
 <script>
 import axios from "axios";
 import { HalfCircleSpinner } from "epic-spinners";
+
+import Vue from "vue";
+
+let handleClickOutside;
+
+Vue.directive("click-outside", {
+  bind(el, binding, vnode) {
+    handleClickOutside = e => {
+      e.stopPropagation();
+      const { handler, exclude } = binding.value;
+      let clickedOnExcludedEl = false;
+
+      // Gives you the ability to exclude certain elements if you want, pass as array of strings to exclude
+      if (exclude) {
+        exclude.forEach(refName => {
+          if (!clickedOnExcludedEl) {
+            const excludedEl = vnode.context.$refs[refName];
+            clickedOnExcludedEl = excludedEl.contains(e.target);
+          }
+        });
+      }
+
+      if (!el.contains(e.target) && !clickedOnExcludedEl) {
+        handler(e);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+  },
+
+  unbind() {
+    document.removeEventListener("click", handleClickOutside);
+    document.removeEventListener("touchstart", handleClickOutside);
+  }
+});
+
 export default {
   name: "PopupSignup",
   components: {
     HalfCircleSpinner
   },
+
   data() {
     return {
       email: null,
@@ -263,12 +336,13 @@ export default {
       if (this.email !== null && this.email !== "") {
         if (this.password !== null && this.password !== "") {
           if (this.validateEmail(this.email)) {
-            if (this.password.length > 6) {
-              if(this.password === this.password_confirm){
-                  console.log("All fine, ma man");
-                  return true;
-              }else{
-                  this.passwordConfirmError = "Your passwords don't match. Please re-enter your password"
+            if (this.password.length >= 6) {
+              if (this.password === this.password_confirm) {
+                console.log("All fine, ma man");
+                return true;
+              } else {
+                this.passwordConfirmError =
+                  "Your passwords don't match. Please re-enter your password";
               }
             } else {
               this.passwordError = "Your password can't be that short";
@@ -299,20 +373,22 @@ export default {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  height: 100%;
-  width: 100%;
   border-radius: 38px;
+  min-height: 700px;
+  max-width: 1200px;
 }
 #left {
+  height: 100%;
   padding: 45px;
-  width: 400px;
+  min-width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
-.signup-heading-wrapper{
+.signup-heading-wrapper {
   width: 100%;
+  margin-bottom: 48px;
 }
 .signup-heading {
   font-size: 25px;
@@ -327,8 +403,9 @@ export default {
   width: 100%;
   text-align: left;
 }
-.signup-form{
+.signup-form {
   width: 100%;
+  margin-bottom: 48px;
 }
 .form-field-wrapper {
   display: flex;
@@ -417,6 +494,7 @@ export default {
   font-weight: 400;
   background-color: #0294ff;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 #spinner-wrapper {
@@ -433,19 +511,19 @@ export default {
   display: block;
 }
 
-.help{
+.help {
   font-size: 12px;
   width: 100%;
 }
-.forgot-password{
+.forgot-password {
   margin-bottom: 10px;
 }
-.forgot-password a{
+.forgot-password a {
   color: #0294ff;
   cursor: pointer;
   text-decoration: none;
 }
-.help-login{
+.help-login {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -463,27 +541,75 @@ export default {
   margin-left: 20px;
 }
 
-
-
 #right {
   height: 100%;
+  position: relative;
 }
 #right img {
   height: 100%;
   width: auto;
 }
+
 #close-button {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 25px;
+  right: 25px;
   background-color: #fff;
   border-radius: 50px;
   width: 50px;
   height: 50px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#close-button img {
-  height: 50px;
-  width: 50px;
+
+#close-button-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .popup-signup {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 45px;
+    max-width: 500px;
+
+  }
+  #left {
+    width: 100%;
+    height: initial;
+    position: relative;
+    z-index: 50;
+    min-width:initial;
+
+  }
+  #right {
+    display: none;
+  }
+  #close-button-mobile {
+    background-color: #0294FF;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .popup-signup {
+    padding: 24px;
+  }
+  #close-button-mobile {
+    top: 10px;
+    right: 48px;
+  }
 }
 </style>

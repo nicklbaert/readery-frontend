@@ -43,7 +43,7 @@
           </router-link>
         </div>
         <div class="links-right">
-          <a href="#" id="login-button" class="link" @click="handleLoginClick()" >
+          <a href="#" id="login-button" class="link" @click="handleLoginClick()">
             <span class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -140,34 +140,34 @@
     <router-view id="router-view" v-on:loggedInUser="setUserData($event)" />
 
     <div class="login_overlay" @click="closeLogin()" :class="{login_overlay_open: this.showLogin}"></div>
-    <div class="popup_login_wrapper" :class="{popup_login_open: this.showLogin}" >
-      <PopupLogin id="popup_login" v-on:event="handleLoginEvent($event)"/>
+    <div class="popup_login_wrapper" :class="{popup_login_open: this.showLogin}">
+      <PopupLogin id="popup_login" v-on:event="handleLoginEvent($event)" />
     </div>
 
     <div class="signup_overlay" @click="closeSignup()" :class="{signup_overlay_open: this.showSignup}"></div>
     <div class="popup_signup_wrapper" :class="{popup_signup_open: this.showSignup}" >
-      <PopupSignup id="popup_signup" v-on:event="handleSignupEvent($event)"/>
+      <PopupSignup id="popup_signup" v-on:event="handleSignupEvent($event)" />
     </div>
-
-
   </div>
 </template>
 <script>
 import PopupLogin from "./components/popup-login.vue";
 import PopupSignup from "./components/popup-signup.vue";
+
+
 export default {
   name: "App",
   components: {
     PopupLogin,
-    PopupSignup,
+    PopupSignup
   },
   methods: {
-    bodyScroll(){
-      if(this.showNav){
+    bodyScroll() {
+      if (this.showNav) {
         return true;
-      }else if(this.showLogin){
+      } else if (this.showLogin) {
         return true;
-      }else if(this.showSignup){
+      } else if (this.showSignup) {
         return true;
       }
       return false;
@@ -180,14 +180,17 @@ export default {
       this.showNav = false;
       console.log("Nav closed");
     },
-    handleLoginClick(){
-      if(this.userData === null){
+    handleLoginClick() {
+      if (this.userData === null) {
         this.openLogin();
-      }else{
+      } else {
         this.$router.push({
-              name: "Account",
-              params: { userId: this.userData._id, access_token: this.userData.access_token }
-            });
+          name: "Account",
+          params: {
+            userId: this.userData._id,
+            access_token: this.userData.access_token
+          }
+        });
       }
     },
     openLogin() {
@@ -198,25 +201,25 @@ export default {
       this.showLogin = false;
       console.log("Login closed");
     },
-    handleLoginEvent(event){
-      if(event === "close"){
+    handleLoginEvent(event) {
+      if (event === "close") {
         this.closeLogin();
-      }else{
+      } else {
         console.log("User data received.");
         console.log(event);
         this.userData = event.userData;
-        console.log("Access token: "+this.userData.access_token);
+        console.log("Access token: " + this.userData.access_token);
         this.closeLogin();
       }
     },
-    handleSignupEvent(event){
-      if(event === "close"){
+    handleSignupEvent(event) {
+      if (event === "close") {
         this.closeSignup();
-      }else{
+      } else {
         console.log("User data received.");
         console.log(event);
         this.userData = event.userData;
-        console.log("Access token: "+this.userData.access_token);
+        console.log("Access token: " + this.userData.access_token);
         this.closeSignup();
       }
     },
@@ -227,7 +230,7 @@ export default {
     closeSignup() {
       this.showSignup = false;
       console.log("Login closed");
-    },
+    }
   },
   data() {
     return {
@@ -318,7 +321,7 @@ body {
   position: relative;
   cursor: pointer;
 }
-.highlighted:hover{
+.highlighted:hover {
   color: #0294ff;
 }
 .highlighted::before {
@@ -480,7 +483,7 @@ body {
   transition: 0.2s ease-in;
 }
 
-.popup_login_wrapper{
+.popup_login_wrapper {
   left: 0;
   right: 0;
   top: 0;
@@ -490,12 +493,10 @@ body {
   z-index: 1000000;
   transform: scale(0);
   transition: 0.2s ease-out;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 1100px;
   max-height: 600px;
+  min-height: 600px;
+  overflow-y: scroll;
 }
 
 .popup_login_open {
@@ -505,7 +506,6 @@ body {
 
 /*Signup Popup */
 .signup_overlay {
-  opacity: 1;
   position: fixed;
   z-index: 99999;
   top: 0;
@@ -513,7 +513,6 @@ body {
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   transition: 0.2s ease-out;
@@ -521,30 +520,33 @@ body {
 .signup_overlay_open {
   visibility: visible;
   transition: 0.2s ease-in;
+  overflow-y: scroll;
 }
 
-.popup_signup_wrapper{
+.popup_signup_wrapper {
+  position: fixed;
+  z-index: 100000;
+  top: 0px;
   left: 0px;
   right: 0px;
-  top: 0px;
   bottom: 0px;
-  margin: auto;
-  position: fixed;
-  z-index: 1000000;
+  margin: 0 auto;
   transform: scale(0);
-  transition: 0.2s ease-out;
-  padding: 0;
+  padding: 45px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  max-width: 1100px;
+  transition: 0.2s ease-out;
 }
 
 .popup_signup_open {
   transform: scale(1);
   transition: 0.2s ease-in;
+  overflow-y: scroll;
 }
 
+#popup-signup{
+  overflow-y: scroll;
+}
 
 @media screen and (max-width: 1020px) {
   .nav-icon {
@@ -695,6 +697,9 @@ body {
     color: #00006d;
     font-family: "Merriweather", serif;
   }
+  .popup_signup_wrapper {
+  padding: 0px;
+}
 }
 
 @media screen and (max-height: 400px) {

@@ -12,6 +12,8 @@ Vue.use(VueAnalytics, {
 
 
 
+
+
 Vue.config.productionTip = false;
 
 new Vue({

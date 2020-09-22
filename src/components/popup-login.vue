@@ -226,7 +226,7 @@ export default {
       if (this.email !== null && this.email !== "") {
         if (this.password !== null && this.password !== "") {
           if (this.validateEmail(this.email)) {
-            if (this.password.length > 6) {
+            if (this.password.length >= 6) {
               console.log("All fine, ma man");
               return true;
             } else {
