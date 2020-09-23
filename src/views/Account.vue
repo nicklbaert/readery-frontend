@@ -1,25 +1,29 @@
 <template>
-  <div class="wrapper">
-    <h1 id="heading">
-      Hi, {{first_name}}
-    </h1>
-    <div id="party-emoji">
-      <img src="../assets/images/icons/party_emoji.png" alt="PARTEEEY">
+  <div class="account">
+    <div id="landing-page">
+      <div id="landing-page-left" class="landing-page-part">
+        <h1 class="heading title">
+          Welcome.
+        </h1>
+        <h3 class="text" id="landingpage-subtext">
+          Start your reading journey today with our revolutionary book
+          subscription service.
+        </h3>
+        <div class="action-buttons">
+
+          <router-link id="learn-more" to="/">
+          Logout
+          </router-link>
+        </div>
+      </div>
+      <div id="landing-page-right" class="landing-page-part">
+        <img
+          id="landingpage-illustration"
+          src="../assets/img-new/account/work-in-progress-illu.svg"
+          alt="Illustration"
+        />
+      </div>
     </div>
-    <h1 class="subheading" id="subheading1">
-      Thank you for signing up. You are one of the first people to join readery, 
-      which is why we want to give something back.
-    </h1>
-     <h1 class="subheading" id="subheading2">
-     Our services are currently <span id="in_dev_link">still in development</span>, hence we are not yet able to start shipping books. 
-     However, we appreciate you signing up so early and want to give you a free book in exchange for your trust. 
-     You will be notified via email once you can claim your free book.
-    </h1>
-    <!--<button type="submit" id="notify-button" @click="notifyUser()">Notify me</button>-->
-    <h1 class="subheading" id="subheading3">
-     Sincerely, <br>
-     Niclas (CEO)
-    </h1>
     <Footer />
   </div>
 </template>
@@ -59,8 +63,8 @@ export default {
 
       //this.loadSpinner = false;
 
-      this.first_name = response.data.first_name;
-      this.last_name = response.data.last_name;
+      /*this.first_name = response.data.first_name;
+      this.last_name = response.data.last_name;*/
 
 
     })
@@ -72,90 +76,97 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
+.account{
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
-#heading {
-  margin-top: 150px;
-  font-size:calc(30px + 1.5vw);
-  font-weight: 500;
+/*Landing Page */
+
+#landing-page {
+  padding: 93px 45px;
+  position: relative;
+  max-width: 1332px;
+  margin: 20px auto 150px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
-#party-emoji{
-  margin-top: 10px;
-}
-#party-emoji img{
-  width: 120px;
+#landing-page-left {
+  max-width: 576px;
 }
 
-.subheading {
- font-size:calc(14px + 0.3vw);
-  color: #8595a8;
-  font-weight: 300;
-  line-height: 30px;
+#landingpage-subtext {
+  margin: 48px 0;
 }
-
-#subheading1{
-padding: 0 30%;
-  margin-top: 10px;
+.action-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-#subheading2{
-padding: 0 25%;
-  margin-top: 50px;
-}
-
-#notify-button {
-  cursor: pointer;
-  margin-top: 50px;
-  background-color: #40caff;
-  padding: 15px 50px;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
+#learn-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0294ff;
   transition: 0.2s ease-in;
-  border: none;
-  font-family: cera-pro;
-  outline: none;
+  word-wrap: none;
+  overflow-wrap: initial;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+  font-size: 20px;
 }
-#notify-button:hover {
-  border: none;
-  outline: none;
-  background-color: #1ab5f1;
+#learn-more:hover {
+  transition: 0.2s ease-in;
+  border: 2px solid #0294ff;
+}
+
+#get-started span {
+  margin-left: 20px;
+}
+.get-started-icon {
   transition: 0.2s ease-out;
 }
-#notify-button:focus {
-  border: none;
-  outline: none;
+
+#get-started {
+  text-decoration: none;
+  width: 220px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #0294ff;
+  color: #fff;
+  transition: 0.2s ease-in;
+  word-wrap: none;
+  overflow-wrap: initial;
+  border-radius: 100px;
+  font-size: 20px;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+#get-started:hover {
+  background-color: #018cf2;
+  transition: 0.2s ease-out;
+}
+#get-started:hover .get-started-icon {
+  transform: translateX(3px);
+  transition: 0.2s ease-in;
+}
+#get-started a.router-link-exact-active {
+  color: #fff;
 }
 
-#subheading3{
-  margin-top: 50px;
-  margin-bottom: 10%;
+#landing-page-right {
+  position: absolute;
+  margin: auto 0;
+  z-index: -100;
+  right: calc(40% - 800px);
 }
-#in_dev_link{
-  color: #46CCFF;
-}
-
-@media screen and (max-width: 700px){
-  
-  #subheading1{
-padding: 0 5%;
-}
-#subheading2{
-padding: 0 5%;
-}
-  
-}
-
-
-
-@media screen and (max-width: 700px){
-  #subheading1{
-padding: 0 5%;
-}
-#subheading2{
-padding: 0 5%;
-}
-  
+#landing-page-right img {
+  width: 900px;
 }
 </style>
