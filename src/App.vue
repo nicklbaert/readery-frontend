@@ -201,15 +201,20 @@ export default {
     handleEvent(event) {
       if (event === "get_started_click") {
         this.handleSignupClick();
-      } 
+      } else if(event === "logout"){
+        this.deleteUserData();
+      }
     },
     
-    //Called when user logged in
+    //Manage global user data
     setUserData(userData) {
       console.log("User data received.");
       console.log(event);
       this.userData = userData;
       console.log("Access token: " + this.userData.access_token);
+    },
+    deleteUserData(){
+      this.userData = null;
     },
 
     //Prevent body from being scrollable in certain cases
@@ -293,7 +298,7 @@ export default {
         this.closeSignup();
       }
     }
-
+    
   },
   data() {
     return {

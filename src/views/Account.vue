@@ -1,35 +1,79 @@
 <template>
   <div class="account">
-    <div id="landing-page">
-      <div id="landing-page-left" class="landing-page-part">
-        <h1 class="heading title">
-          Welcome.
-        </h1>
-        <h3 class="text" id="landingpage-subtext">
-          Start your reading journey today with our revolutionary book
-          subscription service.
-        </h3>
-        <div class="action-buttons">
-
-          <router-link id="learn-more" to="/">
-          Logout
-          </router-link>
-        </div>
+    <div id="heading-section">
+      <div id="plans-heading">
+        <h1 id="plans-heading-title" class="heading subtitle">Welcome to Readery.</h1>
       </div>
-      <div id="landing-page-right" class="landing-page-part">
-        <img
-          id="landingpage-illustration"
-          src="../assets/img-new/account/work-in-progress-illu.svg"
-          alt="Illustration"
-        />
+    </div>
+    <div id="illustration-section">
+      <img id="illustration" src="../assets/img-new/account/couch.svg" alt="Illustration" />
+    </div>
+    <div id="letter-section">
+      <div class="letter-part" id="letter-part-01">
+        Thank you for signing up. You are one of the first people to join readery,
+        which is why we want to give something back.
       </div>
+      <div class="letter-part" id="letter-part-02">
+        Our services are currently
+        <span id="in_dev_link">still in development</span>, hence we are not yet able to start shipping books.
+        However, we appreciate you signing up so early and want to give you a free book in exchange for your trust.
+        You will be notified via email once we are ready and you can claim your free book.
+      </div>
+      <div class="letter-part" id="letter-part-03">
+        Sincerely,
+        <br />Niclas (CEO)
+      </div>
+      <router-link to="/" href="#" id="logout-button" class="link" @click="handleLogoutClick()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+          <g
+            id="Icon_feather-log-out"
+            data-name="Icon feather-log-out"
+            transform="translate(1.5 1.5)"
+          >
+            <path
+              id="Path_1281"
+              data-name="Path 1281"
+              d="M4.5,22.5h4a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2h-4"
+              transform="translate(7.5 -4.5)"
+              fill="none"
+              stroke="#0294ff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+            <path
+              id="Path_1282"
+              data-name="Path 1282"
+              d="M29,20.5l-5-5,5-5"
+              transform="translate(-24 -6.5)"
+              fill="none"
+              stroke="#0294ff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+            <path
+              id="Path_1283"
+              data-name="Path 1283"
+              d="M13.5,18h12"
+              transform="translate(-13.5 -9)"
+              fill="none"
+              stroke="#0294ff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </g>
+        </svg>
+        <span class="highlighted">Logout</span>
+      </router-link>
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 import Footer from "../components/footer.vue";
 export default {
   name: "Account",
@@ -37,136 +81,140 @@ export default {
     Footer
   },
   methods: {
-    notifyUser(){
-      //add user email to notification list
+    handleLogoutClick(){
+      this.$emit("event", "logout");
     }
   },
   data() {
     return {
       first_name: "Loading",
-      last_name: "Jobs",
+      last_name: "Jobs"
     };
   },
-  beforeMount(){
+beforeMount() {
     var userId = this.$route.params.userId;
     var access_token = this.$route.params.access_token;
 
     console.log("Fetching data from user...");
     console.log(access_token);
-      axios.get("https://readery-backend.herokuapp.com/api/user/"+userId, {headers: {"Authorization": access_token}})
-    .then(response => {
-      console.log("User Data Fetch Response"+JSON.stringify(response.data));
+    axios
+      .get("https://readery-backend.herokuapp.com/api/user/" + userId, {
+        headers: { Authorization: access_token }
+      })
+      .then(response => {
+        console.log("User Data Fetch Response" + JSON.stringify(response.data));
 
-      if(response.data.error === "Invalid token"){
-        this.$router.push({path: "/"});
-      }
+        if (response.data.error === "Invalid token") {
+          this.$router.push({ path: "/" });
+        }
 
-      //this.loadSpinner = false;
+        //this.loadSpinner = false;
 
-      /*this.first_name = response.data.first_name;
+        /*this.first_name = response.data.first_name;
       this.last_name = response.data.last_name;*/
-
-
-    })
-    .catch(e => {
-      console.log("User creation request Error: "+e.toString());
-    })
-  },
+      })
+      .catch(e => {
+        console.log("User creation request Error: " + e.toString());
+      });
+  }
 };
 </script>
 
 <style scoped>
-.account{
+.account {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
-/*Landing Page */
-
-#landing-page {
-  padding: 93px 45px;
+#heading-section {
+  padding: 0px 45px 0px 45px;
   position: relative;
-  max-width: 1332px;
-  margin: 20px auto 150px auto;
+  max-width: 960px;
+  margin: 0 auto;
   display: flex;
+  margin-bottom: 62px;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
-#landing-page-left {
-  max-width: 576px;
+#plans-heading {
+  margin-bottom: 0px;
+}
+#plans-heading-title {
+  margin-bottom: 0px;
+}
+#plans-heading-subtitle {
+  text-align: center;
+}
+#letter-section {
+  padding: 0px 45px 300px 45px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 22px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-#landingpage-subtext {
-  margin: 48px 0;
+.letter-part {
+  font-size: 18px;
+  color: #4c5d77;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.5;
 }
-.action-buttons {
+#letter-part-03 {
+  margin-bottom: 48px;
+}
+#illustration-section {
+  padding: 0px 45px 0px 45px;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 62px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+#illustration {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
-#learn-more {
+
+#logout-button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-decoration: none;
   color: #0294ff;
-  transition: 0.2s ease-in;
-  word-wrap: none;
-  overflow-wrap: initial;
-  text-decoration: none;
-  transition: 0.2s ease-out;
-  font-size: 20px;
-}
-#learn-more:hover {
-  transition: 0.2s ease-in;
-  border: 2px solid #0294ff;
 }
 
-#get-started span {
-  margin-left: 20px;
+#logout-button svg {
+  margin-right: 20px;
 }
-.get-started-icon {
-  transition: 0.2s ease-out;
-}
+@media screen and (max-width: 1200px) {
+  /*Centered Mobile Mode */
 
-#get-started {
-  text-decoration: none;
-  width: 220px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  background-color: #0294ff;
-  color: #fff;
-  transition: 0.2s ease-in;
-  word-wrap: none;
-  overflow-wrap: initial;
-  border-radius: 100px;
-  font-size: 20px;
-  transition: 0.2s ease-out;
-  cursor: pointer;
-}
-#get-started:hover {
-  background-color: #018cf2;
-  transition: 0.2s ease-out;
-}
-#get-started:hover .get-started-icon {
-  transform: translateX(3px);
-  transition: 0.2s ease-in;
-}
-#get-started a.router-link-exact-active {
-  color: #fff;
-}
+  /*Landing section */
+  .title {
+    text-align: center;
+  }
 
-#landing-page-right {
-  position: absolute;
-  margin: auto 0;
-  z-index: -100;
-  right: calc(40% - 800px);
+  .subtitle {
+    text-align: center;
+  }
 }
-#landing-page-right img {
-  width: 900px;
+@media screen and (max-width: 600px) {
+  #letter-section {
+    padding: 0px 24px 90px 24px;
+    width: 100%;
+  }
+  .letter-part {
+    font-size: 16px;
+  }
 }
 </style>
