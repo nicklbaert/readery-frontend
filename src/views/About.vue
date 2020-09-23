@@ -147,10 +147,10 @@ export default {
 
   /*steps section */
   .step {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   #step-2 {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   
@@ -173,7 +173,7 @@ export default {
   }
 
   .step-text {
-    margin-bottom: 48px;
+    margin-bottom: 64px;
     text-align: center;
   }
 }
