@@ -11,7 +11,7 @@
           subscription service.
         </h3>
         <div class="action-buttons">
-          <router-link id="get-started" to="/signup" class="action-button">
+          <a id="get-started" @click="handleSignupClick()" class="action-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13.503"
@@ -28,7 +28,7 @@
               />
             </svg>
             <span>Get started</span>
-          </router-link>
+          </a>
           <router-link id="learn-more" to="/about">Learn more</router-link>
         </div>
       </div>
@@ -186,7 +186,7 @@
       </div>
     </div>
 
-    <SignupCTA />
+    <SignupCTA v-on:event="handleSignupClick($event)"/>
     <Footer />
   </div>
 </template>
@@ -213,6 +213,9 @@ export default {
       } else {
         this.showDemoPreview = false;
       }
+    },
+    handleSignupClick(){
+      this.$emit("event", "get_started_click");
     }
   }
 };
@@ -294,6 +297,7 @@ export default {
   border-radius: 100px;
   font-size: 20px;
   transition: 0.2s ease-out;
+  cursor: pointer;
 }
 #get-started:hover {
   background-color: #018cf2;

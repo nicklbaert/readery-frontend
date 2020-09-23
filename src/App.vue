@@ -1,5 +1,5 @@
 <template>
-  <div class="app" :class="{no_scroll: this.bodyScroll()}">
+  <div class="app" :class="{ no_scroll: this.bodyScroll() }">
     <div id="nav">
       <div id="logo">
         <router-link to="/">
@@ -10,7 +10,11 @@
             viewBox="0 0 162.851 28.497"
             id="logo"
           >
-            <g id="Gruppe_182" data-name="Gruppe 182" transform="translate(-261.643 -84.971)">
+            <g
+              id="Gruppe_182"
+              data-name="Gruppe 182"
+              transform="translate(-261.643 -84.971)"
+            >
               <path
                 id="Pfad_1920"
                 data-name="Pfad 1920"
@@ -30,7 +34,7 @@
         </router-link>
       </div>
 
-      <div class="links" v-bind:class="{nav_open: this.showNav}">
+      <div class="links" v-bind:class="{ nav_open: this.showNav }">
         <div class="links-left">
           <router-link to="/about" class="link highlighted">
             <span @click="closeNav()">How it works</span>
@@ -43,7 +47,12 @@
           </router-link>
         </div>
         <div class="links-right">
-          <a href="#" id="login-button" class="link" @click="handleLoginClick()">
+          <a
+            href="#"
+            id="login-button"
+            class="link"
+            @click="handleLoginClick()"
+          >
             <span class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,10 +78,19 @@
         href="#"
         class="nav-icon"
         @click="openNav()"
-        v-bind:class="{nav_icon_opened: this.showNav}"
+        v-bind:class="{ nav_icon_opened: this.showNav }"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 191 152">
-          <g id="Group_43" data-name="Group 43" transform="translate(-1948 -4244)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 191 152"
+        >
+          <g
+            id="Group_43"
+            data-name="Group 43"
+            transform="translate(-1948 -4244)"
+          >
             <rect
               id="Rectangle_56"
               data-name="Rectangle 56"
@@ -106,7 +124,7 @@
       <div
         class="nav-close-icon"
         @click="closeNav()"
-        v-bind:class="{nav_icon_close_opened: this.showNav}"
+        v-bind:class="{ nav_icon_close_opened: this.showNav }"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +132,11 @@
           height="30"
           viewBox="0 0 173.282 173.282"
         >
-          <g id="Group_43" data-name="Group 43" transform="translate(-1956.718 -4482)">
+          <g
+            id="Group_43"
+            data-name="Group 43"
+            transform="translate(-1956.718 -4482)"
+          >
             <rect
               id="Rectangle_59"
               data-name="Rectangle 59"
@@ -137,15 +159,29 @@
         </svg>
       </div>
     </div>
-    <router-view id="router-view" v-on:loggedInUser="setUserData($event)" />
+    <router-view id="router-view" v-on:event="handleEvent($event)" />
 
-    <div class="login_overlay" @click="closeLogin()" :class="{login_overlay_open: this.showLogin}"></div>
-    <div class="popup_login_wrapper" :class="{popup_login_open: this.showLogin}">
+    <div
+      class="login_overlay"
+      @click="closeLogin()"
+      :class="{ login_overlay_open: this.showLogin }"
+    ></div>
+    <div
+      class="popup_login_wrapper"
+      :class="{ popup_login_open: this.showLogin }"
+    >
       <PopupLogin id="popup_login" v-on:event="handleLoginEvent($event)" />
     </div>
 
-    <div class="signup_overlay" @click="closeSignup()" :class="{signup_overlay_open: this.showSignup}"></div>
-    <div class="popup_signup_wrapper" :class="{popup_signup_open: this.showSignup}" >
+    <div
+      class="signup_overlay"
+      @click="closeSignup()"
+      :class="{ signup_overlay_open: this.showSignup }"
+    ></div>
+    <div
+      class="popup_signup_wrapper"
+      :class="{ popup_signup_open: this.showSignup }"
+    >
       <PopupSignup id="popup_signup" v-on:event="handleSignupEvent($event)" />
     </div>
   </div>
@@ -154,7 +190,6 @@
 import PopupLogin from "./components/popup-login.vue";
 import PopupSignup from "./components/popup-signup.vue";
 
-
 export default {
   name: "App",
   components: {
@@ -162,6 +197,22 @@ export default {
     PopupSignup
   },
   methods: {
+    //Handle event emitted by router view e.g. open signup popup
+    handleEvent(event) {
+      if (event === "get_started_click") {
+        this.handleSignupClick();
+      } 
+    },
+    
+    //Called when user logged in
+    setUserData(userData) {
+      console.log("User data received.");
+      console.log(event);
+      this.userData = userData;
+      console.log("Access token: " + this.userData.access_token);
+    },
+
+    //Prevent body from being scrollable in certain cases
     bodyScroll() {
       if (this.showNav) {
         return true;
@@ -172,6 +223,8 @@ export default {
       }
       return false;
     },
+    
+    //Open and close Navigation in mobile view
     openNav() {
       this.showNav = true;
       console.log("Nav open");
@@ -180,6 +233,9 @@ export default {
       this.showNav = false;
       console.log("Nav closed");
     },
+    
+    //Either close nav and open popup 
+    //OR redirect to account page if logged in
     handleLoginClick() {
       this.closeNav();
       if (this.userData === null) {
@@ -194,10 +250,14 @@ export default {
         });
       }
     },
+    
+    //Close Nav and open Singup Popup
     handleSignupClick() {
       this.closeNav();
       this.openSignup();
     },
+
+    //Open Popup Forms
     openLogin() {
       this.showLogin = true;
       console.log("Login opened");
@@ -206,14 +266,22 @@ export default {
       this.showLogin = false;
       console.log("Login closed");
     },
+    openSignup() {
+      this.showSignup = true;
+      console.log("Signup opened");
+    },
+    closeSignup() {
+      this.showSignup = false;
+      console.log("Login closed");
+    },
+
+    //Login and Signup Popup emit events to either 
+    //close the popup OR set user data to new login
     handleLoginEvent(event) {
       if (event === "close") {
         this.closeLogin();
       } else {
-        console.log("User data received.");
-        console.log(event);
-        this.userData = event.userData;
-        console.log("Access token: " + this.userData.access_token);
+        this.setUserData(event.userData);
         this.closeLogin();
       }
     },
@@ -221,21 +289,11 @@ export default {
       if (event === "close") {
         this.closeSignup();
       } else {
-        console.log("User data received.");
-        console.log(event);
-        this.userData = event.userData;
-        console.log("Access token: " + this.userData.access_token);
+        this.setUserData(event.userData);
         this.closeSignup();
       }
-    },
-    openSignup() {
-      this.showSignup = true;
-      console.log("Login opened");
-    },
-    closeSignup() {
-      this.showSignup = false;
-      console.log("Login closed");
     }
+
   },
   data() {
     return {
@@ -545,7 +603,7 @@ body {
   overflow-y: scroll;
 }
 
-#popup-signup{
+#popup-signup {
   overflow-y: scroll;
 }
 
@@ -699,11 +757,11 @@ body {
     font-family: "Merriweather", serif;
   }
   .popup_signup_wrapper {
-  padding: 0px;
-}
-.popup_login_wrapper {
-  padding: 0px;
-}
+    padding: 0px;
+  }
+  .popup_login_wrapper {
+    padding: 0px;
+  }
 }
 
 @media screen and (max-height: 400px) {

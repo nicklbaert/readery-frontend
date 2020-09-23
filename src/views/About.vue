@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <SignUpCTA />
+    <SignUpCTA v-on:event="handleSignupClick($event)"/>
     <Footer />
   </div>
 </template>
@@ -61,7 +61,12 @@ export default {
   components: {
     Footer,
     SignUpCTA
-  }
+  },
+  methods:{
+    handleSignupClick(){
+      this.$emit("event", "get_started_click");
+    }
+  },
 };
 </script>
 

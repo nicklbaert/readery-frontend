@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <SignUpCTA />
+    <SignUpCTA v-on:event="handleSignupClick($event)"/>
     <Footer />
   </div>
 </template>
@@ -58,6 +58,9 @@ export default {
     SignUpCTA
   },
   methods: {
+    handleSignupClick(){
+      this.$emit("event", "get_started_click");
+    },
     toggleQuestion(question) {
       if (this.openQuestions.includes(question)) {
         this.openQuestions = this.removeItem(this.openQuestions, question);
@@ -75,6 +78,7 @@ export default {
       return arr;
     }
   },
+
   data() {
     return {
       openQuestions: [],
@@ -195,7 +199,7 @@ export default {
 }
 
 .openQuestionContent {
-  max-height: 250px;
+  max-height: 500px;
   margin-bottom: 30px;
   overflow: auto;
   transition: max-height 0.7s, overflow 0.7s 0.7s, margin-bottom 0.5s;

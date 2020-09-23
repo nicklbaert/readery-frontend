@@ -46,13 +46,13 @@
       </div>
       <div class="footer-col">
         <div class="social">
-          <a href="#" class="social-icon">
+          <a href="https://www.instagram.com/readery.io/" target="_blank" class="social-icon">
             <img src="../assets/icons-new/footer/instagram.svg" width="20" height="20" />
           </a>
-          <a href="#" class="social-icon">
+          <a  class="social-icon">
             <img src="../assets/icons-new/footer/twitter.svg" width="20" height="20" />
           </a>
-          <a href="#" class="social-icon">
+          <a class="social-icon">
             <img src="../assets/icons-new/footer/facebook.svg" width="20" height="20" />
           </a>
         </div>
@@ -193,7 +193,7 @@ export default {
 }
 #copyright {
   color: #4c5d77;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
 }
 

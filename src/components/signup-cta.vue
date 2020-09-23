@@ -11,7 +11,7 @@
         >Take action now and sign up to claim our offer for early supporters.</h3>
       </div>
       <div id="signup-cta-button">
-        <router-link id="get-started" to="/signup" class="action-button">
+        <a id="get-started" class="action-button" @click="handleSignupClick()">
           <svg
             class="get-started-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@
             />
           </svg>
           <span>Get started</span>
-        </router-link>
+        </a>
       </div>
     </div>
   </div>
@@ -37,7 +37,13 @@
 <script>
 export default {
   name: "Signup-CTA",
-  components: {}
+  components: {},
+  methods:{
+    handleSignupClick(){
+      console.log("click");
+      this.$emit("event", "get_started_click");
+    }
+  },
 };
 </script>
 
@@ -102,6 +108,7 @@ export default {
   border-radius: 100px;
   font-size: 20px;
   transition: 0.2s ease-out;
+  cursor: pointer;
 }
 #get-started:hover {
   background-color: #018cf2;
