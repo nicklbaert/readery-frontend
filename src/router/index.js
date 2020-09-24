@@ -4,7 +4,6 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Plans from "../views/Plans.vue";
-import Signup from "../views/Signup.vue";
 import Account from "../views/Account.vue";
 import Students from "../views/Students.vue";
 import Contact from "../views/Contact.vue";
@@ -26,11 +25,6 @@ const routes = [{
         path: "/plans",
         name: "Plans",
         component: Plans
-    },
-    {
-        path: "/signup",
-        name: "Signup",
-        component: Signup
     },
     {
         path: "/students",

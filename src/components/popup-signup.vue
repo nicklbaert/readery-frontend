@@ -163,7 +163,7 @@
       <div class="help">
         <div class="help-login">
           Already have an account?
-          <a href="#" id="login-link">
+          <a href="#" id="login-link" @click="goToLogin()">
             <span class="highlighted">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -231,6 +231,9 @@ export default {
   methods: {
     closeSignup() {
       this.$emit("event", "close");
+    },
+    goToLogin(){
+      this.$emit("event", "go_to_login");
     },
     initializeSignup() {
       this.signupError = null;

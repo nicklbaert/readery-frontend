@@ -203,7 +203,7 @@ export default {
         this.handleSignupClick();
       } else if(event === "logout"){
         this.deleteUserData();
-      }
+      } 
     },
     
     //Manage global user data
@@ -285,7 +285,11 @@ export default {
     handleLoginEvent(event) {
       if (event === "close") {
         this.closeLogin();
-      } else {
+      }else if(event === "go_to_signup"){
+        this.closeLogin();
+        this.openSignup();
+      } 
+      else {
         this.setUserData(event.userData);
         this.closeLogin();
       }
@@ -293,7 +297,11 @@ export default {
     handleSignupEvent(event) {
       if (event === "close") {
         this.closeSignup();
-      } else {
+      } else if(event === "go_to_login"){
+        this.closeSignup();
+        this.openLogin();
+      }
+      else {
         this.setUserData(event.userData);
         this.closeSignup();
       }
