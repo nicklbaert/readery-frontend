@@ -5,7 +5,7 @@
         <div class="signup-heading">Sign up. It's free.</div>
         <div class="signup-subheading">Join Readery using your email and password.</div>
       </div>
-      <form class="signup-form">
+      <div class="signup-form">
         <div class="form-field-wrapper" id="email-wrapper">
           <label>Email</label>
           <div class="form-field">
@@ -159,7 +159,7 @@
             />
           </svg>
         </div>
-      </form>
+      </div>
       <div class="help">
         <div class="help-login">
           Already have an account?

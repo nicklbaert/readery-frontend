@@ -5,7 +5,7 @@
         <div class="login-heading">Welcome back.</div>
       <div class="login-subheading">Log in using your email and password.</div>
       </div>
-      <form class="login-form">
+      <div class="login-form">
         <div class="form-field-wrapper" id="email-wrapper">
           <label>Email</label>
           <div class="form-field">
@@ -114,7 +114,7 @@
             />
           </svg>
         </div>
-      </form>
+      </div>
       <div class="help">
         <div class="forgot-password">
           <router-link to="/password_reset">Forgot password?</router-link>
