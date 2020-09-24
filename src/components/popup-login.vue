@@ -2,7 +2,7 @@
   <div class="popup-login">
     <div id="left">
       <div class="login-heading-wrapper">
-        <div class="login-heading">Welcome back.</div>
+        <div class="login-heading">Glad to have you back.</div>
       <div class="login-subheading">Log in using your email and password.</div>
       </div>
       <div class="login-form">
@@ -116,9 +116,9 @@
         </div>
       </div>
       <div class="help">
-        <div class="forgot-password">
+        <!--<div class="forgot-password">
           <router-link to="/password_reset">Forgot password?</router-link>
-        </div>
+        </div>-->
         <div class="signup">
           Don't have an account?
           <a href="#" id="signup-link" @click="goToSignup()">
@@ -486,7 +486,7 @@ export default {
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
+/*@media screen and (max-width: 1200px) {*/
   .popup-login {
     flex-direction: column;
     align-items: center;
@@ -521,7 +521,7 @@ export default {
     align-items: center;
     justify-content: center;
   }
-}
+/*}*/
 
 @media screen and (max-width: 600px) {
   .popup-login {

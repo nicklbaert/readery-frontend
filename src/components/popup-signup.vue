@@ -540,7 +540,7 @@ export default {
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
+/*@media screen and (max-width: 1200px) {*/
   .popup-signup {
     flex-direction: column;
     align-items: center;
@@ -573,7 +573,7 @@ export default {
     align-items: center;
     justify-content: center;
   }
-}
+/*}*/
 
 @media screen and (max-width: 600px) {
   .popup-signup {
