@@ -11,13 +11,13 @@
     <div id="letter-section">
       <div class="letter-part" id="letter-part-01">
         Thank you for signing up. You are one of the first people to join readery,
-        which is why we want to give something back.
+        which is why you are now an essential part of our journey.
       </div>
       <div class="letter-part" id="letter-part-02">
         Our services are currently
-        <span id="in_dev_link">still in development</span>, hence we are not yet able to start shipping books.
-        However, we appreciate you signing up so early and want to give you a free book in exchange for your trust.
-        You will be notified via email once we are ready and you can claim your free book.
+        <span id="in_dev_link">still in development</span>, hence we are not yet able to start offering our services.
+        However, we appreciate you signing up so early and want to give you a small surprise to express our gratitude.
+        You will be notified via email once our services are ready and you can claim your gift.
       </div>
       <div class="letter-part" id="letter-part-03">
         Sincerely,
