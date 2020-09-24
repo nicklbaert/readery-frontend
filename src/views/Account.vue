@@ -15,7 +15,7 @@
       </div>
       <div class="letter-part" id="letter-part-02">
         Our services are currently
-        <span id="in_dev_link">still in development</span>, hence we are not yet able to start offering our services.
+        <span id="in_dev_link">still in development</span>, hence we are not yet able to start offering them to users.
         However, we appreciate you signing up so early and want to give you a small surprise to express our gratitude.
         You will be notified via email once our services are ready and you can claim your gift.
       </div>
