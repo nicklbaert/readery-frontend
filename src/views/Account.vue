@@ -23,8 +23,8 @@
         Sincerely,
         <br />Niclas (CEO)
       </div>
-      <router-link to="/" href="#" id="logout-button" class="link" @click="handleLogoutClick()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+      <router-link to="/" href="#" id="logout-button" class="link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" @click="handleLogoutClick()">
           <g
             id="Icon_feather-log-out"
             data-name="Icon feather-log-out"
@@ -65,7 +65,7 @@
             />
           </g>
         </svg>
-        <span class="highlighted">Logout</span>
+        <span class="highlighted" @click="handleLogoutClick()">Logout</span>
       </router-link>
     </div>
     <Footer />
@@ -82,6 +82,7 @@ export default {
   },
   methods: {
     handleLogoutClick(){
+      console.log("logout clicked");
       this.$emit("event", "logout");
     }
   },

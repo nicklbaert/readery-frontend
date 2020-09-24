@@ -202,6 +202,7 @@ export default {
       if (event === "get_started_click") {
         this.handleSignupClick();
       } else if(event === "logout"){
+        console.log("deleting user data");
         this.deleteUserData();
       } 
     },
