@@ -3,74 +3,25 @@
     <div id="nav">
       <div id="logo">
         <router-link to="/">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="162.851"
-            height="26"
-            viewBox="0 0 162.851 28.497"
-            id="logo"
-          >
-            <g
-              id="Gruppe_182"
-              data-name="Gruppe 182"
-              transform="translate(-261.643 -84.971)"
-            >
-              <path
-                id="Pfad_1920"
-                data-name="Pfad 1920"
-                d="M13.2,3.135h5.414l-4.69-8.09a7.262,7.262,0,0,0,4.061-6.39A7.537,7.537,0,0,0,10.434-18.9H1.62V3.135H6.656v-7.24H9.049ZM6.656-14.178h3.777a2.668,2.668,0,0,1,2.518,2.833,2.668,2.668,0,0,1-2.518,2.833H6.656Zm17.6,11.332H35.427a9.15,9.15,0,0,0,.189-1.889,7.947,7.947,0,0,0-8-8.31,8.07,8.07,0,0,0-8.373,8.31c0,4.69,3.337,8.31,8.719,8.31A7.987,7.987,0,0,0,34.829.333L31.052-1.839a4.11,4.11,0,0,1-3.022,1.2C26.3-.643,24.851-1.209,24.253-2.846Zm-.094-3.526a3.249,3.249,0,0,1,3.431-2.487,3.24,3.24,0,0,1,3.337,2.487Zm25.4-6.233v1.479a5.912,5.912,0,0,0-4.69-1.92c-4.124,0-7.523,3.62-7.523,8.31s3.4,8.31,7.523,8.31a5.912,5.912,0,0,0,4.69-1.92V3.135h4.722V-12.6ZM45.815-.895a3.594,3.594,0,0,1-3.746-3.84,3.594,3.594,0,0,1,3.746-3.84,3.594,3.594,0,0,1,3.746,3.84A3.594,3.594,0,0,1,45.815-.895ZM69.172-18.9v7.775a5.912,5.912,0,0,0-4.69-1.92c-4.124,0-7.523,3.62-7.523,8.31s3.4,8.31,7.523,8.31a5.912,5.912,0,0,0,4.69-1.92V3.135h4.722V-18.9ZM65.426-.895a3.594,3.594,0,0,1-3.746-3.84,3.594,3.594,0,0,1,3.746-3.84,3.594,3.594,0,0,1,3.746,3.84A3.594,3.594,0,0,1,65.426-.895ZM81.574-2.846H92.749a9.15,9.15,0,0,0,.189-1.889,7.947,7.947,0,0,0-8-8.31,8.07,8.07,0,0,0-8.373,8.31c0,4.69,3.337,8.31,8.719,8.31A7.987,7.987,0,0,0,92.151.333L88.373-1.839a4.11,4.11,0,0,1-3.022,1.2C83.62-.643,82.172-1.209,81.574-2.846ZM81.48-6.372a3.249,3.249,0,0,1,3.431-2.487,3.24,3.24,0,0,1,3.337,2.487ZM100.335-9.8v-2.8H95.613V3.135h4.722V-3.979c0-3.116,2.77-3.9,4.722-3.588v-5.351A4.727,4.727,0,0,0,100.335-9.8Zm17.155-2.8-2.959,9.632L111.037-12.6h-5.194l6.264,15.015c-.693,1.92-1.731,2.613-3.935,2.613V9.43c4.407.22,7.208-1.763,8.971-6.768L122.527-12.6Z"
-                transform="translate(301.967 104.021)"
-                fill="#00006D"
-              />
-              <path
-                id="Icon_metro-books"
-                data-name="Icon metro-books"
-                d="M9.056,8.571H3.5a.929.929,0,0,0-.926.926v20.38A.929.929,0,0,0,3.5,30.8H9.056a.929.929,0,0,0,.926-.926V9.5a.929.929,0,0,0-.926-.926Zm9.264,0H12.762a.929.929,0,0,0-.926.926v20.38a.929.929,0,0,0,.926.926H18.32a.929.929,0,0,0,.926-.926V9.5a.929.929,0,0,0-.926-.926ZM24.72,10l-4.964,2.5a.929.929,0,0,0-.41,1.244l8.337,16.546a.929.929,0,0,0,1.244.41l4.964-2.5a.929.929,0,0,0,.41-1.244L25.964,10.414A.929.929,0,0,0,24.72,10Zm4.716,19.874a.926.926,0,1,1-.926-.926A.926.926,0,0,1,29.436,29.878Z"
-                transform="translate(259.071 76.4)"
-                fill="#0294ff"
-              />
-            </g>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="80.307" height="51.79" viewBox="0 0 150.307 51.79">
+  <path id="Union_2" data-name="Union 2" d="M13733.145,8287.763V8280.9c3.429,0,5.042-1.077,6.123-4.065l-9.75-23.364h8.084l5.438,14.989,4.6-14.989h7.838l-8.374,23.759c-2.607,7.4-6.675,10.559-12.96,10.558Q13733.653,8287.788,13733.145,8287.763Zm-67.364-3.37a18.289,18.289,0,0,1-13.067-8.7,21.189,21.189,0,0,1-2.674-8.721,19.275,19.275,0,0,1,6.452-15.745,13.75,13.75,0,0,0,1.435,13.826,2.117,2.117,0,0,0,.405.461,1.587,1.587,0,0,0,1.728.321,1.493,1.493,0,0,0,.946-1.351,2.286,2.286,0,0,0-.219-.89,21.563,21.563,0,0,1,6.321-24.033,17.656,17.656,0,0,1,6.615-3.567,13.748,13.748,0,0,0,2.3,15.451c1.7,1.7,3.727,2.86,5.479,4.481a22.833,22.833,0,0,1,2.054,2.213l-.136.027a13.061,13.061,0,0,1,2.161,3.377l.351.7a16.063,16.063,0,0,1-4.049,17.826,18.61,18.61,0,0,1-12.792,4.534A25.945,25.945,0,0,1,13665.78,8284.393Zm108.562-18.675a12.983,12.983,0,1,1,12.984,12.933A12.838,12.838,0,0,1,13774.342,8265.718Zm7.349,0a5.635,5.635,0,1,0,5.636-5.78A5.494,5.494,0,0,0,13781.69,8265.718Zm-78.138,12.247v-34.291h12.98a11.759,11.759,0,1,1,0,23.513h-5.143s.135,5.476-2.358,8.313a6.9,6.9,0,0,1-5.135,2.48A3.288,3.288,0,0,1,13703.553,8277.965Zm7.838-18.128h5.143a4.416,4.416,0,0,0,0-8.817h-5.143Zm46.783-6.365h7.35v4.356c.98-3.279,4.264-4.849,7.35-4.849v8.33c-3.037-.492-7.35.733-7.35,5.583,0,0,.721,5.274-1.156,8.173s-6.193,2.9-6.193,2.9Z" transform="translate(-13650 -8235.998)" fill="#afff23"/>
+</svg>
         </router-link>
       </div>
 
       <div class="links" v-bind:class="{ nav_open: this.showNav }">
         <div class="links-left">
           <router-link to="/about" class="link highlighted">
-            <span @click="closeNav()">How it works</span>
+            <span @click="closeNav()">Terms of Service</span>
           </router-link>
           <router-link to="/plans" class="link highlighted">
-            <span @click="closeNav()">Pricing</span>
+            <span @click="closeNav()">Privacy Policy</span>
           </router-link>
-          <router-link to="/faq" class="link highlighted">
-            <span @click="closeNav()">FAQ</span>
-          </router-link>
+        
         </div>
         <div class="links-right">
-          <a
-            href="#"
-            id="login-button"
-            class="link"
-            @click="handleLoginClick()"
-          >
-            <span class="highlighted">Login</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="13.503"
-              height="18.616"
-              viewBox="0 0 13.503 23.616"
-            >
-              <path
-                id="Icon_ionic-ios-arrow-forward"
-                data-name="Icon ionic-ios-arrow-forward"
-                d="M20.679,18,11.742,9.07a1.681,1.681,0,0,1,0-2.384,1.7,1.7,0,0,1,2.391,0L24.258,16.8a1.685,1.685,0,0,1,.049,2.327L14.14,29.32a1.688,1.688,0,0,1-2.391-2.384Z"
-                transform="translate(-11.246 -6.196)"
-                fill="#0294ff"
-              />
-            </svg>
-          </a>
-          <a href="#" id="signup-button" @click="handleSignupClick()">
-            <span @click="closeNav()">Early Access</span>
+          <a href="https://pyro.page.link/q9Ku" target="_blank" id="signup-button">
+            <span @click="closeNav()">Download Pyro</span>
           </a>
         </div>
       </div>
@@ -98,7 +49,7 @@
               height="29"
               rx="14.5"
               transform="translate(1948 4244)"
-              fill="#1B1F23"
+              fill="#fff"
             />
             <rect
               id="Rectangle_57"
@@ -107,7 +58,7 @@
               height="29"
               rx="14.5"
               transform="translate(1991 4306)"
-              fill="#1B1F23"
+              fill="#fff"
             />
             <rect
               id="Rectangle_58"
@@ -116,7 +67,7 @@
               height="29"
               rx="14.5"
               transform="translate(2043 4367)"
-              fill="#1B1F23"
+              fill="#fff"
             />
           </g>
         </svg>
@@ -144,7 +95,7 @@
               height="32.303"
               rx="16.151"
               transform="translate(1979.56 4482) rotate(45)"
-              fill="#1b1f23"
+              fill="#fff"
             />
             <rect
               id="Rectangle_60"
@@ -153,7 +104,7 @@
               height="32.303"
               rx="16.152"
               transform="translate(2130 4504.841) rotate(135)"
-              fill="#1b1f23"
+              fill="#fff"
             />
           </g>
         </svg>
@@ -161,72 +112,27 @@
     </div>
     <router-view id="router-view" v-on:event="handleEvent($event)" />
 
-    <div
-      class="login_overlay"
-      @click="closeLogin()"
-      :class="{ login_overlay_open: this.showLogin }"
-    ></div>
-    <div
-      class="popup_login_wrapper"
-      :class="{ popup_login_open: this.showLogin }"
-    >
-      <PopupLogin id="popup_login" v-on:event="handleLoginEvent($event)" />
-    </div>
+   
 
-    <div
-      class="signup_overlay"
-      @click="closeSignup()"
-      :class="{ signup_overlay_open: this.showSignup }"
-    ></div>
-    <div
-      class="popup_signup_wrapper"
-      :class="{ popup_signup_open: this.showSignup }"
-    >
-      <PopupSignup id="popup_signup" v-on:event="handleSignupEvent($event)" />
-    </div>
+    
   </div>
 </template>
 <script>
-import PopupLogin from "./components/popup-login.vue";
-import PopupSignup from "./components/popup-signup.vue";
+
 
 export default {
   name: "App",
   components: {
-    PopupLogin,
-    PopupSignup
   },
   methods: {
-    //Handle event emitted by router view e.g. open signup popup
-    handleEvent(event) {
-      if (event === "get_started_click") {
-        this.handleSignupClick();
-      } else if(event === "logout"){
-        console.log("deleting user data");
-        this.deleteUserData();
-      } 
-    },
     
-    //Manage global user data
-    setUserData(userData) {
-      console.log("User data received.");
-      console.log(event);
-      this.userData = userData;
-      console.log("Access token: " + this.userData.access_token);
-    },
-    deleteUserData(){
-      this.userData = null;
-    },
-
+    
+    
     //Prevent body from being scrollable in certain cases
     bodyScroll() {
       if (this.showNav) {
         return true;
-      } else if (this.showLogin) {
-        return true;
-      } else if (this.showSignup) {
-        return true;
-      }
+      } 
       return false;
     },
     
@@ -240,93 +146,29 @@ export default {
       console.log("Nav closed");
     },
     
-    //Either close nav and open popup 
-    //OR redirect to account page if logged in
-    handleLoginClick() {
-      this.closeNav();
-      if (this.userData === null) {
-        this.openLogin();
-      } else {
-        this.$router.push({
-          name: "Account",
-          params: {
-            userId: this.userData._id,
-            access_token: this.userData.access_token
-          }
-        });
-      }
-    },
+
     
-    //Close Nav and open Singup Popup
-    handleSignupClick() {
-      this.closeNav();
-      this.openSignup();
-    },
-
-    //Open Popup Forms
-    openLogin() {
-      this.showLogin = true;
-      console.log("Login opened");
-    },
-    closeLogin() {
-      this.showLogin = false;
-      console.log("Login closed");
-    },
-    openSignup() {
-      this.showSignup = true;
-      console.log("Signup opened");
-    },
-    closeSignup() {
-      this.showSignup = false;
-      console.log("Login closed");
-    },
-
-    //Login and Signup Popup emit events to either 
-    //close the popup OR set user data to new login
-    handleLoginEvent(event) {
-      if (event === "close") {
-        this.closeLogin();
-      }else if(event === "go_to_signup"){
-        this.closeLogin();
-        this.openSignup();
-      } 
-      else {
-        this.setUserData(event.userData);
-        this.closeLogin();
-      }
-    },
-    handleSignupEvent(event) {
-      if (event === "close") {
-        this.closeSignup();
-      } else if(event === "go_to_login"){
-        this.closeSignup();
-        this.openLogin();
-      }
-      else {
-        this.setUserData(event.userData);
-        this.closeSignup();
-      }
-    }
+    
+   
     
   },
   data() {
     return {
       showNav: false,
-      showLogin: false,
-      showSignup: false,
-      userData: null
     };
   }
 };
+
 </script>
 <style>
 * {
   margin: 0;
   padding: 0;
   text-align: left;
+  font-family: "Cera Pro";
 }
 body {
-  background-color: #f8fbfd;
+  background-color: #13191F;
 }
 
 @font-face {
@@ -360,7 +202,7 @@ body {
   font-family: cera-pro;
   margin: 0;
   padding: 0;
-  color: #00006d;
+  color: #fff;
   overflow-x: hidden;
 }
 #router-view {
@@ -369,17 +211,15 @@ body {
 }
 
 .heading {
-  font-family: "Merriweather", serif;
-}
-.title {
-  font-size: 52px;
-  line-height: 1.5;
+  font-family: "Cera Pro", serif;
+  text-align: center;
+  font-size: 90px;
 }
 
 .subtitle {
   font-size: 38px;
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
 }
 .no_scroll {
   height: 100vh;
@@ -399,46 +239,23 @@ body {
   cursor: pointer;
 }
 .highlighted:hover {
-  color: #0294ff;
-}
-.highlighted::before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 1px;
-  bottom: -1px;
-  background-color: #0294ff;
-  transition: all 0.1s ease-in-out 0s;
-}
-.highlighted:hover::before {
-  width: 100%;
-  transition: all 0.1s ease-in-out 0s;
+  color: #AFFF23;
+  transition: 0.2s ease-in-out;
 }
 
 .highlighted-reverse {
-  color: #0294ff;
+  color: #AFFF23;
   position: relative;
   cursor: pointer;
-}
-.highlighted-reverse::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  bottom: -5px;
-  left: 0;
-  background-color: #0294ff;
-  opacity: 1;
-  transition: all 0.2s ease-in-out 0s;
-}
-.highlighted-reverse:hover::before {
-  opacity: 0;
-  transition: all 0.2s ease-in-out 0s;
 }
 
 #nav {
   padding: 45px 45px;
-  position: relative;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  left: 0;
   max-width: 1332px;
   margin: 0 auto 24px auto;
   display: flex;
@@ -478,20 +295,20 @@ body {
 
 .links-left a {
   text-decoration: none;
-  color: #4c5d77;
-  font-size: 16px;
+  color: #fff;
+  font-size: 14px;
   margin: 0 40px;
   transition: 0.1s ease-in;
 }
 
 .links-left a:hover {
-  color: #0294ff;
+  color: #AFFF23;
   transition: 0.1s ease-out;
 }
 
 .links-left a.router-link-exact-active,
 .links-right a.router-link-exact-active {
-  color: #0294ff;
+  color: #AFFF23;
 }
 
 .links-right {
@@ -502,12 +319,12 @@ body {
 
 .links-right a {
   text-decoration: none;
-  color: #4c5d77;
+  color: #fff;
   font-size: 16px;
   margin: 0;
 }
 .links-right a:hover {
-  color: #0294ff;
+  color: #AFFF23;
   transition: 0.1s ease-out;
 }
 #login-button {
@@ -522,9 +339,9 @@ body {
 
 #signup-button {
   margin: 0;
-  background-color: #0294ff;
-  padding: 18px 40px;
-  color: #fff;
+  background-color: #AFFF23;
+  padding: 15px 40px;
+  color: #06090C;
   transition: 0.2s ease-in;
   word-wrap: none;
   overflow-wrap: initial;
@@ -533,93 +350,14 @@ body {
 }
 #signup-button:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 10px 0 rgb(2, 148, 255, 0.5);
+  box-shadow: 0 4px 10px 0 rgb(175, 255, 35, 0.5);
   transition: 0.2s ease-out;
 }
 #signup-button a.router-link-exact-active {
   color: #fff;
 }
 
-/*Login Popup */
-.login_overlay {
-  opacity: 1;
-  position: fixed;
-  z-index: 99999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  visibility: hidden;
-  transition: 0.2s ease-out;
-}
-.login_overlay_open {
-  visibility: visible;
-  transition: 0.2s ease-in;
-}
 
-.popup_login_wrapper {
-  position: fixed;
-  z-index: 100000;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  margin: 0 auto;
-  transform: scale(0);
-  display: flex;
-  justify-content: center;
-  transition: 0.2s ease-out;
-}
-
-.popup_login_open {
-  transform: scale(1);
-  transition: 0.2s ease-in;
-  overflow-y: scroll;
-}
-
-/*Signup Popup */
-.signup_overlay {
-  position: fixed;
-  z-index: 99999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.3);
-  visibility: hidden;
-  transition: 0.2s ease-out;
-}
-.signup_overlay_open {
-  visibility: visible;
-  transition: 0.2s ease-in;
-}
-
-.popup_signup_wrapper {
-  position: fixed;
-  z-index: 100000;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  transform: scale(0);
-  display: flex;
-  justify-content: center;
-  transition: 0.2s ease-out;
-}
-
-.popup_signup_open {
-  transform: scale(1);
-  transition: 0.2s ease-in;
-  overflow-y: scroll;
-}
-
-#popup-signup {
-  overflow-y: scroll;
-}
 
 @media screen and (max-width: 1020px) {
   .nav-icon {
@@ -635,7 +373,7 @@ body {
   }
 
   .links {
-    padding: 0 45px 80px 45px;
+    padding: 45px 45px 80px 45px;
     width: 100vw;
     height: calc(100vh - 100px);
     min-height: 300px;
@@ -649,7 +387,7 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     transition: 0.2s ease-in;
-    background-color: #f8fbfd;
+    background-color: #21272D;
   }
   .links-left {
     flex-direction: column;
@@ -662,8 +400,8 @@ body {
     margin: 40px 0px 40px 0;
     font-size: 30px;
     text-align: left;
-    color: #00006d;
-    font-family: "Merriweather", serif;
+    color: #fff;
+    font-family: "Cera Pro", serif;
   }
 
   .links-right {
@@ -742,7 +480,7 @@ body {
     padding: 45px 25px;
   }
   .links {
-    padding: 0 25px 60px 25px;
+    padding: 45px 25px 60px 25px;
   }
   .title {
     font-size: 38px;
@@ -764,10 +502,10 @@ body {
     text-align: left;
   }
   .links-left a {
-    margin: 20px 0px 20px 0;
+    margin: 30px 0px 30px 0;
     font-size: 20px;
     text-align: left;
-    color: #00006d;
+    color: #fff;
     font-family: "Merriweather", serif;
   }
   .popup_signup_wrapper {
